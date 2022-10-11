@@ -5,8 +5,12 @@ from django.http.response import HttpResponse
 from wishlist.models import Wishlist
 from member.models import Member
 from product.models import Product
+import logging
 
 # Create your views here.
+
+logger = logging.getLogger(__name__)
+
 class WishView(View):
     def get(self, request):
         template = loader.get_template("wish.html")
@@ -32,6 +36,8 @@ class WishView(View):
                     "message" : "찜 목록이 비었습니다.",
                     "memid" : memid,
                     }
+        print(request.META.HTTP_REFERER, request.path)
+        # logger.info()
         return HttpResponse(template.render(context, request))
     def post(self, request):
         pass
@@ -63,6 +69,7 @@ class WishInsView(View):
                 prodNum = Product.objects.get(prodNum=prodNum),
                 )
             wish.save()
+        print(request.path)
         return redirect("wishlist:wish")
     def post(self, request):
         pass

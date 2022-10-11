@@ -16,9 +16,12 @@ from product.models import Product
 from cart.models import Cart
 from refund.models import Refund
 from product.choice import BRAND_CHOICE
+import logging
 
 PAGE_SIZE = 5
 PAGE_BLOCK = 3
+
+logger = logging.getLogger(__name__)
 
 #메인
 class IndexView(View):
