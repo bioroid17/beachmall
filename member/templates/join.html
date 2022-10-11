@@ -6,6 +6,12 @@
 {% endblock %}
 
 {%block content %}
+{% if not request.session.memid %}
+<script type="text/javascript">
+	alert("로그인 후 이용하실 수 있습니다.");
+	location.href = "{% url 'member:login' %}"
+</script>
+{% else %}
 <div style="text-align: center;">
 	<form method="post" name="inputform" action="memberjoin" onsubmit="return inputcheck()">
 		<input type="hidden" name="checkid" value="0"> 
@@ -134,5 +140,6 @@
 	</form>
 </div>
 {% block scroll %} 
-{%endblock%} 
-{%endblock%}
+{% endblock %}
+{% endif %}
+{% endblock %}
