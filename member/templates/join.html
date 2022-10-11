@@ -6,6 +6,12 @@
 {% endblock %}
 
 {%block content %}
+{% if not request.session.memid %}
+<script type="text/javascript">
+	alert("로그인 후 이용하실 수 있습니다.");
+	location.href = "{% url 'member:login' %}"
+</script>
+{% else %}
 <div style="text-align: center;">
 	<form method="post" name="inputform" action="memberjoin" onsubmit="return inputcheck()">
 		<input type="hidden" name="checkid" value="0"> 
@@ -45,7 +51,15 @@
 
 			<input class="input" type="text" name="name" placeholder="홍길동">
 
-
+	        <br><br>
+			<h3 class="join_title"> <label for="age">나이</label> </h3>
+	        <input type="radio" name="age" class="sel" aria-label="age" value="10대" checked>10대
+	        <input type="radio" name="age" class="sel" aria-label="age" value="20대">20대
+	        <input type="radio" name="age" class="sel" aria-label="age" value="30대">30대
+	        <input type="radio" name="age" class="sel" aria-label="age" value="40대">40대
+	        <input type="radio" name="age" class="sel" aria-label="age" value="50대">50대
+	        <input type="radio" name="age" class="sel" aria-label="age" value="60대">60대
+	        <input type="radio" name="age" class="sel" aria-label="age" value="70대">70대
 
 			<br> <br>
 			<h3 class="join_title">
@@ -126,5 +140,6 @@
 	</form>
 </div>
 {% block scroll %} 
-{%endblock%} 
-{%endblock%}
+{% endblock %}
+{% endif %}
+{% endblock %}
