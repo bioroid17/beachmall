@@ -14,7 +14,7 @@ class Member (models.Model):
     signupdate = models.DateTimeField(auto_now_add=True, verbose_name="가입일", null=False, blank=True)
     modifydate = models.DateTimeField(auto_now_add=True, verbose_name="최근 수정일", null=False, blank=True)
     status = models.CharField(max_length=500, verbose_name="가입상태", null=False)
-
+    age = models.CharField(max_length=50, verbose_name="나이", null=False)
 
 class DeleteMember (models.Model):
     userId = models.CharField(max_length=50 , verbose_name="아이디")
