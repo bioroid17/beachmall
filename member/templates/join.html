@@ -1,0 +1,130 @@
+{% extends "base.html"%}
+<!--주소찾기 api -->
+{% load static %}
+
+{% block navright %}
+{% endblock %}
+
+{%block content %}
+<div style="text-align: center;">
+	<form method="post" name="inputform" action="memberjoin" onsubmit="return inputcheck()">
+		<input type="hidden" name="checkid" value="0"> 
+		<input type="hidden" name="checktel" value="0">
+		<div id="sform">
+			<div style="text-align:center;">
+				<h2> 회원가입 </h2>
+				<img src="{% static 'images/gaip.png' %}">
+				<p>하나의 계정으로 비치몰 
+				<br>서비스를 이용할 수 있습니다</p>
+			</div>
+			<br><br>
+			<div id="sform1">
+				<h3 class="join_title">
+					<label for="id">아이디</label>
+				</h3>
+				<input autofocus class="input_id" width="100%" type="text" name="id" placeholder="아이디를 입력해주세요"
+					oninput="this.value=this.value.replace(/[^a-zA-Z0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="20" onkeyup="idconfirm()"> 
+				<!-- <input class="input_id2" type="button" value="중복확인" onclick="confirm()"> -->
+				<span id="idcheck">아이디를 입력해주세요</span>
+			</div>
+			<br>
+
+			<h3 class="join_title">
+				<label for="passwd">비밀번호</label>
+			</h3>
+
+			<input autofocus class="input" type="password" name="passwd" placeholder="8~12자리의 영대소문자와 숫자 조합" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').replace(/(\..*)\./g, '$1');"> <br> <br>
+			<h3 class="join_title">
+				<label for="repasswd">비밀번호 재확인</label>
+			</h3>
+			<input autofocus class="input" type="password" name="repasswd"
+				placeholder="8~12자리의 영대소문자와 숫자 조합" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').replace(/(\..*)\./g, '$1');"> <br> <br> <br>
+			<h3 class="join_title">
+				<label for="name">이름</label>
+			</h3>
+
+			<input class="input" type="text" name="name" placeholder="홍길동">
+
+
+
+			<br> <br>
+			<h3 class="join_title">
+				<label for="gender">성별</label>
+			</h3>
+			<!-- <select id="gender" name="gender" class="sel" aria-label="성별">
+				<option value selected>성별</option>
+				<option value="M">남자</option>
+				<option value="F">여자</option>
+			</select> <br> <br> <br> -->
+			<input type="radio" name="gender" class="sel" aria-label="성별" value="M" checked>남자
+			<input type="radio" name="gender" class="sel" aria-label="성별" value="F">여자
+			<br><br>
+			<h3 class="join_title">
+				<label for="addrnum">우편번호</label>
+			</h3>
+
+			<input type="text" id="sample6_postcode" placeholder="우편번호" class="input_zipnum" name="zonecode" readonly>
+			<input class="input_zipnum2" type="button" onclick="sample6_execDaumPostcode()" value="우편번호찾기"> <br><br>
+			<h3 class="join_title">
+				<label for="addr">주소</label>
+			</h3>
+			<input class="input" id="sample6_address" type="text" name="addr" readonly>
+			<br> <br> <br>
+			<h3 class="join_title">
+				<label for="addrdetail">상세주소</label>
+			</h3>
+			<input class="input" id="sample6_detailAddress" type="text" name="detailaddr" placeholder="상세주소를 입력해주세요">
+			<br>
+			<br>
+			<br>
+			<h3 class="join_title">
+				<label for="addr">본인 확인 이메일 <span class="terms_choice">(선택)</span>
+				</label>
+			</h3>
+			<div style="display: flex;">
+				<div>
+					<input style="height: 40px; width: 250px; font-size:20px;" type="text" name="email1" placeholder="Email">
+				</div>
+				<div style="font-size: 30px;">&nbsp;@&nbsp;</div>
+				<div>
+					<select name="email2">
+						<option value="naver.com">naver.com</option>
+						<option value="daum.net">daum.net</option>
+						<option value="nate.com">nate.com</option>
+					</select>
+				</div>
+			</div>
+
+			<br>
+			<div>
+				<h3 class="join_title">
+					<label for="addr">전화번호</label>
+				</h3>
+				<div class="join_row join_birthday">
+					<div class="bir_wrap">
+
+						<input type="text" name="tel1" placeholder="010" class="int" maxlength="3" value="010" readonly onkeyup="confirmteluncheck()"> - 
+						<input type="text" name="tel2" class="int" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" onkeyup="confirmteluncheck()"> - 
+						<input type="text" name="tel3" class="int" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" onkeyup="confirmteluncheck()"> 
+						<br>
+						<div>
+							<input type="button" value="번호확인" style="background-color: pink; border: 0; height: 30px;" onclick="telconfirm()">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<br> <br>
+			<div id="sform1">
+				<button type="submit" class="primary-btn2"
+					style="border: 0; width: 250px;" value="가입">가입</button>
+
+				<button class="primary-btn" type="button" value="메인으로" style="border: 0; width: 250px; height: 48px;" onclick="location='index'">메인으로</button>
+			</div>
+
+		</div>
+	</form>
+</div>
+{% block scroll %} 
+{%endblock%} 
+{%endblock%}

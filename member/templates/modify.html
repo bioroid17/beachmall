@@ -1,0 +1,38 @@
+{% extends "base.html"%}
+
+{% block title %} <h2>회원정보수정</h2> {%endblock%}
+
+{% block navright %}
+{% endblock %}
+
+{%block content %} {% if not request.session.memid %}
+<script type="text/javascript">
+	alert("로그인 후 이용하실 수 있습니다.");
+	location.href = "{% url 'member:login' %}"
+</script>
+{% else %}
+{%csrf_token%}
+<div style="width:400px; text-align:center; margin-left:auto;margin-right:auto;">
+	<form method="post" action="modify" name="modifyform"><!-- 자기자신한테 옮긴다 action modify -->
+		<div class="idmessage" >
+					{% if message %}
+					{{message}}
+					{% else %}
+					<br>
+					<span style="margin-left:25px;"></span>	비밀번호를 입력해주세요<br><br>
+					{% endif %}
+		</div>
+			<div class="form-group">
+				<div>비밀번호</div>
+				<input  style="width:415px;" type="password" class="input" name="passwd">
+			</div>
+			<div>
+					<input class="btn btn-primary"  style="width:426px;background-color:#8FCEFF;border:0" type="submit" value="수정">
+					<input class="btn btn-primary" style="width:426px;background-color:#DDDDFF;border:0" type="button" value="수정취소" onclick="history.back()">
+			</div>
+		
+	</form>
+
+</div>
+{% endif %}
+{% endblock %}

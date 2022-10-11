@@ -1,0 +1,238 @@
+{% extends "base.html"%}
+{% load static %}
+{% load mathfilters %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+<div>
+	<main style="z-index: 2; text-align: center">
+
+		<!-- QnA -->
+
+		<div class="board">
+			<div class="board2">
+				<div>
+					<div>
+						<h2 class="gongzi">QnA 게시판</h2>
+					</div>
+					<table class="table_3">
+						<!-- 콜그룹으로 열의 비율을 맞춤 두번째것은
+                        값을 안넣었으니 자동으로 남은 비율을 가진다-->
+						<colgroup>
+							<col style="width: 100px">
+							<col style="width: 800px;">
+							<col style="width: 100px;">
+							<col style="width: 100px">
+							<col style="width: 100px">
+						</colgroup>
+						<thead>
+							<tr style="text-align: none;">
+								<th>글번호</th>
+								<th>제목</th>
+								<th>아이디</th>
+								<th>조회수</th>
+								<th>작성일</th>
+							</tr>
+						</thead>
+						<!-- 상위 공지는 글씨 진하게 위에 고정-->
+						<tbody>
+							{% if count == 0 %}
+							<tr>
+								<td colspan="6" style="text-align: center">
+									게시판에 글이 없습니다.
+									글쓰기 눌러주세요
+								</td>
+							</tr>
+							{% else %}
+								{% for dto in dtos %}
+								<tr>
+									<td style="text-align: center">
+										{{number|sub:forloop.counter0}} <!-- 리스트가 출력될 때 글번호가 출력됨 -->
+									</td>
+									<td>
+										{% if dto.qnaScore == -1 %}
+											삭제된 글입니다
+										{% else %} <!-- 삭제된 글이 아닐 때 -->
+											{% if dto.relevel > 1 %}
+												<img src="{% static 'images/level.gif' %}" border="0" height="20" width="{{dto.relevel|mul:7}}">
+											{% endif %}
+											{% if dto.relevel > 0 %} <!-- 0보다 크면 답글 -->
+												<img src="{% static 'images/re.gif' %}" border="0" width="15">
+											{% endif %}
+											<a style="text-decoration:none; float:left;color:black;"href="{% url 'qnaboard:detailarticle' %}?qnaNum={{dto.qnaNum}}&pagenum={{pagenum}}&number={{number|sub:forloop.counter0}}">
+												{% if dto.reply_title %}
+												<img src="{% static 'images/qna.png' %}" width="20px" height="20px">
+												{% endif %}
+												{{dto.qnaTitle}}
+											</a>
+										{% endif %}
+									</td>
+									<td style="text-align: center">{{dto.userId}}</td>
+									<td style="text-align: center">
+										{% if dto.qnaScore == -1 %}
+											&nbsp;&nbsp;&nbsp;
+										{% else %}
+											{{dto.qnaScore}}
+										{% endif %}</td>
+									<td style="text-align: center"> {{dto.qnaDate|date:"Y-m-d"}} <!-- db에 시간까지 다 들어있어서 찍을 수 있음 --> </td>
+								</tr>
+								{% endfor %}
+							{% endif %}
+						</tbody>
+					</table>
+					<div class="">
+						{% if request.session.memid %}
+						<span class="glejacksung">
+							<a href="{% url 'qnaboard:writearticle' %}">
+								<h3 class="glejacksung2">글작성</h3>
+							</a>
+						</span>
+						{% else %}
+						로그인 후 글작성이 가능합니다.
+						{% endif %}
+					</div>
+					<img src="{% static 'images/qna.png' %}" width="20px" height="20px">는 답변이 달린 글에 붙는 아이콘입니다.
+					<div class="table_lr">
+						{% if startpage > pageblock %}
+							<a href="{% url 'qnaboard:qna' %}?pagenum={{startpage|sub:pageblock}}">[◀]</a>
+						{% endif %}
+						{% for page in pages %}
+							{% if pagenum == page %}
+								<!--현재 보는 페이지와 같으면 -->
+								<b>[{{page}}]</b>
+							{% else %}
+								<a href="{% url 'qnaboard:qna' %}?pagenum={{page}}">[{{page}}]</a>
+							{% endif %}
+						{% endfor %}
+						{% if endpage < pagecount %}
+							<a href="{% url 'qnaboard:qna' %}?pagenum={{startpage|add:pageblock}}">[▶]</a>
+						{% endif %}
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- QnA 끝 -->
+
+		<!-- FAQ -->
+
+		<div class="faq_mom">
+			<div>
+				<p></p>
+				<h2>자주 묻는 질문 ( F A Q )</h2>
+				<p></p>
+				<button class="accordion">
+					<span class="faq_qa_size">Q</span> [주문] 쿠팡앱과 홈페이지가 아닌 판매자가 직접 거래를
+					요청할 경우 어떻게 해야하나요?
+				</button>
+				<div class="panel">
+					<br> <span class="faq_qa_size">A</span> <span>쿠팡은 판매자
+						직접거래를 허용하고 있지 않습니다. 판매자가 현금결제를 통한 직거래를 유도하는 경우 절대 응하지 마시고, 즉시 사기
+						거래<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						신고센터 (02-2621-4699)로 신고하시기 바랍니다.
+					</span> <br>
+					<br>
+				</div>
+
+				<button class="accordion">
+					<span class="faq_qa_size">Q</span> [분쟁처리] 분쟁처리절차는 어떻게 되나요?
+				</button>
+				<div class="panel">
+					<br> <span class="faq_qa_size">A</span> <span>통신판매중개자
+						또는 통신판매중개의뢰자에 의하여 발생한 불만이나 분쟁을 해결하기 위한 절차는 아래의 내용을 참고해 주시기 바랍니다.<br>
+						<br>분쟁처리절차<br> '물로켓배송' 상품의 고객문의가 접수되는 경우:<br> -
+						비치몰이 문의내용을 확인하여 문의 해결 후 고객에게 처리결과를 안내합니다.<br>
+					<br> 통신판매중개의뢰자인 '판매자배송(오픈마켓)' 상품의 고객문의가 접수되는 경우:<br> ① 개별
+						판매자가 문의를 해결하고 고객에게 처리결과를 답변함이 원칙입니다.<br> ② 다만, 고객과 판매자 간에 분쟁이
+						있거나 판매자가 고객의 문의에 대응이 없는 등의 경우 비치몰은 통신판매중개자로서 분쟁의 원만한 해결을 위해 판매자에게
+						고객문의 내용을 직접 확인한 후 고객에게 평일(영업일) 기준 3일 이내 진행경과를 알리고, 평일(영업일) 기준 10일
+						이내 조사 결과 또는 처리방안을 안내합니다.<br>
+					<br> ※ 통신판매중개자인 '비치몰'에 대해 고객문의가 접수되는 경우:<br> ① 비치몰은 고객이
+						정당한 의견이나 불만을 제기하는 경우 그 신청을 받은 날로부터 고객의 불만 원인 등을 조사하여 평일(영업일) 기준 3일
+						이내에 진행 결과를 고객에게 전달하여야 하고, 평일(영업일) 기준 10일 이내에 조사 결과 또는 처리 방안을 고객에게
+						알려야 합니다.<br> ② 고객은 제1항의 분쟁처리 결과에 대하여 이의가 있을 때에는 비치몰의 처리센터를
+						통하여 이의를 제기할 수 있으며, 그 이의가 받아들여지지 않을 때에는 소비자분쟁조정위원회에 분쟁조정 신청을 할 수
+						있습니다.<br> ③ 비치몰은 고객으로부터 전화, FAX, E-mail, 사이트 게시판, 앱 등을 통해 정당한
+						의견이나 불만을 받을 수 있으며, 이와 같은 절차는 신청에서부터 조사, 처리 결과까지 고객이 원하는 방식으로 이루어져야
+						합니다.<br> ④ 비치몰은 제3항의 수단으로 불만 등을 접수 받은 경우 접수사실을 접수 받은 방법으로
+						통지하고 지체없이 사실관계를 파악하여 고객에게 손해가 발생하였는지 여부 등을 확인한 뒤에 처리 방안을 마련합니다. <br>⑤
+						비치몰은 고객문의에 대하여 비치몰 사이트, 정책, 서비스 등을 개선하도록 노력합니다.<br>
+					<br>
+					<br>
+					<br> 판매자 정보 확인 방법 ※ 물로켓 배송, 로켓 프레시, 로켓 모바일, 물로켓 직구 상품은 비치몰
+						고객센터(1577-1234)로 문의바랍니다.<br> App • 마이 비치몰 > 주문목록 > ['판매자명'에
+						문의하기] 버튼 클릭 • 상품 상세 페이지 > 배송/교환/반품 안내 > 판매자 정보란 에서 판매자 연락처 확인<br>
+						Web • 마이 비치몰 > 주문목록/배송조회 > 판매자 문의하기 • 상품 상세 페이지 > 배송/교환/반품 안내 >
+						판매자 정보란 에서 판매자 연락처 확인<br>
+					<br> 비치몰 365고객센터 전자금융거래분쟁처리담당<br> • 전화: 1577-1234<br>
+						• 주소: 서울시 송파구 송파대로 570<br> • Email : help@beachmall.com <br>
+					<br>1372 소비자상담센터<br> • 전화 : 국번없이 1372<br> • 인터넷을 이용한
+						24시간 상담접수 (www.bbm.go.kr) <br>
+					<br>
+
+					</span>
+
+				</div>
+
+				<button class="accordion">
+					<span class="faq_qa_size">Q</span> [주문] 긴급재난지원금을 비치몰에서 사용 가능한가요?
+				</button>
+				<div class="panel">
+					<br> <span class="faq_qa_size">A</span> <span> 아니오,
+						긴급재난지원금은 온라인 상거래에서 사용할 수 없으며, 쿠팡에서도 사용이 불가합니다. </span> <br>
+					<br>
+				</div>
+
+				<button class="accordion">
+					<span class="faq_qa_size">Q</span> [환불] 다른 사람 명의의 계좌로 환불받을 수 있나요?
+				</button>
+				<div class="panel">
+					<br> <span class="faq_qa_size">A</span> <span> 고객님 본인
+						명의의 계좌로만 환불이 가능합니다. </span> <br>
+					<br>
+				</div>
+
+				<button class="accordion">
+					<span class="faq_qa_size">Q</span> [반품] 반품 신청을 취소(철회)하고 싶어요.
+				</button>
+				<div class="panel">
+					<br> <span class="faq_qa_size">A</span> <span> 반품할 상품이
+						아직 수거되지 않았거나 발송하지 않은 경우, 마이쿠팡에서 반품 취소(철회) 가능합니다.<br>
+					<br> 반품 철회하기<br> App<br> • 마이쿠팡 > 취소·반품·교환목록 >
+						[반품취소] 버튼 클릭<br>
+					<br> Web<br> • 마이쿠팡 > 취소/반품/교환/환불내역 > [반품철회] 버튼 클릭<br>
+					<br>
+					</span>
+				</div>
+				<br>
+				<script>
+					var acc = document.getElementsByClassName("accordion");
+					var i;
+
+					for (i = 0; i < acc.length; i++) {
+						acc[i].addEventListener("click", function() {
+							this.classList.toggle("active");
+							var panel = this.nextElementSibling;
+							if (panel.style.maxHeight) {
+								panel.style.maxHeight = null;
+							} else {
+								panel.style.maxHeight = panel.scrollHeight
+										+ "px";
+							}
+						});
+					}
+				</script>
+			</div>
+		</div>
+
+
+
+
+		<!-- FAQ 끝 -->
+	</main>
+</div>
+
+{% endblock %}

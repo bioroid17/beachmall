@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load mathfilters %}
+{% load static %}
+{% block title %}
+<h2>공지사항 ( 전체글 : {{count}} )</h2>
+{% endblock %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+<main style="z-index: 2; text-align: center">
+	<div class="board">
+		<div class="board2">
+			<div>
+				<h2 class="gongzi">공지 게시판</h2>
+			</div>
+			<div>
+				<table class="table_3">
+					<tr>
+						<th style="width: 100px">글번호</th>
+						<th style="width: 800px">제목</th>
+						<th style="width: 100px">작성자</th>
+						<th style="width: 100px">작성일</th>
+					</tr>
+					{% if count == 0 %}
+					<tr>
+						<td colspan="6" style="text-align: center">게시판에 글이 없습니다. 글쓰기
+							눌러주세요</td>
+					</tr>
+					{% else %} {% for dto in dtos %}
+					<tr>
+						<td style="text-align: center">
+							{{number|sub:forloop.counter0}} <!-- 리스트가 출력될 때 글번호가 출력됨 -->
+						</td>
+						<td>
+							<!-- 목록에서 글번호에 맞게 디테일페이지로 보내는 방법 -->
+							<a style="color: black;" href="noticedetail?noticeNum={{dto.noticeNum}}&pagenum={{pagenum}}&number={{number|sub:forloop.counter0}}">
+								{{dto.noticeTitle}}
+							</a>
+						</td>
+						<td style="text-align: center">{{dto.admin}}</td>
+						<td style="text-align: center">{{dto.noticeDate|date:"Y-m-d H:i"}} <!-- db에 시간까지 다 들어있어서 찍을 수 있음 -->
+						</td>
+
+					</tr>
+					{% endfor %} {% endif %}
+				</table>
+				<br>
+				{% if startpage > pageblock %}
+					<a href="noticelist?pagenum={{startpage|sub:pageblock}}">[◀]</a>
+				{% endif %}
+				{% for page in pages %}
+					{% if pagenum == page %}
+					<!-- 현재 보는 페이지와 같으면 -->
+						<b>[{{page}}]</b>
+					{% else %}
+						<a href="noticelist?pagenum={{page}}">[{{page}}]</a>
+					{% endif %}
+				{% endfor %}
+				{% if endpage < pagecount %}
+					<a href="noticelist?pagenum={{startpage|add:pageblock}}">[▶]</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</main>
+
+
+{% endblock %}

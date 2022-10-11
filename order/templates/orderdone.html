@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+<div class="board">
+	<div class="board2" style="padding:30px 200px;">
+		<div>
+			{% if message %}
+				<div> {{ message }} </div>
+			{% else %}
+				<div>주문이 완료되었습니다.</div>
+			{% endif %}
+		</div>
+		<div>
+			<a href="{% url 'member:index' %}"><p>메인으로 돌아가기</p></a>
+		</div>
+	</div>
+</div>
+{% endblock %}

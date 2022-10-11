@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+	<div style="text-align:center; justify-content:center; ">
+		<div style="margin-top:350px;">
+			<h2>설문조사를 완료 했습니다</h2>
+			<a href="../member/index" style="text-decoration:none;">홈페이지로 돌아가기</a>	
+			<h1 class="logoarea">
+				<a href="{% url 'member:index' %}">
+				<img class="beachlg" src="{% static 'images/BeachLogo2.gif' %}" style="width: 220px; height: 60px" /></a>
+			</h1>
+		</div>
+	</div>
+	</body>
+</html>

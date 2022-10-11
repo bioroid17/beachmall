@@ -1,0 +1,228 @@
+{% extends "base.html"%}
+{% load static %}
+{% load humanize %}
+
+{% block header %}
+{% endblock %}
+
+{% block navright %}
+{% endblock %}
+
+{%block content %}
+{% if not request.session.memid %}
+	<script type="text/javascript">
+		alert("로그인 후 이용하실 수 있는 서비스입니다.");
+	</script>
+	<meta http-equiv="refresh" content="0; url='member:index'">
+{% else %}
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+		function(){
+			$("input[name=myinfo]").on(
+				"change",
+				function(){
+					if($("input[name='myinfo']:checked").val() == "yes"){
+						orderform.getterName.value = "{{member.name}}";
+						orderform.getterTel.value = "{{member.tel}}";
+						orderform.getterAddress.value = "{{member.address}}";
+						orderform.getterZonecode.value = "{{member.zonecode}}";
+						orderform.getterDetailAddr.value = "{{member.detailaddr}}";
+						$("#getterName").attr("readonly", true);
+						$("#getterTel").attr("readonly", true);
+					}
+					else if($("input[name='myinfo']:checked").val() == "no"){
+						orderform.getterName.value = "";
+						orderform.getterTel.value = "";
+						orderform.getterAddress.value = "";
+						orderform.getterZonecode.value = "";
+						orderform.getterDetailAddr.value = "";
+						$("#getterName").removeAttr("readonly");
+						$("#getterTel").removeAttr("readonly");
+					}
+				}
+			);
+		}
+	);
+	function ordercheck(){
+		if (! orderform.getterName.value){
+			alert("받는 분의 이름을 입력해주세요.");
+			orderform.getterName.focus();
+			return false;
+		}
+		else if (! orderform.getterTel.value){
+			alert("받는 분의 연락처를 입력해주세요.");
+			orderform.getterTel.focus();
+			return false;
+		}
+		else if (! orderform.getterZonecode.value){
+			alert("받는 분의 우편번호를 입력해주세요.");
+			orderform.getterZonecode.focus();
+			return false;
+		}
+		else if (! orderform.getterAddress.value){
+			alert("받는 분의 주소를 입력해주세요.");
+			orderform.getterAddress.focus();
+			return false;
+		}
+		else if (! orderform.getterDetailAddr.value){
+			alert("받는 분의 상세주소를 입력해주세요.");
+			orderform.getterDetailAddr.focus();
+			return false;
+		}
+	}
+	// 우편번호 찾기 API 페이지 실행
+	function findzonecode(){
+	    new daum.Postcode({
+	        oncomplete: function(data) {
+	            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+	        	// getElementsByName()는 배열로 값을 받아온다.
+	            orderform.getterZonecode.value = data.zonecode;
+	            orderform.getterAddress.value = data.address;
+	            orderform.getterDetailAddr.focus();
+	        }
+	    }).open();
+	}
+</script>
+
+<!-- big category Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="{% static 'images/beach2.png' %}">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<div class="breadcrumb__text">
+					<h2>Beach order</h2>
+					<div class="breadcrumb__option">
+						<a href="{% url 'member:index' %}">Home</a> <span>Order</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- big category Section End -->
+
+<!-- Checkout Section Begin -->
+<section class="checkout spad">
+	<div class="container" style="">
+		<div class="row">
+			<div class="col-lg-12">
+				<h3>
+					<span class="icon_tag_alt"></span> 주문결제
+				</h3>
+			</div>
+		</div>
+		<div class="checkout__form">
+			<h4>Billing Details</h4>
+			<form name="orderform" action="order" method="post" onsubmit="return ordercheck()">
+				<div class="row">
+					<div class="col-lg-8 col-md-6">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="checkout__input">
+									<p>
+										주문자 이름<span>*</span>
+									</p>
+									<input type="text" name="name" class="checkout__input__add" value="{{member.name}}" readonly>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="checkout__input">
+									<p>
+										주문자 휴대폰 번호<span>*</span>
+									</p>
+									<input type="text" name="tel" class="checkout__input__add" value="{{member.tel}}" readonly>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<input type="radio" name="myinfo" value="yes"> 내 정보 사용
+								<input type="radio" name="myinfo" value="no" checked> 직접 입력
+								<div class="checkout__input">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="checkout__input">
+									<p>
+										받는 사람 이름<span>*</span>
+									</p>
+									<input type="text" placeholder="받는 사람 이름" class="checkout__input__add" id="getterName" name="getterName">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="checkout__input">
+									<p>
+										연락처<span>*</span>
+									</p>
+									<input type="text" placeholder="연락처" class="checkout__input__add" id="getterTel" name="getterTel" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<span style="float:right;">
+									<input type="button" class="checkout__input__add" value="우편번호/주소 찾기" onclick="findzonecode()">
+								</span>
+								<div class="checkout__input">
+									<p>
+										주소<span>*</span>
+									</p>
+									<input type="text" placeholder="우편번호" class="checkout__input__add" id="getterZonecode" name="getterZonecode" readonly>
+									<input type="text" placeholder="주소" class="checkout__input__add" id="getterAddress" name="getterAddress" readonly>
+									<input type="text" placeholder="상세주소" class="checkout__input__add" id="getterDetailAddr" name="getterDetailAddr">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="checkout__input">
+									<p>
+										요청사항<span>*</span>
+									</p>
+									<input type="text" name="requirement" placeholder="요청사항" class="checkout__input__add">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="checkout__input">
+									<p>
+										배송 메세지<span>*</span>
+									</p>
+									<input type="text" name="orderMsg" placeholder="배송 메세지" class="checkout__input__add">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="checkout__order" style="width: 1100px;">
+							<h4>결제정보</h4>
+							<div class="checkout__order__products" style="display:flex; padding-left:40px">
+								<span style="width: 370px; margin-right: 40px;">상품</span>
+			                    <span style="width: 100px; margin-right: 100px;">가격</span>
+			                    <span style="width: 220px; margin-right: 190px;">수량</span>
+								<span>금액</span>
+							</div>
+							<ul>
+								{% for cart in carts %}
+								<div style="display:flex;">
+									<li style="width:400px;">
+										<img src="{{cart.prodNum.prodThumbnail.url}}" width="100" height="100"> {{ cart.prodName }}
+									</li>
+									<li class="prodPrice" style="width:220px; padding-top:28px">{{ cart.prodPrice|intcomma }}원</li>
+									<li class="buyCount" style="width:220px; padding-top:28px">{{ cart.buyCount|intcomma }}개</li>
+									<li style="width:220px; padding-top:26px"><span class="prodTotal">{{ cart.prodTotal|intcomma }}원</span></li>
+								</div>
+								<br>
+								{% endfor %}
+							</ul>
+							<div class="checkout__order__total">
+								<input type="hidden" name="totalPrice" value="{{totalPrice}}">
+								총 결제 금액 <span id="totalPrice">{{totalPrice | intcomma}}원</span>
+							</div>
+							<button type="submit" class="site-btn">결제</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+{% endblock %}

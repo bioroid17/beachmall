@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %} <h2> 반품하기 </h2> {% endblock %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+
+{% csrf_token %}
+<div class="board"style="padding:30px 100px;" >
+	<div class="board2" style="padding:30px 100px;border:1px solid gray">
+		<form name= "writeform" method="post" action="refundregister" enctype="multipart/form-data">	
+		<input type="hidden" name="userId" value="{{memid}}">
+		<input type="hidden" name="orderDetailNum" value="{{orderDetail.orderDetailNum}}">
+		<table>
+				<tr>
+					<h4>{{memid}} 님 사유를 선택하세요.</h4><br>
+				</tr>
+				<tr>
+					<th colspan="2">선택</th>
+				</tr>
+				<tr>
+					<th>
+					<select name="refund_exchangecheck">
+							<option value="1">환불</option>
+							<option value="2">반품</option>
+							<option value="3">교환</option>
+					</select>
+					</th>
+				</tr>
+				<tr>
+					<th> 상품명 </th>
+					<td>&nbsp;{{orderDetail.prodName}}</td> 
+					
+				</tr>
+				<tr>
+					<th> 사유 </th>
+					<td> <textarea name="reason" rows="10" cols="35"></textarea></td>
+				</tr>
+				<tr>
+			 		<th>이미지</th>
+			 		<td> <input type="file" name="photo"> </td>
+			 	</tr>
+				<tr>
+					<th colspan="2">
+						<input class="btn btn-primary" type="submit" value="신청">
+						<input class="btn btn-primary" style="background-color:skyblue;border:0;"type="reset" value="취소">
+						<input class="btn btn-primary" type="button" value="목록"
+							onclick="location='../refund/myrefundlist'">
+					</th>
+				</tr>	
+		</table>	
+		</form>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block header %}
+{% endblock %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+{% if not request.session.memid %}
+<script>
+	alert("로그인 후 이용해 주세요.");
+	history.back();
+</script>
+{% else %}
+<script type="text/javascript">
+	$(document).ready(
+		function(){
+			$(".prodStock").each(
+				function(index, item){
+					if(parseInt($(item).val()) < parseInt($($(".buyCount")[index]).val())){
+						$($(".cart_prodName")[index]).addClass("table-warning");
+						$($(".cart_prodPrice")[index]).addClass("table-warning");
+						$($(".cart_buyCount")[index]).addClass("table-warning");
+						$($(".cart_prodTotal")[index]).addClass("table-warning");
+					}
+				}
+			);
+			
+			$("button[type=button]").on(
+				"click",
+				function(){
+					location.href = "{% url 'order:order' %}";
+				}
+			)
+		}
+	);
+	function stockcheck(){
+    	if($(".table-warning").length > 0){
+    		alert("현재 장바구니의 상품 중 수량이 현재 재고를 넘는 것이 있습니다.\n상품 수량을 다시 선택해주세요.");
+    		return false;
+    	}
+	}
+</script>
+<style>
+.orderinfo {
+	
+}
+</style>
+<!-- big category Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="{% static 'images/beach2.png' %}">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<div class="breadcrumb__text">
+					<h2>Beach order</h2>
+					<div class="breadcrumb__option">
+						<a href="{% url 'member:index' %}">Home</a> <span>Order</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- big category Section End -->
+
+<div class="board">
+	<div class="board2" style="padding:30px 200px;">
+		{% csrf_token %}
+		<form id="orderinfoform" name="orderinfoform" class="orderinfo" method="post" onsubmit="return stockcheck()">
+			<input type="hidden" name="userId" value="{{userId}}">
+			<input type="hidden" name="getterName" value="{{getterName}}">
+			<input type="hidden" name="getterTel" value="{{getterTel}}">
+			<input type="hidden" name="getterZonecode" value="{{getterZonecode}}">
+			<input type="hidden" name="getterAddress" value="{{getterAddress}}">
+			<input type="hidden" name="getterDetailAddr" value="{{getterDetailAddr}}">
+			<input type="hidden" name="requirement" value="{{requirement}}">
+			<input type="hidden" name="orderMsg" value="{{orderMsg}}">
+			<input type="hidden" name="totalPrice" value="{{totalPrice}}">
+			<table border="1">
+				<tr>
+					<th colspan="2" style="text-align:center;">주문자 정보</th>
+				</tr>
+				<tr>
+					<th>주문자 이름</th>
+					<td>{{name}}</td>
+				</tr>
+				<tr>
+					<th>주문자 연락처</th>
+					<td>{{tel}}</td>
+				</tr>
+				<tr>
+					<th colspan="2" style="text-align:center;">배송 정보</th>
+				</tr>
+				<tr>
+					<th>받는 사람 이름</th>
+					<td>{{getterName}}</td>
+				</tr>
+				<tr>
+					<th>연락처</th>
+					<td>{{getterTel}}</td>
+				</tr>
+				<tr>
+					<th>주소</th>
+					<td>{{getterZonecode}} {{getterAddress}} {{getterDetailAddr}}</td>
+				</tr>
+				<tr>
+					<th>요청사항</th>
+					<td>{{requirement}}</td>
+				</tr>
+				<tr>
+					<th>배송 메세지</th>
+					<td>{{orderMsg}}</td>
+				</tr>
+			</table>
+			<br>
+			<table border="1">
+				<tr>
+					<th colspan="4" style="text-align:center;">상품 목록</th>
+				</tr>
+				<tr>
+					<th>상품</th>
+					<th>가격</th>
+					<th>수량</th>
+					<th>금액</th>
+				</tr>
+				{% for cart in carts %}
+				<tr>
+					<td class="cart_prodName">
+						<img src="{{cart.prodNum.prodThumbnail.url}}" width="100" height="100"> {{ cart.prodName }}
+						<input type="hidden" class="prodStock" value="{{cart.prodStock}}">
+					</td>
+					<td class="cart_prodPrice">{{ cart.prodPrice|intcomma }}원</td>
+					<td class="cart_buyCount">
+						{{ cart.buyCount|intcomma }}개
+						<input type="hidden" class="buyCount" value="{{cart.buyCount}}">
+					</td>
+					<td class="cart_prodTotal">{{ cart.prodTotal|intcomma }}원</td>
+				</div>
+				</tr>
+				{% endfor %}
+				<tr>
+					<th colspan="4">총 결제 금액:<span style="float:right;">{{ totalPrice|intcomma }}원</span></th>
+				</tr>
+			</table>
+		</form>
+		<div>이 정보가 맞는지 확인해주세요.</div>
+		<button class="primary-btn2" style="border: 0; width: 250px;" type="submit" form="orderinfoform" formaction="orderdone">구매 확정</button>
+		<button class="primary-btn" style="border: 0; width: 150px; height: 48px;"type="button">구매 취소</button>
+		</div>
+	</div>
+	{% endif %}
+{% endblock %}

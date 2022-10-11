@@ -1,0 +1,118 @@
+{% extends "base.html"%}
+{% block title %}<h2> 회원정보 수정</h2> {% endblock %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+{% if not request.session.memid %}
+<script type="text/javascript">
+	alert("로그인 후 이용하실 수 있습니다.");
+	location.href = "{% url 'member:login' %}"
+</script>
+{% else %}
+{% csrf_token %}
+<div style="text-align: center;">
+ <form method="post" action="modifypro" name="modifyform">
+	<input type ="hidden" name ="check"  value ="0">
+		<div id="sform">
+			<div style="text-align:center;">
+			<h2>수정할 정보를 입력하세요</h2>
+			<img src="../static/images/gaip.png">
+		</div>
+		<br><br>
+		<div id="sform1">
+			<h3 class="join_title">
+				<label for="name">아이디</label>
+			</h3>
+			<h3 class="join_title">
+				<label for="id">{{dto.userId}}</label>
+			</h3>
+		</div>
+			<br>
+
+			<h3 class="join_title">
+				<label for="passwd">비밀번호</label>
+			</h3>
+
+			<input autofocus class="input" type="password" name="passwd" value={{dto.passwd}} placeholder="8~12자리의 영대소문자와 숫자 조합"> <br> <br>
+			<h3 class="join_title">
+				<label for="repasswd">비밀번호 재확인</label>
+			</h3>
+				<input autofocus class="input" type="password" name="repasswd" value={{dto.passwd}} placeholder="8~12자리의 영대소문자와 숫자 조합"> <br> <br> <br>
+			<h3 class="join_title">
+				<label for="name">이름</label>
+			</h3>
+			<h3 class="join_title">
+				<label for="id">{{dto.name}}</label>
+			</h3>
+			<br>
+			<input type="text" id="sample6_postcode" placeholder="우편번호" class="input_zipnum" name="zonecode" value="{{dto.zonecode}}" readonly>
+			<input class="input_zipnum2" type="button" onclick="sample6_execDaumPostcode()" value="우편번호찾기"> <br><br>
+			<h3 class="join_title">
+				<label for="addr">주소</label>
+			</h3>
+			<input class="input" id="sample6_address" type="text" name="addr" value="{{dto.address}}" readonly>
+			<br> <br> <br>
+			<h3 class="join_title">
+				<label for="addrdetail">상세주소</label>
+			</h3>
+			<input class="input" id="sample6_detailAddress" type="text" name="detailaddr" value="{{dto.detailaddr}}" placeholder="상세주소를 입력해주세요">
+			<br>
+			<br>
+			<br>
+			<h3 class="join_title">
+				<label for="addr">본인 확인 이메일 <span class="terms_choice">(선택)</span>
+				</label>
+			</h3>
+			<div style="display: flex;">
+			{%if e %}
+				<div>
+					<input style="height: 40px; width: 250px; font-size:20px;" type="text" name="email1"  value="{{e.0}}">
+				</div>
+				<div style="font-size: 30px;">&nbsp;@&nbsp;</div>
+				<div>
+					<select type="text" name="email2" maxlength="12" placeholder="선택입력" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').replace(/(\..*)\./g, '$1');">
+						<option class="input" value="{{e.1}}">{{e.1}}</option>
+						<option class="input" value="naver.com">naver.com</option>
+						<option class="input" value="daum.net">daum.net</option>
+						<option class="input" value="nate.com">nate.com</option>
+					</select>
+				</div>
+			</div>
+			{%else%}
+				<div>
+					<input style="height: 40px; width: 250px; font-size:20px;" type="text" name="email1" >
+				</div>
+				@
+				<div>
+					<select type="text" name="email2" maxlength="12" placeholder="선택입력" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').replace(/(\..*)\./g, '$1');">
+						<option class="input" value="naver.com">naver.com</option>
+						<option class="input" value="daum.net">daum.net</option>
+						<option class="input" value="nate.com">nate.com</option>
+					</select>
+				</div>
+			</div>
+			{% endif %}
+			<div style="display: flex;">
+				<h3 class="join_title">
+					<label for="name">전화번호</label>
+				</h3>
+				<h3 class="join_title"> <br>
+					<label for="id">{{dto.tel}}</label>
+				</h3>
+			</div>
+		<div id="sform1">
+				<button type="submit" class="primary-btn2"
+					style="border: 0; width: 250px;" value="수정">수정</button>
+
+				<button class="primary-btn" type="button" value="메인으로"
+					style="border: 0; width: 250px; height: 48px;" onclick="location='index'" >메인으로</button>
+		</div>
+
+
+	</div>
+ </form>
+</div>
+{% endif %}
+{% endblock %}

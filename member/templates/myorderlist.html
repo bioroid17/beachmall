@@ -1,0 +1,281 @@
+{% extends "base.html"%}
+{% load humanize %}
+{% load mathfilters %}
+<script src="https://kit.fontawesome.com/d0bb6518aa.js" crossorigin="anonymous"></script>
+
+{% block navright %}
+{% endblock %}
+
+{%block content %}
+{% if not request.session.memid %}
+<script type="text/javascript">
+	alert("로그인 후 이용하실 수 있습니다.");
+	location.href = "{% url 'member:login' %}"
+</script>
+{% else %}
+<script type="text/javascript">
+	function insertcart(userId, prodNum){
+		location.href = "{% url 'cart:cartins' %}?userId="+userId+"&prodNum="+prodNum+"&buyCount=1";
+	}
+</script>
+<!-- 리뷰 작성 모달 -->
+<div class="modal fade" id="writeReview" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        	<form name="reviewform" method="post" enctype="multipart/form-data" action="{% url 'reviewboard:reviewWrite' %}" onsubmit="return reviewcheck()">
+				<input type="hidden" name="prodNum" value="">
+				<input type="hidden" name="userId" value="{{request.session.memid}}">
+				<div class="modal-header">
+					<h4 class="modal-title">리뷰 작성</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<table>
+						<tr>
+							<th>상품명</th>
+							<td><input type="text" name="prodName" readonly></td>
+						</tr>
+						<tr>
+							<th>제목<span style="color:red;">*</span></th>
+							<td><input type="text" name="reviewTitle"></td>
+						</tr>
+						<tr>
+							<th>내용<span style="color:red;">*</span></th>
+							<td><textarea name="reviewContent" rows="10" cols="35"></textarea></td>
+						</tr>
+						<tr>
+							<th>사진</th>
+							<td><input type="file" name="reviewPhoto"></td>
+						</tr>
+					</table>
+					<br>
+					<h6 class="modal-title"><span style="color:red;">*</span>는 필수 입력 항목입니다.</h6>
+				</div>
+				<div class="modal-footer">
+					<p> 리뷰를 등록할까요? </p>
+					<input style="width:50px;"class="inputbutton" type="submit" value="예">
+					<input class="inputbutton" type="button" value="아니오" class="close" data-dismiss="modal">
+		        </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div style="min-height: 100%; position: relative;">
+	<main class="main_mypage">
+		<div class="mybeach">My비치</div>
+		<section id="main_section">
+			<div class="mainwarp">
+				<!-- 마이비치 메뉴-->
+				<div class="navleftwarp">
+					<div>
+						<div style="">
+							<nav style="">
+								<div class="navtext">
+									<div>My 쇼핑</div>
+									<div class="navtext_div">
+										<ul>
+											<li class="mylist_select1"><a href="{% url 'member:myorderlist' %}">주문목록</a></li>
+											<li class="mylist_select1"><a href="{% url 'reviewboard:myReviewList' %}">나의 리뷰목록</a></li>
+											<li class="mylist_select1"><a href="{% url 'qnaboard:myQnaList' %}">나의 질문목록</a></li>
+											<li class="mylist_select2"><a href="{% url 'refund:myrefundlist' %}">반품/환불/교환내역</a></li>
+											<li class="mylist_select2"><a href="{% url 'member:modify' %}">개인정보 확인/수정</a></li>
+											<li class="mylist_select2"><a href="{% url 'member:delete' %}">회원탈퇴</a></li>
+										</ul>
+									</div>
+								</div>
+								<div></div>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<!-- 마이비치 메뉴 끝-->
+				<div class="contentwrap">
+				{% if ordercount == 0 %}
+					구매하신 물품이 없습니다
+				{% else %}
+				{% for order, orderdetails in orderlist %}
+					<div class="contentwarp_size">
+						<div
+							style="height: 28px; display: flex; justify-content: space-between; -webkit-box-pack: justify;">
+							<div class="after_order_date_css">{{ order.orderDate|date:"Y-m-d D H:i" }} 주문</div>
+							<div class="after_order_detailmom_css">
+								<span><a href="{% url 'member:myorderdetail' %}?orderNum={{order.orderNum}}">주문 상세보기</a></span>
+							</div>
+						</div>
+						{% for orderdetail in orderdetails %}
+						<div class="after_order">
+							<div>
+								<div>
+									<span class="after_order_baesong_font">배송완료</span> <span>&nbsp;</span>
+									<span class="after_order_baesong_date_font"></span>
+								</div>
+							</div>
+							<table class="after_order_table">
+								<colgroup>
+									<col width="600px">
+									<col width="">
+								</colgroup>
+								<tbody class="after_order_tbody">
+									<tr>
+										<td class="after_td_title">
+											<div class="after_td_divnull"></div>
+											<div>
+												<div
+													style="margin-top: 20px; box-sizing: border-box; overflow: hidden;">
+													<div
+														style="overflow: hidden; display: flex; flex-direction: row;">
+														<div class="after_order_div_img">
+															<a href=""><img src="{{orderdetail.prodThumbnail}}" alt=""></a>
+														</div>
+														<div class="after_order_div_prodname_mom">
+															<div class="after_order_div_prodname">
+																<a class="after_order_prod_a" href="{% url 'product:productDetail' %}?prodNum={{orderdetail.prodNum}}">
+																	<span class="after_order_prodname_span_Tname">
+																		{{ orderdetail.prodName }}
+																	</span>
+																</a>
+																<a class="after_order_prodprice" href="{% url 'product:productDetail' %}?prodNum={{orderdetail.prodNum}}">
+																	<div style="box-sizing: border-box;">
+																		<div class="after_order_prodprice2">
+																			<span style="font-size: 1rem; font-weight: normal; box-sizing: border-box;">
+																				{{ orderdetail.prodPrice|intcomma }}원
+																			</span>
+																			<span class="after_order_nullspan">
+																				<span class="after_order_nullspanspan"></span>
+																			</span>
+																			<span style="font-size: 1rem;">{{ orderdetail.buyCount }}개</span>
+																		</div>
+																	</div>
+																</a>
+																<div style="box-sizing: border-box;">
+																	<button class="after_order_prod_cart" onclick="insertcart('{{order.userId}}', {{orderdetail.prodNum}})">장바구니 담기</button>
+																	<div class="after_order_nulldiv"></div>
+																</div>
+																<div class="after_order_null_div"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+										<td class="after_td_sh_od">
+											<div class="after_td_sh_od_div">
+												<button class="after_td_sh_od_div_button1">배송완료</button>
+												{% if orderdetail.is_refunded %}
+												<button class="after_td_sh_od_div_button2" disabled>이미 반품된 상품입니다.</button>
+												{% else %}
+												<button class="after_td_sh_od_div_button2"
+													onclick="location='{% url 'refund:refundregister' %}?orderDetailNum={{orderdetail.orderDetailNum}}'">반품/환불/교환</button>
+												{% endif %}
+												<button class="after_td_sh_od_div_button2" data-toggle="modal" data-target="#writeReview"
+													onclick="writereview('{{orderdetail.prodNum}}', '{{orderdetail.prodName}}', '{{order.orderDate}}')">리뷰 작성하기</button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						{% endfor %}
+					</div>
+				{% endfor %}
+					<!-- 주문목록 페이지 이동 버튼 -->
+					<div class="contentwarp_size_button_mom">
+						<ul class="pagination">
+							{% if startpage > pageblock %}
+								<li class="page-item"><a class="page-link" href="% url 'member:myorderlist' %}?pagenum={{startpage|sub:pageblock}}">이전</a></li>
+							{% endif %}
+							{% for page in pages %}
+								{% if pagenum == page %}
+								<li class="page-item disabled"><a class="page-link " href="#">{{page}}</a></li>
+								{% else %}
+								<li class="page-item"><a class="page-link" href="{% url 'member:myorderlist' %}?pagenum={{page}}">{{page}}</a></li>
+								{% endif %}
+							{% endfor %}
+							{% if endpage < pagecount %}
+								<li class="page-item"><a class="page-link" href="{% url 'member:myorderlist' %}?pagenum={{startpage|add:pageblock}}">다음</a></li>
+							{% endif %}
+						</ul>
+					</div>
+				{% endif %}
+				</div>
+				<div
+					style="background-color: rgb(255, 255, 255); margin-top: 30px; padding: 30px 30px;">
+					<div class="sc-178zqvr-11 UxXQy"
+						style="width: 930px; margin-left: 170px;">
+						<div>
+							<b> <i class="sc-178zqvr-13 bQUraS"></i> <span
+								class="i18n-wrapper"> <span style="color: #e52628;">&nbsp;취소/반품/교환
+										신청</span>전 확인해주세요!
+							</span>
+							</b>
+						</div>
+						<div class="sc-178zqvr-14 bboIjZ">
+							<strong class="sc-178zqvr-15 fWZpfp">취소</strong>
+						</div>
+						<div class="sc-178zqvr-14 bboIjZ">
+							- <span class="i18n-wrapper">여행/레저/숙박 상품은 취소 시 수수료가 발생할 수
+								있으며,<br> <span style="margin-left: 7px;">취소수수료를 확인하여
+									2일 이내(주말,공휴일 제외) 처리결과를 문자로 안내해드립니다.</span>
+							</span>(
+							<!-- -->
+							당일 접수 기준, 마감시간 오후 4시
+							<!-- -->
+							)
+						</div>
+						<div class="sc-178zqvr-14 bboIjZ">
+							-
+							<!-- -->
+							문화 상품은 사용 전날 24시까지 취소 신청 시 취소수수료가 발생되지 않습니다.
+						</div>
+						<div class="sc-178zqvr-14 bboIjZ">
+							<strong class="sc-178zqvr-15 fWZpfp">반품</strong>
+						</div>
+						<div class="sc-178zqvr-14 bboIjZ">
+							-
+							<!-- -->
+							상품 수령 후 7일 이내 신청하여 주세요.
+						</div>
+						<div class="sc-178zqvr-14 bboIjZ">
+							-
+							<!-- -->
+							<!-- -->
+							상품이 출고된 이후에는 배송 완료 후, 반품 상품을 회수합니다.
+						</div>
+						<div class="sc-178zqvr-14 bboIjZ">
+							-
+							<!-- -->
+							<!-- -->
+							설치상품/주문제작/해외배송/신선냉동 상품 등은 고객센터에서만 반품 신청이 가능합니다.
+							<!-- -->
+							<a href="/ssr/desktop/contact/inquiry" target="_blank"
+								class="sc-178zqvr-16 jgRggD">1:1문의하기</a>
+						</div>
+						<div class="sc-178zqvr-14 bboIjZ">
+							<strong class="sc-178zqvr-15 fWZpfp">교환</strong>
+						</div>
+						<div class="sc-178zqvr-14 bboIjZ">
+							-
+							<!-- -->
+							<!-- -->
+							상품의 교환 신청은 고객센터로 문의하여 주세요.<a href="/ssr/desktop/contact/inquiry"
+								target="_blank" class="sc-178zqvr-16 jgRggD">1:1문의하기</a>
+						</div>
+					</div>
+				</div>
+				<div class="sc-zlsu1d-0 sc-s18rof-0 gAsjwR dqjcud"
+					style="margin-top: 0px;">
+					<img style="margin-left: 200px; width: 910px;"
+						src="../static/images/is_water.jpg">
+				</div>
+			</div>
+
+		</section>
+
+	</main>
+	<div
+		style="text-align: center; position: relative; margin-top: 50px; margin-bottom: 50px;">10월
+		푸르구나</div>
+</div>
+{% endif %}
+{% endblock %}

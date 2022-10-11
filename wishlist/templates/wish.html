@@ -1,0 +1,85 @@
+{% extends "base.html"%} 
+{% load static %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+<script src="{% static 'js/script_wishlist.js' %}"></script>
+{% if not request.session.memid %}
+<script>
+	alert("로그인 후 이용해 주세요.");
+	location.href = "{% url 'member:login' %}"
+</script>
+{% else %}
+<div style="width: 1140px; margin: 50px auto; text-align: center;">
+	<div>
+		<img style="display: block; float: left; height: 40px; width: 180px; padding-left:0;" src="{% static 'images/wish_heart.png' %}" class="wish_heart"><span></span></img>
+	</div>
+	<br>
+	<br>
+	{% if not memid %}
+	<table border="1" style="min-width: 1000px; width: 1000px;">
+		<tr>
+			<th>상품이미지</th>
+			<th>상품명</th>
+			<th>가격</th>
+			<th>장바구니에 넣기</th>
+			<th>찜 목록에서 제거</th>
+		</tr>
+		<tr>
+			<td style="padding: 20px;" colspan="3">{{message}}</td>
+		</tr>
+	</table>
+	{% else %}
+	<form>
+		<table border="1" style="min-width: 1140px; width: 1140px; margin: 0 auto;">
+			<tr>
+				<th>상품이미지</th>
+				<th>상품명</th>
+				<th>가격</th>
+				<th>장바구니에 넣기</th>
+				<th>찜 목록에서 제거</th>
+			</tr>
+			{% if wishlist %}
+			{% for wish in wishlist %}
+			<tr>
+				<td><img src="{{wish.prodNum.prodThumbnail.url}}" border="0"
+					width="200" height="100"></td>
+				<td>{{ wish.prodName }}</td>
+				<td class="prodPrice">{{ wish.prodPrice }} 원</td>
+				<td style="text-align:center;">
+					<a href="{% url 'cart:cartins' %}?userId={{wish.userId.userId}}&prodNum={{wish.prodNum.prodNum}}&buyCount=1" style="text-decoration:none;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart-plus-lg text-success" viewBox="0 0 16 16">
+							<path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+							<path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+						</svg>
+					</a>
+				</td>
+				<td style="text-align:center;">
+					<a href="{% url 'wishlist:wishdel' %}?wishNum={{wish.wishNum}}" style="text-decoration:none;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x text-danger" viewBox="0 0 16 16">
+							<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+						</svg>
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+			{% else %}
+			<tr>
+				<td colspan="5" style="text-align: center">{{message}}</td>
+			</tr>
+			{% endif %}
+			<tr>
+				<th colspan="5">
+					<input class="primary-btn cart-btn" style="color:#0073e8;border: 2px solid #0073e8; width: 575px;" type="button" id="goshopping" value="쇼핑 계속하기" />
+					<input class="primary-btn cart-btn cart-btn-right" style="background-color:orange;border: 2px solid white; width: 558px;" type="button" id="delallwish" value="찜목록 비우기" />
+					<!-- <input class="after_td_sh_od_div_button1" type="button" id="gocart" value="장바구니 담기" onclick="location='cart'" /> -->
+				</th>
+			</tr>
+		</table>
+	</form>
+	{% endif %}
+</div>
+{% endif %}
+{% endblock %}

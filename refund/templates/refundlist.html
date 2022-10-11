@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load mathfilters %}
+{% load static %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+{% if not request.session.memid %}
+<script type="text/javascript">
+	alert("로그인 후 이용하실 수 있습니다.");
+	location.href = "{% url 'member:login' %}"
+</script>
+{% else %}
+<div class="board" style="width:1500px;">
+   <div class="board2" style="width:1500px;padding:30px 200px;">
+      <table border="1">
+         <div style="border:1px solid black; text-align:center;background-color:#f5f5f5;padding: 10px 0;">
+            <h3>반품/환불/교환</h3>
+         </div>
+         {% if refundscount == 0 %}
+             신청 상품이 없습니다.
+          {% else %}
+         <tr style="text-align:center;background-color:#82bce2;">
+            <th style="width:10%"> 상품 </th>
+            <th style="width:36%"> 사유 </th>
+            <th style="width:35%"> 상품사진 </th>
+            <th style="width:10%"> 진행상태 </th>
+            <th style="width:10%"> 접수 날짜 </th>
+         </tr>
+            {% for refund in refunds %}
+            <tr>
+               <td style="text-align: center">{{refund.orderDetailNum.prodName}}</td>
+         
+               <td style="text-align: center">{{refund.reason}}</td>
+               <td>
+                  {% if refund.refundPhoto %}
+                     <img src="{{refund.refundPhoto.url}}" border="0" width="200" height="100">
+                  {% else %}
+                     사진 미첨부
+                  {% endif %}
+               </td>
+               <td style="text-align: center">
+                  {% if refund.status == "y" %}
+                     신청 완료
+                  {% else %}
+                     신청 진행 중
+                  {% endif %}
+               </td>
+               <td style="text-align: center">
+                  {{refund.refundDate|date:"Y-m-d H:i"}} <!-- db에 시간까지 다 들어있어서 찍을 수 있음 -->
+               </td>
+            </tr>
+            {% endfor %} 
+         {% endif %}
+      </table>
+      <ul class="pagination">
+         {% if startpage > pageblock %}
+            <li class="page-item"><a class="page-link" href="% url 'refund:refundlist' %}?pagenum={{startpage|sub:pageblock}}">이전</a></li>
+         {% endif %}
+         {% for page in pages %}
+            {% if pagenum == page %}
+            <li class="page-item disabled"><a class="page-link " href="#">{{page}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="{% url 'refund:refundlist' %}?pagenum={{page}}">{{page}}</a></li>
+            {% endif %}
+         {% endfor %}
+         {% if endpage < pagecount %}
+            <li class="page-item"><a class="page-link" href="{% url 'refund:refundlist' %}?pagenum={{startpage|add:pageblock}}">다음</a></li>
+         {% endif %}
+      </ul>
+   </div>
+</div>
+{% endif %}
+{% endblock %}

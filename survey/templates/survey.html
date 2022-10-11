@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Agency - Start Bootstrap Theme</title>
+        <script src="{%static 'js/surveyscript.js'%}"></script>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+       <link rel="stylesheet" href="{% static 'css/surveystyles.css' %}" />
+       <style>
+		  .w-btn-outline {
+			    position: relative;
+			    padding: 15px 30px;
+			    border-radius: 15px;
+			    font-family: "paybooc-Light", sans-serif;
+			    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+			    text-decoration: none;
+			    font-weight: 600;
+			    transition: 0.25s;
+			}
+			.w-btn-pink-outline {
+			    border: 3px solid #f199bc;
+			    color: #6e6e6e;
+			}
+	</style>
+    </head>
+    <body id="page-top">      
+     	<form method="POST" name="surveyForm" action="surveylist" onsubmit="return surveyCheck()">
+     	<input type="hidden" name="survey_idx" value="{{survey.survey_idx}}">
+		{% csrf_token %}
+        <!-- 설문조사 -->
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">설문조사</h2>
+                    <h3 class="section-subheading text-muted">해줘!</h3>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'images/ggobugi.jfif' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>1번질문</h4>
+                                <h4 class="subheading">{{survey.question1}}</h4>
+                            </div>
+                            <div class="timeline-body">
+	                            <input type="radio" name="num" value="1"> {{survey.ans1}}<br> 
+								<input type="radio" name="num" value="2"> {{survey.ans2}}<br>
+							</div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'images/ggobugi.jfif' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>2번질문</h4>
+                                <h4 class="subheading">{{survey.question2}}</h4>
+                            </div>
+                            <div class="timeline-body">
+                            	<input type="radio" name="num1" value="3"> {{survey.ans3}}<br> 
+								<input type="radio" name="num1" value="4"> {{survey.ans4}}<br>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'images/ggobugi.jfif' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>3번질문</h4>
+                                <h4 class="subheading">{{survey.question3}}</h4>
+                            </div>
+                            <div class="timeline-body">
+                            	<input type="radio" name="num2" value="5"> {{survey.ans5}}<br> 
+								<input type="radio" name="num2" value="6"> {{survey.ans6}}<br>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'images/ggobugi.jfif' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>4번질문</h4>
+                                <h4 class="subheading">{{survey.question4}}</h4>
+                            </div>
+                            <div class="timeline-body">
+	                            <input type="radio" name="num3" value="7"> {{survey.ans7}}<br> 
+								<input type="radio" name="num3" value="8"> {{survey.ans8}}<br>
+							</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'images/ggobugi.jfif' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>5번질문</h4>
+                                <h4 class="subheading">{{survey.question5}}</h4>
+                            </div>
+                            <div class="timeline-body">
+                            	<input type="radio" name="num4" value="5"> {{survey.ans9}}<br> 
+								<input type="radio" name="num4" value="6"> {{survey.ans10}}<br>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                        <img class="rounded-circle img-fluid" style=""src="{% static 'images/ggobugi.jfif' %}" alt="..." />
+                            <h4>
+                              <input class="w-btn-outline w-btn-pink-outline" style="right:15px;"type="submit" value="내 마음속 저장">
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+</form>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

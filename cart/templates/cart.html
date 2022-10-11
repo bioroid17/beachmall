@@ -1,0 +1,136 @@
+{% extends "base.html"%}
+{% load static %}
+{% load humanize %}
+{% load mathfilters %}
+<script src="https://kit.fontawesome.com/d0bb6518aa.js" crossorigin="anonymous"></script>
+
+{% block navright %}
+{% endblock %}
+
+{%block content %}
+<script src="{% static 'js/script_cart.js' %}"></script>
+{% if not request.session.memid %}
+<script>
+	alert("로그인 후 이용해 주세요.");
+	location.href = "{% url 'member:login' %}"
+</script>
+{% else %}
+<main class="main_mypage">
+	<div class="mybeach">장바구니</div>
+	<section id="main_section">
+		<div class="mainwarp">
+			<!-- Shoping Cart Section Begin -->
+			<section class="shoping-cart spad">
+				<div class="container_cart">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="shoping__cart__table">
+								{% csrf_token %}
+								{% if not memid %}
+								<table>
+									<thead>
+										<tr>
+											<th class="shoping__product">배송상품</th>
+											<th>가격</th>
+											<th>수량</th>
+											<th>금액</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="5" style="text-align: center">{{message}}</td>
+										</tr>
+									</tbody>
+								</table>
+								{% else %}
+								<table>
+									<thead>
+										<tr>
+											<th class="shoping__product">배송상품</th>
+											<th>가격</th>
+											<th>수량</th>
+											<th>금액</th>
+											<th>&nbsp;</th>
+										</tr>
+									</thead>
+									<tbody>
+										{% if carts %}
+											{% for cart in carts %}
+												<tr class="cart_row">
+													<td class="shoping__cart__item">
+														<img src="{{cart.prodNum.prodThumbnail.url}}" width="100" height="100" alt="">
+														<h5>{{ cart.prodName }}</h5>
+														<input type="hidden" class="prodStock" value="{{cart.prodStock}}">
+													</td>
+													<td class="shoping__cart__price"><span class="prodPrice">{{ cart.prodPrice|intcomma }}</span>원</td>
+													<td class="shoping__cart__quantity" style="text-align:center;">
+														<div class="quantity" style="text-align:center;">
+															남은 재고: {{cart.prodStock}} 개<br>
+															<input type="number" class="buyCount" value="{{cart.buyCount}}" style="width:80px;">
+															<input type="button" value="수량 변경" onclick="return modCart({{cart.cartNum}}, {{forloop.counter0}})">
+														</div>
+													</td>
+													<td class="shoping__cart__total"><span class="prodTotal">{{ cart.prodTotal|intcomma }}</span>원</td>
+													<td class="shoping__cart__item__close">
+														<a href="{% url 'cart:cartdel' %}?cartNum={{cart.cartNum}}" style="text-decoration:none;">
+															<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart-x text-danger" viewBox="0 0 16 16">
+																<path d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z"/>
+																<path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+															</svg>
+														</a>
+													</td>
+												</tr>
+											{% endfor %}
+										{% else %}
+											<tr>
+												<td colspan="6" style="text-align:center"> {{message}} </td>
+											</tr>
+										{% endif %}
+									</tbody>
+								</table>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="shoping__cart__btns">
+								<input type="button" style="border: 1px solid white;"
+									class="primary-btn cart-btn" id="goshopping" value="쇼핑 계속하기" />
+								<input type="button" style="border: 1px solid white;"
+									class="primary-btn cart-btn cart-btn-right" id="delcartall"
+									value="장바구니 비우기" />
+							</div>
+						</div><!-- 
+						<div class="col-lg-6">
+							<div class="shoping__continue">
+								<div class="shoping__discount">
+									<h5>Discount Codes</h5>
+									<form action="#">
+										<input type="text" placeholder="Enter your coupon code">
+										<button type="submit" class="site-btn">APPLY COUPON</button>
+									</form>
+								</div>
+							</div>
+						</div> -->
+						<div class="col-lg-6">
+							<div class="shoping__checkout">
+								<h5>총 구매 금액</h5>
+								<ul>
+									<li><span id="totalPrice">{{ totalPrice|intcomma }}원</span></li>
+								</ul>
+								<input type="button" class="primary-btn" id="order"
+									style="border: none; width: 100%; display: block;" value="구매하기">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Shoping Cart Section End -->
+
+		</div>
+	</section>
+</main>
+{% endif %}
+{% endblock %}

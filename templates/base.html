@@ -1,0 +1,412 @@
+<!-- css 먹이기 static -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>비치몰</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<script src="{% static 'js/jquery-3.6.0.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<script src="{% static 'js/script_member.js' %}"></script>
+<script src="{% static 'js/script_review.js' %}"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<script type="text/javascript">
+function noBack(){
+   window.history.forward();
+}
+</script>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet" />
+
+<!-- 폰트어썸 웹사이트 유저별 키 -->
+<script src="https://kit.fontawesome.com/d0bb6518aa.js" crossorigin="anonymous"></script>
+
+<!-- Css Styles -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+
+
+<style>
+video {
+	width:100%;
+	object-fit: cover;
+	position:static;
+}
+#sform {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	border: 1px solid #dadce0;
+	padding: 30px 200px;
+}
+
+.input {
+	width: 500px;
+	height: 50px;
+	font-size: 18px;
+}
+
+.input_id {
+	width: 250px;
+	height: 50px;
+	font-size: 18px;
+}
+
+.input_id2 {
+	width: 150px;
+	height: 40px;
+	font-size: 18px;
+	background-color: pink;
+}
+
+.input_zipnum {
+	width: 300px;
+	height: 50px;
+	font-size: 18px;
+}
+
+.input_zipnum2 {
+	width: 150px;
+	height: 35px;
+	font-size: 18px;
+}
+
+.int {
+	width: 150px;
+	height: 40px;
+	font-size: 18px;
+}
+
+.telcheck {
+	cursor: pointer;
+	width: 100px;
+	height: 30px;
+}
+
+.nav-right-title {
+	width: 102px;
+	height: 33px;
+	overflow: hidden;
+	color: white;
+	background-color: #384359;
+	text-align: center;
+	padding-top: 4px;
+	padding-bottom: 0;
+	margin-right: 15px;
+	margin-bottom: 8px;
+}
+
+.nav-right {
+	position: fixed;
+	right: 1%;
+	top: 44%;
+	list-style: none;
+	z-index: 10;
+	border: 1px solid silver;
+	width: 102px;
+	padding-left: 0;
+	margin-top: 25px;
+}
+
+.nav-right2 {
+	position: absolute;
+	right: 12%;
+	top: 10%;
+	list-style: none;
+	z-index: 10;
+	border: 1px solid silver;
+	width: 102px;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.nav-right li {
+	float: none;
+}
+
+.nav-right-items {
+	position: relative;
+	width: 76px;
+	height: 76px;
+	margin-bottom: 8px;
+	text-align: center;
+	margin-left: 13px;
+}
+
+.nav-right-items2 {
+	position: relative;
+	width: 102px;
+	margin-bottom: 8px;
+	text-align: center;
+}
+
+.nav-right-img {
+	width: 74px;
+	height: 74px;
+	object-fit: cover;
+}
+
+.nav-right-img2 {
+	width: 102px;
+	height: 150px;
+}
+
+.nav-right-a {
+	text-decoration: none;
+}
+
+.nav-right-a2 {
+	text-decoration: none;
+	width: 100%;
+}
+</style>
+
+</head>
+{% block header %}
+<body id="skrollr-body" onload="javascript:showpap()">
+	<input class="goupbtn" type="button"
+		style="background: url(../static/images/top.png); top: 93%; left: 97%; width: 50px; height: 50px; border-radius: 80%; border: none; position: fixed; z-index: 2; background-size: 100% 100%; cursor: pointer;"
+		onclick="clickme()">
+	<div>
+		<!-- 오른쪽 navbar -->
+		{% block navright %}
+		{% if request.session.memid %}
+		<div>
+			<ul class="nav-right" style="background:white;">
+				<li class="nav-right-title">최근본상품</li>
+				{% for recentProduct in recentProducts %}
+					<li class="nav-right-items">
+						<a class="nav-right-a" href="{% url 'product:productDetail' %}?prodNum={{recentProduct.prodNum}}">
+							<img class="nav-right-img" src="{{recentProduct.prodThumbnail.url}}">
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endif %}
+		{% endblock %}
+		<!-- 오른쪽 navbar 끝-->
+		<header class="header" style="z-index: 10;">
+			<div style="text-align: center">
+				<div class="innercontent">
+					<div class="loginArea">
+						<ul style="text-align: right">
+							{% if request.session.memid %}
+							<li class="best_top_nav">{{ request.session.memid }} 님</li>
+							<li class="best_top_nav"><a class="aa" href="{% url 'member:logout' %}">로그아웃</a></li>
+							{% else %}
+							<li class="best_top_nav"><a class="aa" href="{% url 'member:login' %}">로그인</a></li>
+							<li class="best_top_nav"><a class="aa" href="{% url 'member:memberjoin' %}">회원가입</a></li>
+							{% endif %}
+						</ul>
+					</div>
+				</div>
+				<div class="main innercontent">
+					<h1 class="logoarea">
+						<a href="{% url 'member:index' %}"><img class="beachlg"
+							src="{% static 'images/BeachLogo2.gif' %}"
+							style="width: 220px; height: 60px" /></a>
+					</h1>
+					<div class="innersearSearch" >
+						<form class="form-inline my-2 my-lg-0" action="{% url 'search:searchResult' %}" name="searchform" method="get" onsubmit="return searchcheck()">
+							<div class="search_color">
+								<label class="blind" for=""></label>
+								<input class="search_input" name="kw" title="검색어 입력" type="search" placeholder="비치몰라?🧡" aria-label="비치몰라?🧡" id="query" />
+								<button class="search_button" type="submit" value="">
+									<img class="search_img" src="{% static 'images/icon_heart.png' %}" />
+								</button>
+							</div>
+						</form>
+					</div>
+					{% if request.session.memid %}
+					<div class="mydataarea">
+						<ul class="beach_mydata" style="display: flex">
+							<li class="mydata"><a class="aa img1"
+								href="{% url 'wishlist:wish' %}">나의 찜</a></li>
+							<li class="mydata"><a class="aa img2"
+								href="{% url 'member:mybeach' %}">마이비치</a></li>
+							<li class="mydata"><a class="aa img3"
+								href="{% url 'cart:cart' %}">장바구니</a></li>
+						</ul>
+					</div>
+					{% else %}
+						로그인 해주세요.
+					{% endif %}
+				</div>
+				<!-- top menu -->
+				<nav>
+					<div class="container">
+						<ul class="category_ul">
+							<li><a href="{% url 'member:index' %}">Home</a></li>
+							<li><a href="{% url 'product:waterrocket' %}">물로켓 배송</a></li>
+							<li><a href="{% url 'product:productCategory' %}">카테고리</a></li>
+							<li class='sub-menu'><a
+								href="{% url 'noticeboard:noticelist' %}">공지</a></li>
+							<li class='sub-menu'><a href="{% url 'qnaboard:qna' %}">QnA/FAQ</a></li>
+						</ul>
+					</div>
+				</nav>
+				<!--검색어 순위-->
+				<div class="block"
+					style="position: absolute; width: 200px; display: inline-block; right: 400px; /* 창에서 오른쪽 길이 */ top: 75%; /* 창에서 위에서 부터의 높이 */ background-color: white; margin: 0; height: 40px;">
+					<ul id="ticker">
+						<li><a href="#"><span>1</span> 비치몰</a></li>
+						<li><a href="#"><span>2</span> 여름추천상품</a></li>
+						<li><a href="#"><span>3</span> 비키니</a></li>
+						<li><a href="#"><span>4</span> 삼겹살</a></li>
+						<li><a href="#"><span>5</span> 등심</a></li>
+						<li><a href="#"><span>6</span> 유이</a></li>
+						<li><a href="#"><span>7</span> 손나바카나</a></li>
+						<li><a href="#"><span>8</span> 손연재</a></li>
+						<li><a href="#"><span>9</span> 손짜이찌엔</a></li>
+					</ul>
+				</div>
+			</div>
+			<input class="goupbtn" type="button" onclick="clickme()">
+		</header>
+	</div>
+	{% endblock %}
+	
+	{% block content %}
+	{% endblock %}
+	
+	{% block scroll %}
+
+	<div id="wrap">
+		<div class="fix_background"></div>
+		<div class="black_visual_video">
+			<video loop muted autoplay >
+				<source src="../static/production ID_4323703.mp4" type="video/mp4" />
+			</video>
+		</div>
+	</div>
+	<!-- scroll event js -->
+	<script src="{% static 'js/skrollr.js' %}"></script>
+	<script type="text/javascript">
+		skrollr.init({
+			forceHeight : false,
+			mobileCheck : function() {
+				if (/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i
+						.test(navigator.userAgent || navigator.vendor
+								|| window.opera)) {
+				}
+			},
+		});
+	</script>
+
+	{% endblock %} {% block footer %}
+	<!-- Footer Section Begin -->
+	<footer class="footer spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="footer__about">
+						<div class="footer__about__logo">
+							<a href="{% url 'member:index' %}"><img
+								src="{% static 'images/BeachLogo2.gif' %}" alt="" /></a>
+						</div>
+						<ul style="width: 500px;">
+							<li><a style="color: #000; text-decoration: none;" href="#">상호명
+									및 호스팅 서비스 제공 : 비치몰(주)</a></li>
+							<li><a style="color: #000; text-decoration: none;" href="#">대표이사
+									: 한강희</a></li>
+							<li><a style="color: #000; text-decoration: none;" href="#">서울특별시
+									서초구 서초대로74길 33 </a></li>
+							<li><a style="color: #000; text-decoration: none;" href="#">사업자
+									등록번호 : 120-00-00000</a></li>
+							<li><a style="color: #000; text-decoration: none;" href="#">통신판매업신고
+									: 신청 예정</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+					<div class="footer__widget">
+						<h6>Useful Links</h6>
+
+						<ul>
+							<li><a href="#">회사소개</a></li>
+							<li><a href="#">인재채용</a></li>
+							<li><a href="#">입점 / 제휴문의</a></li>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">고객문의</a></li>
+							<li><a href="#">개인정보 처리방침</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12">
+					<div class="footer__widget">
+						<h6>Join Our Newsletter Now</h6>
+						<p>Get E-mail updates about our latest shop and special
+							offers.</p>
+						<form action="#">
+							<input type="text" placeholder="Enter your mail" />
+							<button type="submit" class="site-btn">Subscribe</button>
+						</form>
+						<div class="footer__widget__social">
+							<a href="#"> <i class="fa fa-facebook"></i>
+							</a> <a href="#"> <i class="fa fa-instagram"></i>
+							</a> <a href="#"> <i class="fa fa-twitter"></i>
+							</a> <a href="#"> <i class="fa fa-pinterest"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer__copyright">
+						<div class="footer__copyright__text">
+							<p>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;
+								<script>
+									document.write(new Date().getFullYear());
+								</script>
+								All rights reserved | This template is made with <i
+									class="fa fa-heart" aria-hidden="true"></i> by <a
+									href="{% url 'member:index' %}" target="_blank">Beach Mall</a>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</p>
+						</div>
+						<div class="footer__copyright__payment">
+							<img src="{% static 'images/payment-item.png' %}" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer Section End -->
+	{% endblock %}
+	<!-- Js Plugins -->
+	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'js/jquery.slicknav.js' %}"></script>
+	<script src="{% static 'js/mixitup.min.js' %}"></script>
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<!-- jquery 3 6 0 -->
+	<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main2.js' %}"></script>
+	<!-- scrollbar js -->
+	<script src="{% static 'js/jquery.nicescroll.js' %}"></script>
+</body>
+</html>

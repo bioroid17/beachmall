@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}
+<h2>글 보 기</h2>
+{% endblock %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+<style>
+.form_box {
+	background-color: #ffffff;
+	margin: 10px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+.input_field {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 4px;
+	margin: 3px 0;
+	font-size: 14px;
+	width: 100%;
+}
+
+.textarea_field {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 4px;
+	margin: 3px 0;
+	font-size: 14px;
+	width: 100%;
+	height: 160px;
+}
+
+.write_button {
+	background-color: #475d9f;
+	border: 1px solid #323f6b;
+	color: #ffffff;
+	border-radius: 4px;
+	padding: 2px 8px;
+	font-size: 18px;
+}
+</style>
+<!-- Button trigger modal -->
+
+<!-- 수정 모달 -->
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form name="modifyform" method="get" action="modifyarticle">
+				<input type="hidden" name="qnaNum" value="{{qnaNum}}">
+				<input type="hidden" name="pagenum" value="{{pagenum}}">
+				<div class="modal-header">
+					<h4 class="modal-title">수정 하기</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<p>수정하시겠습니까</p>
+				</div>
+				<div class="modal-footer">
+					<input style="width: 50px;" class="inputbutton" type="submit" value="예">
+					<input class="inputbutton" type="button" value="아니오" class="close" data-dismiss="modal">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- 삭제 모달 -->
+<div class="modal fade" id="myModal2" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form name="deleteform" method="post" action="deletearticle">
+				<input type="hidden" name="qnaNum" value="{{qnaNum}}">
+				<input type="hidden" name="pagenum" value="{{pagenum}}">
+				<div class="modal-header">
+					<h4 class="modal-title">삭제 하기</h4>
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<p>삭제하시겠습니까</p>
+				</div>
+				<div class="modal-footer">
+					<input style="width: 50px;" class="inputbutton" type="submit" value="예" onclick="location='deletearticle'">
+					<input class="inputbutton" type="button" value="아니오" class="close" data-dismiss="modal">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+<h3>
+	<center>질문</center>
+</h3>
+<div class="board">
+	<div class="board2" style="padding: 30px 200px;">
+		<div class="form_box">
+			<span class="input_field"> 글번호 </span>
+			<span class="input_field"> {{qnaNum}} </span>
+			<span class="input_field"> 작성자 </span>
+			<span class="input_field"> {{dto.userId}} </span>
+			<span class="input_field"> 조회수 </span>
+			<span class="input_field"> {{dto.qnaScore}} </span>
+			<span class="input_field"> 작성일 </span>
+			<span class="input_field"> {{dto.qnaDate|date:"Y-m-d H:i"}} </span>
+			<div class="input_field">제목</div>
+			<div class="input_field">{{dto.qnaTitle}}</div>
+			<div class="input_field">내용</div>
+			<div class="input_field" style="height: 500px;">
+				{{dto.qnaContent}}
+			</div>
+			{% if memid %}
+				{% if dto.userId == memid %}
+					{% if dto.reply_content %}
+						답변이 달린 게시판은 수정 삭제가 불가 합니다.
+					{% else %}
+						<input class="write_button" type="button" value="수정" data-toggle="modal" data-target="#myModal">
+						<input class="write_button" type="button" value="삭제" data-toggle="modal" data-target="#myModal2">
+					{% endif %}
+				{% endif %}
+			{% endif %}
+			<input class="write_button" type="button" value="목록" onclick="location='qna?pagenum={{pagenum}}'">
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+
+{% if dto.reply_content %}
+<h3>
+	<center>답변</center>
+</h3>
+<div class="board">
+	<div class="board2" style="padding: 30px 200px;">
+		<div class="form_box">
+			<span class="input_field"> 답글제목 </span>
+			<span class="input_field"> {{dto.reply_title}} </span>
+			<span class="input_field"> 작성자 </span>
+			<span class="input_field"> 관리자 </span>
+			<div class="input_field">답글내용</div>
+			<div class="input_field" style="height: 500px;"> {{dto.reply_content}} </div>
+		</div>
+	</div>
+</div>
+
+{% endif %} {% endblock %}

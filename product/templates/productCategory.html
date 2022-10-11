@@ -1,0 +1,178 @@
+{% extends "base.html"%}
+{% load static %}
+{% load humanize %}
+{% load mathfilters %}
+{% block content %}
+
+<script type="text/javascript">
+	function setPriceRange(){
+		loca = location.href.split("?")
+		let minamount = document.getElementById("minamount").value.replace("원", "");
+		let maxamount = document.getElementById("maxamount").value.replace("원", "");
+		location.href = loca[0]+"?minamount="+minamount+"&maxamount="+maxamount;
+	}
+</script>
+
+<!-- big category Section Begin -->
+<section class="breadcrumb-section set-bg"
+	data-setbg="{% static 'images/beach2.png' %}">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<div class="breadcrumb__text">
+					<h2 style="color: black;">Beach product</h2>
+					<div class="breadcrumb__option">
+						<a href="{% url 'member:index' %}" style="color: black;">Home</a>
+						<span style="color: black;">productCategory</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- big category Section End -->
+
+<!-- Product Section Begin -->
+<section class="product spad">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-5">
+				<div class="sidebar">
+					<div class="sidebar__item">
+						<h4>Price</h4>
+						<div class="price-range-wrap">
+							<div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" data-min="10" data-max="5000000">
+								<div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+								<span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+								<span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+							</div>
+							<div class="range-slider">
+								<div class="price-input">
+									<input type="text" id="minamount" />
+									<input type="text" id="maxamount" />
+								</div>
+								<input type="button" value="가격 범위 설정" onclick="setPriceRange()">
+							</div>
+						</div>
+					</div>
+					<div class="sidebar__item" style="width:240px;margin-right:0px;">
+						<h4>Department</h4>
+						<ul>
+							{% for brand in brands %}
+							<li><a href="{% url 'product:productList' %}?brand={{brand.0}}">{{brand.0}}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-9 col-md-7">
+				<div class="product__discount">
+					<div class="section-title product__discount__title">
+						<h2>Sale Off</h2>
+					</div>
+					<div class="row">
+						<div class="product__discount__slider owl-carousel">
+							{% for recommend in recommends %}
+							<div class="col-lg-4">
+								<div class="product__discount__item">
+									<div class="product__discount__item__pic set-bg"
+										data-setbg="{{recommend.prodNum.prodImage1.url}}">
+										<div class="product__discount__percent">-10%</div>
+										<ul class="product__item__pic__hover">
+											<li>
+												<a href="{% url 'wishlist:wishins' %}?userId={{request.session.memid}}&prodNum={{recommend.prodNum.prodNum}}">
+													<i class="fa fa-heart"></i>
+												</a>
+											</li>
+											<li>
+												<a href="{% url 'cart:cartins' %}?userId={{request.session.memid}}&prodNum={{recommend.prodNum.prodNum}}&buyCount=1">
+													<i class="fa fa-shopping-cart"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<div class="product__discount__item__text">
+										<span>{{recommend.prodNum.brand}}</span>
+										<h5>
+											<a href="{% url 'product:productDetail' %}?prodNum={{recommend.prodNum.prodNum}}">{{recommend.prodNum.prodName}}</a>
+										</h5>
+										<div class="product__item__price">
+											{{recommend.prodNum.prodPrice|intcomma }}원 <span>{{recommend.prodNum.prodPrice|mul:1.1|floatformat:"0"|intcomma }}원</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="filter__item">
+					<div class="row">
+						<div class="col-lg-4 col-md-5">
+							<div class="filter__sort">
+								<span>Sort By</span>
+								<select>
+									<option value="0">기본 정렬</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<div class="filter__found">
+								<h6>
+									<span>{{count}}</span> Products found
+								</h6>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-3">
+							<div class="filter__option">
+								<span class="icon_grid-2x2"></span> <span class="icon_ul"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					{% for product in products %}
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<div class="product__item">
+							<div class="product__item__pic set-bg"
+								data-setbg="{{product.prodThumbnail.url}}">
+								<ul class="product__item__pic__hover">
+									<li><a href="{% url 'wishlist:wishins' %}?userId={{request.session.memid}}&prodNum={{product.prodNum}}"><i class="fa fa-heart"></i></a></li>
+									<li><a href="{% url 'cart:cartins' %}?userId={{request.session.memid}}&prodNum={{product.prodNum}}&buyCount=1"><i class="fa fa-shopping-cart"></i></a></li>
+								</ul>
+							</div>
+							<div class="product__item__text">
+								<h6>
+									<a href="{% url 'product:productList' %}?brand={{product.brand}}">{{product.brand}}</a>
+								</h6>
+								<h6>
+									<a href="{% url 'product:productDetail' %}?prodNum={{product.prodNum}}">{{product.prodName}}</a>
+								</h6>
+								<h5>{{product.prodPrice|intcomma}}원</h5>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<div class="product__pagination">
+					{% if startpage > pageblock %}
+						<a href="{% url 'product:productCategory' %}?pagenum={{startpage|sub:pageblock}}"><i class="fa fa-long-arrow-left"></i></a>
+					{% endif %}
+					{% for page in pages %}
+						{% if pagenum == page %}
+							<a style="color:black;">{{page}}</a>
+						{% else %}
+							<a href="{% url 'product:productCategory' %}?pagenum={{page}}">{{page}}</a>
+						{% endif %}
+					{% endfor %}
+					{% if endpage < pagecount %}
+						<a href="{% url 'product:productCategory' %}?pagenum={{startpage|add:pageblock}}"><i class="fa fa-long-arrow-right"></i></a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Product Section End -->
+{%endblock%}
+

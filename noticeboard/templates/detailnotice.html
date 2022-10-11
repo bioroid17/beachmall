@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} <h2> 글보기 </h2> {% endblock %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+{% load static %}
+		<main style="z-index: 2; text-align: center">
+			<div class="board">
+				<div class="board2" style="padding:30px 200px;">
+					<span class="input_field" style="margin-bottom:15px;"> 글번호</span>
+					<span class="input_field"> {{number}} </span><br><br>
+					<div class="input_field"> 제목 </div>
+					<div class="input_field"> {{dto.noticeTitle}} </div>
+					<div class="input_field"> 내용 </div>
+					<div class="input_field" style="height:500px;"> {{dto.noticeContent}} </div>
+					<span class="input_field"> 작성자 </span>
+					<span class="input_field"> {{dto.admin}} </span>
+					<span class="input_field"> 작성일 </span>
+					<span class="input_field"> {{dto.noticeDate|date:"Y-m-d H:i"}} </span>
+					<input class="write_button" style="width:80px;" type="button" value="목록" onclick="location='noticelist?pagenum={{pagenum}}'">
+				</div>
+			</div>
+		</main>
+{% endblock %}

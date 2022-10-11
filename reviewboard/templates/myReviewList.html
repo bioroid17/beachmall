@@ -1,0 +1,96 @@
+{% extends "base.html"%}
+{% load static %}
+{% load mathfilters %}
+
+{% block navright %}
+{% endblock %}
+
+{% block content %}
+{% if not request.session.memid %}
+<script type="text/javascript">
+	alert("로그인 후 이용하실 수 있습니다.");
+	location.href = "{% url 'member:login' %}"
+</script>
+{% else %}
+<div>
+	<main style="z-index: 2; text-align: center">
+
+		<!-- QnA -->
+		<div class="board">
+			<div class="board2">
+				<div>
+					<div>
+						<h2 class="gongzi">내가 쓴 리뷰, 게시글{{count}}개가 있습니다</h2>
+					</div>
+					<table class="table_3">
+						<!-- 콜그룹으로 열의 비율을 맞춤 두번째것은
+                        값을 안넣었으니 자동으로 남은 비율을 가진다-->
+						<colgroup>
+							<col style="width: 600px">
+							<col style="width: 300px;">
+							<col style="width: 100px;">
+							<col style="width: 100px">
+							<col style="width: 100px">
+						</colgroup>
+						<thead>
+							<tr style="text-align: none;">
+								<th>상품이름</th>
+								<th>제목</th>
+								<th>아이디</th>
+								<th>작성일</th>
+							</tr>
+						</thead>
+						<!-- 상위 공지는 글씨 진하게 위에 고정-->
+						<tbody>
+							{% if count == 0 %}
+							<tr>
+								<td colspan="6" style="text-align: center">
+									내가 쓴 리뷰가 없습니다.
+									리뷰를 작성 해주세요
+								</td>
+							</tr>
+							{% else %}
+								{% for dto in reviewboards %}
+								<tr>
+									<td style="text-align: center">
+										<a style="color:black;" href="{% url 'product:productDetail' %}?prodNum={{dto.prodNum.prodNum}}">{{dto.prodNum.prodName}}</a> <!-- 리스트가 출력될 때 글번호가 출력됨 -->
+									</td>
+									<td>
+										{% if dto.reviewScore == -1 %}
+											삭제된 글입니다
+										{% else %} <!-- 삭제된 글이 아닐 때 -->
+											{% if dto.relevel > 1 %}
+												<img src="{% static 'images/level.gif' %}" border="0" height="20" width="{{dto.relevel|mul:7}}">
+											{% endif %}
+											{% if dto.relevel > 0 %} <!-- 0보다 크면 답글 -->
+												<img src="{% static 'images/re.gif' %}" border="0" width="15">
+											{% endif %}
+											<a style="text-decoration:none; color:black;"href="{% url 'product:productDetail' %}?prodNum={{dto.prodNum.prodNum}}">
+												{{dto.reviewTitle}}							
+											</a><!--  -->
+										{% endif %}
+									</td>
+									<td style="text-align: center">{{dto.userId}}</td>
+									
+									<td style="text-align: center"> {{dto.reviewDate|date:"Y-m-d H:i"}} <!-- db에 시간까지 다 들어있어서 찍을 수 있음 --> </td>
+								</tr>
+								{% endfor %}
+							{% endif %}
+						</tbody>
+					</table>
+					
+					<!-- <div class="">
+						<span class="glejacksung">
+							<a href="writearticle">
+								<h3 class="glejacksung2">글작성</h3>
+							</a>
+						</span>
+					</div> -->
+					
+
+					</div>
+				</div>
+			</div>
+		</div>
+{% endif %}
+{% endblock %}
