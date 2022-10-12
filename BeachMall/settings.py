@@ -110,6 +110,15 @@ LOGGING = {
             "backupCount" : 5,
             "formatter" : "format1",
         },
+        "searchfile" : {
+            "level" : "INFO",
+            "class" : "logging.handlers.RotatingFileHandler",
+            "filename" : os.path.join(BASE_DIR, "log/searchlog.log"),
+            "encoding" : "utf-8",
+            "maxBytes" : 1024 * 1024 * 5,
+            "backupCount" : 5,
+            "formatter" : "format1",
+        },
         "surveyfile" : {
             "level" : "INFO",
             "class" : "logging.handlers.RotatingFileHandler",

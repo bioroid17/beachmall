@@ -115,6 +115,7 @@
 		<div class="checkout__form">
 			<h4>Billing Details</h4>
 			<form name="orderform" action="order" method="post" onsubmit="return ordercheck()">
+				<input type="hidden" name="userId" value="{{request.session.memid}}">
 				<div class="row">
 					<div class="col-lg-8 col-md-6">
 						<div class="row">

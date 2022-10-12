@@ -8,6 +8,9 @@ from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
 from order.models import Order, OrderDetail
 from product.models import Product
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 class OrderView(View):
@@ -45,6 +48,7 @@ class OrderView(View):
                 "member" : member,
                 "totalPrice" : totalPrice
                 }
+            logger.info("id:"+memid+",,,,,,,,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         return HttpResponse(template.render(context, request))
     """
     입력한 수취인의 정보를 post 방식으로 넘길 때 실행한다.
@@ -53,27 +57,37 @@ class OrderView(View):
     """
     def post(self, request):
         template = loader.get_template("orderinfo.html")
-        userId = request.session.get("memid")
+        userId = request.POST["userId"]
         carts = Cart.objects.raw("""
         select c.cartNum, p.prodName, p.prodThumbnail, p.prodPrice, p.prodStock, c.buyCount, p.prodPrice*c.buyCount prodTotal
         from Product_Product p inner join Cart_Cart c
         on p.prodNum=c.prodNum and c.userId=%s
         order by cartNum desc
         """, (userId,))
+        
+        getterName = request.POST["getterName"]
+        getterTel = request.POST["getterTel"]
+        getterZonecode = request.POST["getterZonecode"]
+        getterAddress = request.POST["getterAddress"]
+        getterDetailAddr = request.POST["getterDetailAddr"]
+        totalPrice = request.POST["totalPrice"]
+        
         context = {
             "name" : request.POST["name"],
             "tel" : request.POST["tel"],
             "userId" : userId,
-            "getterName" : request.POST["getterName"],
-            "getterTel" : request.POST["getterTel"],
-            "getterZonecode" : request.POST["getterZonecode"],
-            "getterAddress" : request.POST["getterAddress"],
-            "getterDetailAddr" : request.POST["getterDetailAddr"],
+            "getterName" : getterName,
+            "getterTel" : getterTel,
+            "getterZonecode" : getterZonecode,
+            "getterAddress" : getterAddress,
+            "getterDetailAddr" : getterDetailAddr,
             "requirement" : request.POST["requirement"],
             "orderMsg" : request.POST["orderMsg"],
             "carts" : carts,
-            "totalPrice" : request.POST["totalPrice"],
+            "totalPrice" : totalPrice,
             }
+        logger.info("id:"+userId+",,getterName:"+getterName+",getterTel:"+getterTel+",getterZonecode:"+getterZonecode+",getterAddress:"+getterAddress+
+                    ",getterDetailAddr:"+getterDetailAddr+",totalPrice:"+totalPrice+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         
         return HttpResponse(template.render(context, request))
 
@@ -107,16 +121,24 @@ class OrderDoneView(View):
                     }
                 return HttpResponse(template.render(context, request))
         
+        
+        getterName = request.POST["getterName"]
+        getterTel = request.POST["getterTel"]
+        getterZonecode = request.POST["getterZonecode"]
+        getterAddress = request.POST["getterAddress"]
+        getterDetailAddr = request.POST["getterDetailAddr"]
+        totalPrice = request.POST["totalPrice"]
+        
         order = Order(
             userId = userId,
-            getterName = request.POST["getterName"],
-            getterTel = request.POST["getterTel"],
-            getterZonecode = request.POST["getterZonecode"],
-            getterAddress = request.POST["getterAddress"],
-            getterDetailAddr = request.POST["getterDetailAddr"],
+            getterName = getterName,
+            getterTel = getterTel,
+            getterZonecode = getterZonecode,
+            getterAddress = getterAddress,
+            getterDetailAddr = getterDetailAddr,
             requirement = request.POST["requirement"],
             orderMsg = request.POST["orderMsg"],
-            totalPrice = request.POST["totalPrice"],
+            totalPrice = totalPrice,
             )
         order.save()
         
@@ -139,6 +161,9 @@ class OrderDoneView(View):
             product.prodStock -= cart.buyCount
             product.save()
             cart.delete()
+        
+        logger.info("id:"+userId+",orderNum:"+orderNum+",getterName:"+getterName+",getterTel:"+getterTel+",getterZonecode:"+getterZonecode+",getterAddress:"+getterAddress+
+                    ",getterDetailAddr:"+getterDetailAddr+",totalPrice:"+totalPrice+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         
         return HttpResponse(template.render(context, request))
     

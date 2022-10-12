@@ -7,9 +7,9 @@ from member.models import Member
 from product.models import Product
 import logging
 
-# Create your views here.
-
 logger = logging.getLogger(__name__)
+
+# Create your views here.
 
 class WishView(View):
     def get(self, request):
@@ -36,8 +36,7 @@ class WishView(View):
                     "message" : "찜 목록이 비었습니다.",
                     "memid" : memid,
                     }
-        print(request.META.HTTP_REFERER, request.path)
-        # logger.info()
+                logger.info("id:"+memid+",,,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         return HttpResponse(template.render(context, request))
     def post(self, request):
         pass
@@ -48,11 +47,13 @@ class WishDelView(View):
         wishNum = request.GET["wishNum"]
         if wishNum != "0":
             wish = Wishlist.objects.get(wishNum=wishNum)
+            logger.info("id:"+wish.userId.userId+",wishNum:"+str(wishNum)+",prodNum:"+str(wish.prodNum.prodNum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
             wish.delete()
         else:
             userId = request.session.get("memid")
             wishlist = Wishlist.objects.filter(userId__exact=userId)
             for wish in wishlist:
+                logger.info("id:"+userId+",wishNum:0,prodNum:"+str(wish.prodNum.prodNum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
                 wish.delete()
         return redirect("wishlist:wish")
     def post(self, request):
@@ -68,8 +69,8 @@ class WishInsView(View):
                 userId = Member.objects.get(userId=userId),
                 prodNum = Product.objects.get(prodNum=prodNum),
                 )
+            logger.info("id:"+userId+",,prodNum:"+str(wish.prodNum.prodNum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
             wish.save()
-        print(request.path)
         return redirect("wishlist:wish")
     def post(self, request):
         pass

@@ -42,7 +42,7 @@ class CartView(View):
                     "memid" : memid,
                     "totalPrice" : totalPrice
                     }
-            logger.info("id : " + memid + "\tcart.html")
+            logger.info("id:"+memid+",,,,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         return HttpResponse(template.render(context, request))
     def post(self, request):
         pass
@@ -54,13 +54,15 @@ class CartInsView(View):
     def get(self, request):
         userId = request.GET["userId"]
         prodNum = request.GET["prodNum"]
+        buyCount = request.GET["buyCount"]
         count = Cart.objects.filter(prodNum=prodNum).filter(userId=userId).count()
         if userId and count == 0:
             cart = Cart(
                 userId = Member.objects.get(userId=userId),
                 prodNum = Product.objects.get(prodNum=prodNum),
-                buyCount = request.GET["buyCount"]
+                buyCount = buyCount
                 )
+            logger.info("id:"+userId+",,prodNum:"+str(cart.prodNum.prodNum)+",buyCount:"+buyCount+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
             cart.save()
         return redirect("cart:cart")
     def post(self, request):
@@ -74,13 +76,15 @@ cart 페이지에서 장바구니 항목 삭제 시 실행
 class CartDelView(View):
     def get(self, request):
         cartNum = request.GET.get("cartNum")
+        userId = request.session.get("memid")
         if cartNum != "0":
             cart = Cart.objects.get(cartNum=cartNum)
+            logger.info("id:"+cart.userId.userId+",cartNum:"+cartNum+",prodNum:"+str(cart.prodNum.prodNum)+",,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
             cart.delete()
         else:
-            userId = request.session.get("memid")
             carts = Cart.objects.filter(userId__exact=userId)
             for cart in carts:
+                logger.info("id:"+userId+",cartNum:0,prodNum:"+str(cart.prodNum.prodNum)+",,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
                 cart.delete()
         return redirect("cart:cart")
     def post(self, request):
@@ -89,8 +93,10 @@ class CartDelView(View):
 class CartModView(View):
     def get(self, request):
         cartNum = request.GET["cartNum"]
+        buyCount = request.GET["buyCount"]
         cart = Cart.objects.get(cartNum=cartNum)
-        cart.buyCount = request.GET["buyCount"]
+        cart.buyCount = buyCount
+        logger.info("id:"+cart.userId.userId+",cartNum:"+cartNum+",prodNum:"+str(cart.prodNum.prodNum)+",buyCount:"+buyCount+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         cart.save()
         return redirect("cart:cart")
     def post(self, request):
