@@ -128,6 +128,10 @@ function idconfirm(){
 					inputform.checkid.value = "0";
 					console.log("사용불가 아이디");
 				}
+				if(! inputform.id.value){
+					$("#idcheck").html("아이디를 입력해주세요");
+					inputform.checkid.value = "0";
+				}
 			},
 			error : function(error){
 				$("#idcheck").html(error)
