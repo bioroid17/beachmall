@@ -27,10 +27,12 @@ logger = logging.getLogger(__name__)
 class IndexView(View):
     def get (self,request):
         userId = request.session.get("memid")
+        #Recommend어플에서 모델을 사용해서, 최신순으로 정렬을 하게한다 
         recommends = Recommend.objects.order_by("-recommendNum")
         
+        #로그를 이용해서 최근본 상품을 사용한다.
         productlog = open("log/productlog.log", 'r', encoding="utf-8")
-        lines = csv.reader(productlog)
+        lines = csv.reader(productlog)  #전체 productlog하는 것을 갖고오는 것
         
         recents = []
         mostViews = {}
@@ -68,6 +70,7 @@ class IndexView(View):
         
         productlog.close()
         
+        #OrderDetail.prodNum과 Product.prodNum 같은것을 연결해준. hotdeal객체를 사용하여 많이 구매한 상품을 띄어준다
         hotdeals = OrderDetail.objects.raw("""
         select od.orderDetailNum, od.orderNum, od.prodName, od.prodPrice, od.prodThumbnail, p.prodNum, p.brand
         from order_OrderDetail od, product_product p where od.prodNum=p.prodNum
@@ -89,7 +92,7 @@ class IndexView(View):
         pass
 
 
-#로그아웃
+#회원탈퇴
 class DeleteView(View):
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
@@ -101,10 +104,14 @@ class DeleteView(View):
         return HttpResponse(template.render(context,request))
     #post방식에서 유효성 검사를 해준다.
     def post(self , request):
+        #userId를 Cookie에서 갖고온다
         userId = request.session.get("memid")
+        #비밀번호를 입력받는다
         passwd = request.POST["passwd"]
+        #Member모델에 컬럼이userId와 Cookie안에 memeid의 값이 같다면 
         dto = Member.objects.get(userId = userId)
          
+        #비밀번호가 같다면 회원정보를 삭제된 회원 테이블에 넣어준다
         if passwd == dto.passwd :
             deletedto = DeleteMember(
                 userId = dto.userId,
@@ -113,15 +120,17 @@ class DeleteView(View):
                 address = dto.address,
                 detailaddr =dto.address,
                 email = dto.email,
-                # 짤라받는곳 붙여 받기
                 tel = dto.tel,
                 signupdate = dto.signupdate 
             )
+            # DeleteMember테이블에 탈퇴회원정보를 insert한다
             deletedto.save()
-            dto.delete()                  # db지우기
+           
+            dto.delete()        # member테이블에서 지워준다           
             del(request.session["memid"]) #로그아웃상태로 만들기
             return redirect("member:index")
         else: 
+            #비밀번호가 다르면 생기는 페이지
             template = loader.get_template("delete.html")
             context={
                 "message" : "비밀번호가 다릅니다.",
@@ -129,7 +138,7 @@ class DeleteView(View):
             return HttpResponse(template.render(context, request))
 
 
-    
+#로그아웃을 만들어주는 View    
 class LogoutView(View):
     def get (self,request):
         if request.session.get("memid"):
@@ -191,10 +200,12 @@ class JoinView(View):
         return HttpResponse(template.render(context,request))
     #입력 데이터 받는곳    
     def post(self,request):
+        #templates에서 전화번호를 나눠준것을 받아서
         tel = ""
         tel1 = request.POST["tel1"]
         tel2 = request.POST["tel2"]
         tel3 = request.POST["tel3"]
+        #다시 합쳐준다.
         if tel1 and tel2 and tel3 :
             tel = tel1  + "-" + tel2 + "-" + tel3
         email = ""
