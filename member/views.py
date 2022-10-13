@@ -16,7 +16,7 @@ from product.models import Product
 from cart.models import Cart
 from refund.models import Refund
 from product.choice import BRAND_CHOICE
-import logging
+import logging, csv
 
 PAGE_SIZE = 5
 PAGE_BLOCK = 3
@@ -30,21 +30,23 @@ class IndexView(View):
         recommends = Recommend.objects.order_by("-recommendNum")
         
         productlog = open("log/productlog.log", 'r', encoding="utf-8")
-        lines = productlog.readlines()[::-1]
+        lines = csv.reader(productlog)
         
         recents = []
         mostViews = {}
         count = 0
         today = datetime.today()
-        for line in lines:
-            logs = line.split(",")
+        for line in reversed(list(lines)):
             # 최대 일주일 치 로그만 분석한다.
-            if datetime.strptime(logs[0][1:11], "%Y-%m-%d") < today - timedelta(days=7):
+            if datetime.strptime(line[0][1:11], "%Y-%m-%d") < today - timedelta(days=7):
                 break
-            id = logs[3].split(":")[1]
+            id = line[3].split(":")[1]
             if id != userId:
                 continue
-            prodNum = logs[4].split(":")[1]
+            print(line[3])
+            if line[4] == "" or line[4] == None:
+                continue
+            prodNum = line[4].split(":")[1]
             if Product.objects.filter(prodNum=prodNum).count() == 0:
                 continue
             if str(prodNum) in mostViews:

@@ -130,8 +130,10 @@ class ProductCategoryView(View):
             "recommends" : recommends,
             "lastProducts" : lastProducts,
             "recentProducts" : recentProducts,
+            "minamount" : minamount,
+            "maxamount" : maxamount,
             }
-        logger.info("id:"+userId+",,,,pageNum:"+pagenum+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
+        logger.info("id:"+userId+",,,,pageNum:"+str(pagenum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         return HttpResponse(template.render( context ,request))
     def post(self,request):
         pass
@@ -194,7 +196,7 @@ class WaterRocketView(View):
             "pagecount" : pagecount,
             "recentProducts" : recentProducts,
             }
-        logger.info("id:"+userId+",,,,pageNum:"+pagenum+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
+        logger.info("id:"+userId+",,,,pageNum:"+str(pagenum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         return HttpResponse(template.render( context ,request))
     def post(self,request):
         pass
@@ -259,7 +261,7 @@ class ProductListView(View):
             "recentProducts" : recentProducts,
             "lastProducts" : lastProducts,
             }
-        logger.info("id:"+userId+",,,brand:"+brand+",pageNum:"+pagenum+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
+        logger.info("id:"+userId+",,,brand:"+brand+",pageNum:"+str(pagenum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         return HttpResponse(template.render( context, request))
     def post(self,request):
         pass
