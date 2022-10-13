@@ -3,6 +3,11 @@ import csv
 from member.models import Member
 from order.models import Order, OrderDetail
 
+"""
+직접 정의한 함수들은 여기에 직접 작성해서 쓴다.
+"""
+
+
 def getRecentProduct(userId):
     
     productlog = open("log/productlog.log", 'r', encoding="utf-8")
@@ -49,3 +54,10 @@ def recommendByGenderAge(userId):
                     recommends[str(orderDetail.prodNum)] += 1
                 else:
                     recommends[str(orderDetail.prodNum)] = 1
+    
+    reco_sorted = [(key, value) for key, value in recommends.items()]
+    print(reco_sorted, len(reco_sorted))
+    if len(reco_sorted) > 0:
+        reco_sorted.sort(key=lambda x:x[1], reverse=True)
+    
+    return reco_sorted[0:6]
