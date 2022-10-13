@@ -4,12 +4,12 @@
 {% block navright %}
 {% endblock %}
 
-{% block content %}
+{% block content %} 
 <script src="{% static 'js/script_wishlist.js' %}"></script>
 {% if not request.session.memid %}
-<script>
-	alert("로그인 후 이용해 주세요.");
-	location.href = "{% url 'member:login' %}"
+<script> 
+	alert("로그인 후 이용해 주세요."); /* 알림 메시지를 띄운다 */
+	location.href = "{% url 'member:login' %}" /* 알림 메세지를 닫으면 로그인 페이지로 이동한다 */
 </script>
 {% else %}
 <div style="width: 1140px; margin: 50px auto; text-align: center;">
@@ -18,7 +18,7 @@
 	</div>
 	<br>
 	<br>
-	{% if not memid %}
+	{% if not memid %} <!-- 아이디가 없을 때 -->
 	<table border="1" style="min-width: 1000px; width: 1000px;">
 		<tr>
 			<th>상품이미지</th>
@@ -28,10 +28,10 @@
 			<th>찜 목록에서 제거</th>
 		</tr>
 		<tr>
-			<td style="padding: 20px;" colspan="3">{{message}}</td>
+			<td style="padding: 20px;" colspan="3">{{message}}</td> <!-- 로그인 하라는 메세지 출력함 -->
 		</tr>
 	</table>
-	{% else %}
+	{% else %} <!-- 아이디가 있을 때 -->
 	<form>
 		<table border="1" style="min-width: 1140px; width: 1140px; margin: 0 auto;">
 			<tr>
@@ -41,23 +41,23 @@
 				<th>장바구니에 넣기</th>
 				<th>찜 목록에서 제거</th>
 			</tr>
-			{% if wishlist %}
-			{% for wish in wishlist %}
-			<tr>
+			{% if wishlist %} <!-- 찜 목록에 상품이 있을 때 -->
+			{% for wish in wishlist %} <!-- 찜 상품을 나열함 -->
+			<tr> <!-- img src : 찜.상품번호.상품썸네일사진.url을 가져옴 -->
 				<td><img src="{{wish.prodNum.prodThumbnail.url}}" border="0"
 					width="200" height="100"></td>
-				<td>{{ wish.prodName }}</td>
-				<td class="prodPrice">{{ wish.prodPrice }} 원</td>
-				<td style="text-align:center;">
+				<td>{{ wish.prodName }}</td> <!-- 찜 상품 이름 -->
+				<td class="prodPrice">{{ wish.prodPrice }} 원</td> <!-- 찜 상품 가격 -->
+				<td style="text-align:center;"> <!-- a : 장바구니에 추가 버튼 . userID,prodNum,buycount를 보낸다 buycount:무조건 1개로 넣기  -->
 					<a href="{% url 'cart:cartins' %}?userId={{wish.userId.userId}}&prodNum={{wish.prodNum.prodNum}}&buyCount=1" style="text-decoration:none;">
 						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart-plus-lg text-success" viewBox="0 0 16 16">
-							<path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+							<path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/> <!-- 장바구니 추가  -->
 							<path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 						</svg>
 					</a>
 				</td>
 				<td style="text-align:center;">
-					<a href="{% url 'wishlist:wishdel' %}?wishNum={{wish.wishNum}}" style="text-decoration:none;">
+					<a href="{% url 'wishlist:wishdel' %}?wishNum={{wish.wishNum}}" style="text-decoration:none;"> <!-- 찜 비우기 -->
 						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x text-danger" viewBox="0 0 16 16">
 							<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
 						</svg>
@@ -65,9 +65,9 @@
 				</td>
 			</tr>
 			{% endfor %}
-			{% else %}
+			{% else %} <!-- 찜 목록이 비었을 떄 -->
 			<tr>
-				<td colspan="5" style="text-align: center">{{message}}</td>
+				<td colspan="5" style="text-align: center">{{message}}</td> <!-- 찜 목록에 상품이 없다, 비었다는 메세지 나옴 -->
 			</tr>
 			{% endif %}
 			<tr>
