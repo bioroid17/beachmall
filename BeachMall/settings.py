@@ -194,6 +194,11 @@ LOGGING = {
             "propagate" : True,
             "level" : "INFO",
         },
+        "search_app" : {
+            "handlers" : ["searchfile"],
+            "propagate" : True,
+            "level" : "INFO",
+        },
         "survey" : {
             "handlers" : ["surveyfile"],
             "propagate" : True,

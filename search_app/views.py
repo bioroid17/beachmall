@@ -58,5 +58,5 @@ def searchResult(request):
         }
     memid = request.session.get("memid")
     if memid:
-        logger.info("id:"+memid+",query:"+query+",pagenum:"+pagenum+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
+        logger.info("id:"+memid+",query:"+query+",pagenum:"+str(pagenum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
     return render(request,'search.html', context)    
