@@ -29,51 +29,52 @@ class WishView(View):
             on p.prodNum=w.prodNum and w.userId=%s
             order by wishNum desc
             """, (memid,)) # userId=%s : memid를 문자열로 포맷팅한다
-            if wishlist:
+            if wishlist: # 찜 목록이 있다면 아이디와 찜목록을 가져온다
                 context = {
                     "wishlist" : wishlist,
                     "memid" : memid,
                     }
-            else:
+            else: # 찜 목록이 비었을 떄 , 출력할 메시지를 만들고 , memid를 가져와 지정한다
                 context = {
                     "message" : "찜 목록이 비었습니다.",
                     "memid" : memid,
-                    }
-                logger.info("id:"+memid+",,,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
+                    }                                   # 지금 있는 페이지(http_referer)와 어떤 페이지로 넘어가는지(get_full_path)를 나타냄
+                logger.info("id:"+memid+",,,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path()) # id ,,,from:wishNum,prodNum등을 생략한다는 의미로 사용
         return HttpResponse(template.render(context, request))
     def post(self, request):
         pass
     
-
+# 찜 삭제
 class WishDelView(View):
     def get(self, request):
-        wishNum = request.GET["wishNum"]
-        if wishNum != "0":
-            wish = Wishlist.objects.get(wishNum=wishNum)
+        wishNum = request.GET["wishNum"] # 찜 번호를 가져옴
+        if wishNum != "0":  # 찜번호가 0이 아닐때
+            wish = Wishlist.objects.get(wishNum=wishNum) # 찜 목록에 찜 번호가 같은 것을 wish에 넣음
+            # id, wishNum, prodNum, from: 현제 페이지와 넘어가는 페이지를 기록한다
             logger.info("id:"+wish.userId.userId+",wishNum:"+str(wishNum)+",prodNum:"+str(wish.prodNum.prodNum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
-            wish.delete()
-        else:
-            userId = request.session.get("memid")
-            wishlist = Wishlist.objects.filter(userId__exact=userId)
-            for wish in wishlist:
+            wish.delete() # 찜 목록에 상품을 삭제 한다
+        else: # 찜 번호가 0 일 때
+            userId = request.session.get("memid") # memid 를 가져온다 
+            wishlist = Wishlist.objects.filter(userId__exact=userId)    # 찜목록
+            for wish in wishlist:   # 찜 목록 리스트를 wish로 반복문 돌림, 아래 로그를 남기고 , 찜 목록이 있다면 삭제
                 logger.info("id:"+userId+",wishNum:0,prodNum:"+str(wish.prodNum.prodNum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
                 wish.delete()
-        return redirect("wishlist:wish")
+        return redirect("wishlist:wish")    # 찜목록 페이지로 넘김
     def post(self, request):
         pass
-    
+# 찜 넣기
 class WishInsView(View):
     def get(self, request):
         userId = request.GET["userId"]
         prodNum = request.GET["prodNum"]
-        count = Wishlist.objects.filter(prodNum=prodNum).filter(userId=userId).count()
-        if userId and count == 0:
-            wish = Wishlist(
+        count = Wishlist.objects.filter(prodNum=prodNum).filter(userId=userId).count()  # 같은 상품번호 같은 아이디를 카운트
+        if userId and count == 0:   # 유저 아이디가 있을떄 그리고 카운트가 0 일 때 
+            wish = Wishlist(        # 아이디와 상품을 wish에 넣는다
                 userId = Member.objects.get(userId=userId),
                 prodNum = Product.objects.get(prodNum=prodNum),
-                )
+                )               # 로그를 쌓는다
             logger.info("id:"+userId+",,prodNum:"+str(wish.prodNum.prodNum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
             wish.save()
-        return redirect("wishlist:wish")
+        return redirect("wishlist:wish")    # wish 페이지로 던진다
     def post(self, request):
         pass
