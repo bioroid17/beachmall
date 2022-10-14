@@ -16,7 +16,8 @@ from product.models import Product
 from cart.models import Cart
 from refund.models import Refund
 from product.choice import BRAND_CHOICE
-import logging
+import logging, csv
+from static.myfunction import recommendByGenderAge, realtimeSearch
 
 PAGE_SIZE = 5
 PAGE_BLOCK = 3
@@ -32,21 +33,22 @@ class IndexView(View):
         
         #로그를 이용해서 최근본 상품을 사용한다.
         productlog = open("log/productlog.log", 'r', encoding="utf-8")
-        lines = productlog.readlines()[::-1] #전체 productlog하는 것을 갖고오는 것
+        lines = csv.reader(productlog)  #전체 productlog하는 것을 갖고오는 것
         
         recents = []
         mostViews = {}
         count = 0
         today = datetime.today()
-        for line in lines:
-            logs = line.split(",")
+        for line in reversed(list(lines)):
             # 최대 일주일 치 로그만 분석한다.
-            if datetime.strptime(logs[0][1:11], "%Y-%m-%d") < today - timedelta(days=7):
+            if datetime.strptime(line[0][1:11], "%Y-%m-%d") < today - timedelta(days=7):
                 break
-            id = logs[3].split(":")[1]
+            id = line[3].split(":")[1]
             if id != userId:
                 continue
-            prodNum = logs[4].split(":")[1]
+            if line[4] == "" or line[4] == None:
+                continue
+            prodNum = line[4].split(":")[1]
             if Product.objects.filter(prodNum=prodNum).count() == 0:
                 continue
             if str(prodNum) in mostViews:
@@ -68,6 +70,9 @@ class IndexView(View):
         
         productlog.close()
         
+        reco_age_gender = []
+        if userId != None and userId != "":
+            reco_age_gender = recommendByGenderAge(userId)
         #OrderDetail.prodNum과 Product.prodNum 같은것을 연결해준. hotdeal객체를 사용하여 많이 구매한 상품을 띄어준다
         hotdeals = OrderDetail.objects.raw("""
         select od.orderDetailNum, od.orderNum, od.prodName, od.prodPrice, od.prodThumbnail, p.prodNum, p.brand
@@ -76,6 +81,7 @@ class IndexView(View):
         order by sum(buyCount) DESC LIMIT 5
         """)
         
+        realtimeSearch()
         context={
             "recommends":recommends,
             "userId":userId,
@@ -83,6 +89,7 @@ class IndexView(View):
             "brands":BRAND_CHOICE,
             "frequentProducts":frequentProducts,
             "hotdeals":hotdeals,
+            "reco_age_gender":reco_age_gender,
             }
         template=loader.get_template("index.html")
         return HttpResponse(template.render( context ,request))
@@ -215,19 +222,19 @@ class JoinView(View):
         #다시 합쳐준다.
         if tel1 and tel2 and tel3 :
             tel = tel1  + "-" + tel2 + "-" + tel3
-        #templates에서 이메일을 나눠준것을 받아서
         email = ""
         email1 = request.POST["email1"]
         email2 = request.POST["email2"]
         if email1 and email2:
             email = email1  + "@" + email2
-        #입력받은 값들을 저장받는 곳이다.   
+            
         dto = Member(
            userId = request.POST["id"],
            passwd = request.POST["passwd"],
            name = request.POST["name"],
            age = request.POST["age"],
            gender = request.POST["gender"],
+           zonecode = request.POST["zonecode"],
            address = request.POST["addr"],
            detailaddr = request.POST["detailaddr"],
            email = email,
@@ -235,18 +242,14 @@ class JoinView(View):
            tel = tel,
            signupdate = DateFormat(datetime.now()).format("Y-m-d") 
         )
-        #Member 테이블에 저장한다.
         dto.save()
         #setting에서 info 에다 쌓이는것 
 
         return redirect("member:index") 
     
 class IdConfirmView(View):
-    #ajax를 통한 id check 
     def get(self, request):
-        #아이디를 입력받은것
         userId = request.GET["id"]  
-        #결과가 0을 초기화 해준다
         result = 0
         try :  
             # Member테이블에 아이디가 없다면 userId에 넣어준다
@@ -267,7 +270,6 @@ class IdConfirmView(View):
     def post(self, request):  
         pass
 
-#전화번호 중복성검사를 하는 곳이다.
 class TelConfirmView(View):
     def get(self, request):
         #join.html에서 tel1,tel2,tel3로 나눠진 값들이다
@@ -276,7 +278,9 @@ class TelConfirmView(View):
         tel1 = request.GET["tel1"]
         tel2 = request.GET["tel2"]
         tel3 = request.GET["tel3"]
+
         #-를 포함해서 합쳐준다 tel이라는 변수에 합하기
+
         if tel1 and tel2 and tel3 :
             tel = tel1  + "-" + tel2 + "-" + tel3 
         result = 0
@@ -309,10 +313,12 @@ class MyOrderListView(View):
         template=loader.get_template("myorderlist.html")
         
         userId = request.session.get("memid")
-        #Order모델에서 userid와 로그인된 아이디가 같은것을 갖고안다
         ordercount = Order.objects.filter(userId=userId).count()
+
         #페이징
         #pagenum을 get으로 갖고온다
+        
+
         pagenum = request.GET.get( "pagenum" )
         if not pagenum :
             #pagenum은 1로 시작하게 만들기
@@ -323,20 +329,15 @@ class MyOrderListView(View):
         end = start + int(PAGE_SIZE)                      # 41 + 10 - 1            50 페이지에갖고 올것 끝을 정해준다.
         if end > ordercount :
             end = ordercount
-        #Order테이블에 userId와 로그인 상태 유저아이디가 같은것에서 처음과 끝을 최신순으로 갖고와서 orders라는 변수에 넣는다.
+            
         orders = Order.objects.filter(userId=userId).order_by("-orderNum")[start:end]
-        #오더디테일을 리스트로 만들어준다.
         orderdetaillist = []
         
-        #orders에는있는 것을 하나씩 꺼내오기 위해 (리스트형태이다. ) for문을 사용한다.
         for order in orders:
-            #orderdetail테이블에서 orderNum하고 order테이블에서 orderNum하고 같은것의 값들만 물건당 오더를 갖고오게 하기위해
             orderdetails = OrderDetail.objects.filter(orderNum=order.orderNum).order_by("orderDetailNum").values()  # 딕셔너리 여러개가 든 리스트 형태로 반환 
-            #orderdetaillist에 딕셔러리를 추가해준다
             orderdetaillist.append(orderdetails)
         orderlist = zip(orders, orderdetaillist)
         
-        #페이징
         number = ordercount - ( pagenum - 1 ) * int(PAGE_SIZE )
         
         startpage = pagenum // int(PAGE_BLOCK) * int(PAGE_BLOCK) + 1       # 9 // 10 * 10 + 1    1
@@ -368,22 +369,17 @@ class MyOrderListView(View):
 class MyOrderDetailView(View):
     def get (self,request):
         template=loader.get_template("myorderdetail.html")
-        # url에서 orderNum 을 받아온다
         orderNum = request.GET["orderNum"]
-        # url에서 orderNum과 Order테이블에서 orderNum 같은것을 찾는다
         order = Order.objects.get(orderNum=orderNum)
-        #아이디 상태유지
         memid = request.session.get("memid")
-        #카트에서 useId를 찾아온다.
         carts = Cart.objects.filter(userId=memid)
         if order.userId != memid:
             context = {
                 "message" : "주문자 정보와 로그인 정보가 일치하지 않습니다.",
                 }
             return HttpResponse(template.render( context ,request))
-        # member오브젝트에서 "name", "tel"의 값을 갖고온다.
+            
         name, tel = Member.objects.filter(userId=memid).values_list("name", "tel")[0]
-        #orderNum이 같은걸 "orderDetailNum"의 값을 갖고온다.
         orderdetails = OrderDetail.objects.filter(orderNum=orderNum).order_by("orderDetailNum").values()
         
         for orderdetail in orderdetails:
@@ -399,7 +395,7 @@ class MyOrderDetailView(View):
         return HttpResponse(template.render(context ,request))
     def post(self,request):
         pass
-# 마이비치 가는 view
+    
 class MyBeachView(View):
     def get (self,request):
         memid = request.session.get("memid")
@@ -424,7 +420,6 @@ class ModifyProView(View):
     def get(self, request):
         pass
     def post(self, request):
-        #수정페이지에서 수정한 값들을 받아온다.modifypro.html에서 수정받은것 들
         userId = request.session.get("memid")
         dto = Member.objects.get(userId=userId)
         dto.passwd = request.POST["passwd"]
@@ -438,8 +433,7 @@ class ModifyProView(View):
             email = email1  + "@" + email2
  
         dto.email = email
-        #insert된다
-        dto.save() 
+        dto.save() #insert된다
         return redirect("member:index")
         
         
@@ -460,14 +454,13 @@ class ModifyView(View):
         if passwd == dto.passwd:
             template = loader.get_template("modifypro.html")
             #여기서 또 짤라준다 dto를 잘라서 template에서 사용하게 만들어준다
+            t = dto.tel.split("-")
             if dto.email :
                 e = dto.email.split("@")
-            if dto.tel :
-                t = dto.tel.split("-")
                 context = {
                     "dto" : dto,
-                    "t" : t, #바꿔준 값을 받아온다
-                    "e" : e, #바꿔준 값을 받아온다
+                    "t" : t,
+                    "e" : e,
                     }
             else:
                 context={
@@ -479,7 +472,7 @@ class ModifyView(View):
                 "message" : "비밀번호가 다릅니다." 
                 }   
         return HttpResponse(template.render(context,request))
-#팝업을 열어주는 뷰
+
 class PapUpView(View):
     def get (self,request):
         context={}
