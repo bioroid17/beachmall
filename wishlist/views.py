@@ -68,7 +68,7 @@ class WishInsView(View):
         userId = request.GET["userId"]
         prodNum = request.GET["prodNum"]
         count = Wishlist.objects.filter(prodNum=prodNum).filter(userId=userId).count()  # 같은 상품번호 같은 아이디를 카운트
-        if userId and count == 0:   # 유저 아이디가 있을떄 그리고 카운트가 0 일 때 
+        if userId and count == 0:   # 유저 아이디가 있을떄 그리고 카운트가 0 일 때 ,같은 상품이 안들어가게함
             wish = Wishlist(        # 아이디와 상품을 wish에 넣는다
                 userId = Member.objects.get(userId=userId),
                 prodNum = Product.objects.get(prodNum=prodNum),
