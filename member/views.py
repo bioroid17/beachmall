@@ -147,30 +147,39 @@ class LogoutView(View):
 
 #로그인    
 class LoginView(View):
+    #post를 사용하기위해 먼저 정의해준다.
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
         return super(LoginView, self).dispatch(request , *args, **kwargs)
     def get(self, request):
-        
+        #쿠키에 memid가 있다면
         if request.session.get("memid"):
+            #인덱스 페이지로 가라
             return redirect("member:index")
+        #쿠키에 memid가 없다면
         else:
+            #로그인 페이지그대로 존재
             template=loader.get_template("login.html")
             context={
                 }
             return HttpResponse(template.render(context,request))
     def post(self, request):
+        #입력받는값
         userId = request.POST["id"]
         passwd = request.POST["passwd"]
         
         #유효성 검사
         try:
             dto = Member.objects.get(userId=userId)
+            # passwd가 Member테이블에 있는 것이라면 
             if passwd == dto.passwd:
                 request.session["memid"] = userId  #db에있는 userId, passwd가  입력한것이 같다면  session (파이썬에서는 쿠키에)
+                #설문지 조사테이블에 아이디가 있다면
                 if Answer.objects.filter(userId = userId ):
+                    #인덱스페이지로
                     return redirect("member:index")
                 else:
+                    #아이디가 인덱스페이지에 없다면
                     return redirect("survey:surveylist")
             else:
                 message = "비밀번호가 다릅니다"
@@ -240,12 +249,12 @@ class IdConfirmView(View):
         #결과가 0을 초기화 해준다
         result = 0
         try :  
-            # 아이디가 있다면
+            # Member테이블에 아이디가 없다면 userId에 넣어준다
             Member.objects.get(userId=userId)
-            #결과를 일로 받아 준다
+            # 결과를 일로 받아 준다
             result = 1
         except ObjectDoesNotExist :
-            # result =0 된다면 가입이 된다. -> idconfirm에서 확인할 수 있다.
+            # result = 0 된다면 가입이 안된다. -> idconfirm에서 확인할 수 있다.
             result = 0
         context= {
             "result" : result,
@@ -261,20 +270,23 @@ class IdConfirmView(View):
 #전화번호 중복성검사를 하는 곳이다.
 class TelConfirmView(View):
     def get(self, request):
-        #나눠 받은 전화번호를 받아준다
+        #join.html에서 tel1,tel2,tel3로 나눠진 값들이다
+        # 전화번호를 받아준다
         tel = ""
         tel1 = request.GET["tel1"]
         tel2 = request.GET["tel2"]
         tel3 = request.GET["tel3"]
-        #합쳐준다
+        #-를 포함해서 합쳐준다 tel이라는 변수에 합하기
         if tel1 and tel2 and tel3 :
             tel = tel1  + "-" + tel2 + "-" + tel3 
         result = 0
         try :  
+            # 없는 번호라면 값을 넣어준다. 
             Member.objects.get(tel=tel)
             result = 1
 
         except ObjectDoesNotExist :
+            # 있는 번호라면 값을 못넣게 된다 .  telconfirm.html을 확인해본다
             result = 0
             
         context= {
@@ -300,12 +312,15 @@ class MyOrderListView(View):
         #Order모델에서 userid와 로그인된 아이디가 같은것을 갖고안다
         ordercount = Order.objects.filter(userId=userId).count()
         #페이징
+        #pagenum을 get으로 갖고온다
         pagenum = request.GET.get( "pagenum" )
         if not pagenum :
+            #pagenum은 1로 시작하게 만들기
             pagenum = "1"
+        #문자를 숫자로 바꿔준다.    
         pagenum = int(pagenum)
-        start = ( pagenum - 1 ) * int(PAGE_SIZE)          # ( 5 - 1 ) * 10 + 1     41
-        end = start + int(PAGE_SIZE)                      # 41 + 10 - 1            50
+        start = ( pagenum - 1 ) * int(PAGE_SIZE)          # ( 5 - 1 ) * 10 + 1     41 페이지에갖고 올것 처음
+        end = start + int(PAGE_SIZE)                      # 41 + 10 - 1            50 페이지에갖고 올것 끝을 정해준다.
         if end > ordercount :
             end = ordercount
         #Order테이블에 userId와 로그인 상태 유저아이디가 같은것에서 처음과 끝을 최신순으로 갖고와서 orders라는 변수에 넣는다.
