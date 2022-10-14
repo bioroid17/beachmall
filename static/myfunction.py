@@ -1,7 +1,8 @@
 from product.models import Product
-import csv
 from member.models import Member
 from order.models import Order, OrderDetail
+import csv
+import pandas as pd
 
 """
 직접 정의한 함수들은 여기에 직접 작성해서 쓴다.
@@ -61,3 +62,23 @@ def recommendByGenderAge(userId):
         reco_sorted.sort(key=lambda x:x[1], reverse=True)
     
     return reco_sorted[0:6]
+
+def realtimeSearch():
+# 실시간 검색어 로그
+    searchlog = open("log/searchlog.log", "r", encoding="utf-8") # 로그 읽기
+    lines = csv.reader(searchlog)
+    count = 0
+    f = open("search.csv", "w", encoding="utf-8") # csv에 작성하기
+    for line in lines :
+        searchlog = line[1].split(" ")[5]
+        searchtitle = searchlog.split(":")[1]
+        f.write(searchtitle)
+        f.write("\r") # 줄바꿈
+    f.close()
+    
+    # 실시간 검색어 출력
+    searchrank = pd.read_csv("search.csv", encoding='utf-8') # 저장한 csv 읽기
+    searchrank.rename(columns={'하이힐':'title'}, inplace=True) # 칼럼이 '하이힐'로 먹음 변환해준것
+    sl = searchrank.groupby('title')['title'].count().reset_index(name='count') # 그룹으로 묶은것들의 갯수를 샌다음 count라는 칼럼명을 지정해줌
+    slh = sl.sort_values(by='count', ascending=False).head(10) # 위부터 10개만 뽑음
+    slr = slh.reset_index(drop=True) # 기존의 index 테이블 삭제

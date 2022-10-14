@@ -25,7 +25,7 @@ $(document).ready(
 	    $("#order").on(
             "click",
             function() {	// 카트의 길이가 0일 때 비어 있다는 메세지를 출력하고 주문을 실패한다
-            	if ("{{carts|length}}" == "0"){			
+            	if ($(".cart_row").length == "0"){			
             		alert("장바구니가 비어있습니다.");
             		return false;
             	}

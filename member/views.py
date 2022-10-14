@@ -224,6 +224,7 @@ class JoinView(View):
            name = request.POST["name"],
            age = request.POST["age"],
            gender = request.POST["gender"],
+           zonecode = request.POST["zonecode"],
            address = request.POST["addr"],
            detailaddr = request.POST["detailaddr"],
            email = email,
@@ -427,10 +428,9 @@ class ModifyView(View):
         if passwd == dto.passwd:
             template = loader.get_template("modifypro.html")
             #여기서 또 짤라준다 dto를 잘라서 template에서 사용하게 만들어준다
+            t = dto.tel.split("-")
             if dto.email :
                 e = dto.email.split("@")
-            if dto.tel :
-                t = dto.tel.split("-")
                 context = {
                     "dto" : dto,
                     "t" : t,
