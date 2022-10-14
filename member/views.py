@@ -81,7 +81,8 @@ class IndexView(View):
         order by sum(buyCount) DESC LIMIT 5
         """)
         
-        realtimeSearch()
+        rts = realtimeSearch()
+        
         context={
             "recommends":recommends,
             "userId":userId,
@@ -90,6 +91,7 @@ class IndexView(View):
             "frequentProducts":frequentProducts,
             "hotdeals":hotdeals,
             "reco_age_gender":reco_age_gender,
+            "rts":rts,
             }
         template=loader.get_template("index.html")
         return HttpResponse(template.render( context ,request))

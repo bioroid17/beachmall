@@ -265,15 +265,16 @@ video {
 				<div class="block"
 					style="position: absolute; width: 200px; display: inline-block; right: 400px; /* 창에서 오른쪽 길이 */ top: 75%; /* 창에서 위에서 부터의 높이 */ background-color: white; margin: 0; height: 40px;">
 					<ul id="ticker">
-						<li><a href="#"><span>1</span> 비치몰</a></li>
-						<li><a href="#"><span>2</span> 여름추천상품</a></li>
-						<li><a href="#"><span>3</span> 비키니</a></li>
-						<li><a href="#"><span>4</span> 삼겹살</a></li>
-						<li><a href="#"><span>5</span> 등심</a></li>
-						<li><a href="#"><span>6</span> 유이</a></li>
-						<li><a href="#"><span>7</span> 손나바카나</a></li>
-						<li><a href="#"><span>8</span> 손연재</a></li>
-						<li><a href="#"><span>9</span> 손짜이찌엔</a></li>
+						<li><a href="{% url 'search:searchResult' %}?kw={{rts.0}}"><span>1</span> {{rts.0}}</a></li>
+						<li><a href="{% url 'search:searchResult' %}?kw={{rts.1}}"><span>2</span> {{rts.1}}</a></li>
+						<li><a href="{% url 'search:searchResult' %}?kw={{rts.2}}"><span>3</span> {{rts.2}}</a></li>
+						<li><a href="{% url 'search:searchResult' %}?kw={{rts.3}}"><span>4</span> {{rts.3}}</a></li>
+						<li><a href="{% url 'search:searchResult' %}?kw={{rts.4}}"><span>5</span> {{rts.4}}</a></li>
+						<li><a href="{% url 'search:searchResult' %}?kw={{rts.5}}"><span>6</span> {{rts.5}}</a></li>
+						<li><a href="{% url 'search:searchResult' %}?kw={{rts.6}}"><span>7</span> {{rts.6}}</a></li>
+						<li><a href="{% url 'search:searchResult' %}?kw={{rts.7}}"><span>8</span> {{rts.7}}</a></li>
+						<li><a href="{% url 'search:searchResult' %}?kw={{rts.8}}"><span>9</span> {{rts.8}}</a></li>
+						<li><a href="{% url 'search:searchResult' %}?kw={{rts.9}}"><span>10</span> {{rts.9}}</a></li>
 					</ul>
 				</div>
 			</div>

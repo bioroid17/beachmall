@@ -80,6 +80,6 @@ def realtimeSearch():
     searchrank = pd.read_csv("log/searchlog.log", encoding='utf-8', names=["asctime", "levelname", "name:lineno", "id", "query", "pagenum", "from", "to"]) # 저장한 csv 읽기
     print(searchrank)
     sl = searchrank.groupby('query')['query'].count().reset_index(name='count') # 그룹으로 묶은것들의 갯수를 샌다음 count라는 칼럼명을 지정해줌
-    slh = sl.sort_values(by='query', ascending=False).head(10) # 위부터 10개만 뽑음
+    slh = sl.sort_values(by='count', ascending=False).head(10) # 위부터 10개만 뽑음
     slr = slh.reset_index(drop=True) # 기존의 index 테이블 삭제
-    print(slr)
+    return [row.split(":")[1] for row in slr["query"]]
