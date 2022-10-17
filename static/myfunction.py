@@ -8,7 +8,7 @@ import pandas as pd
 직접 정의한 함수들은 여기에 직접 작성해서 쓴다.
 """
 
-
+# 최근 본 상품
 def getRecentProduct(userId):
     
     productlog = open("log/productlog.log", 'r', encoding="utf-8")
