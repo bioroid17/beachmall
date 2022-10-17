@@ -25,14 +25,15 @@ class OrderView(View):
     def get(self, request):
         template = loader.get_template("order.html")
         memid = request.session.get("memid")
-        
+        # 로그인이 안되어 있을 당시
         if not memid:
             context= {
                 "message" : "로그인 후 이용하실 수 있습니다.",
                 }
         else:
+        # 로그인시
             member = Member.objects.get(userId=memid)
-            
+        # 카트와 상품을 iNNERjOIN해준다 카트의 상품번호와 상품테이블의 상품번호 같은것을 갖고온다 상품테이블의 가격과 카트의 갯수를 곱해준다.
             carts = Cart.objects.raw("""
             select c.cartNum, p.prodName, p.prodThumbnail, p.prodPrice, p.prodStock, c.buyCount, p.prodPrice*c.buyCount prodTotal
             from Product_Product p inner join Cart_Cart c
@@ -40,6 +41,7 @@ class OrderView(View):
             order by cartNum desc
             """, (memid,))
             totalPrice = 0
+            # carts에서 하나씩 빼서 더해준다. 총가격을 만들어준다.
             for cart in carts:
                 totalPrice += cart.prodTotal
             context = {
@@ -58,6 +60,7 @@ class OrderView(View):
     def post(self, request):
         template = loader.get_template("orderinfo.html")
         userId = request.POST["userId"]
+        # 카트와 상품을 iNNERjOIN해준다 카트의 상품번호와 상품테이블의 상품번호 같은것을 갖고온다 상품테이블의 가격과 카트의 갯수를 곱해준다.
         carts = Cart.objects.raw("""
         select c.cartNum, p.prodName, p.prodThumbnail, p.prodPrice, p.prodStock, c.buyCount, p.prodPrice*c.buyCount prodTotal
         from Product_Product p inner join Cart_Cart c
@@ -65,6 +68,7 @@ class OrderView(View):
         order by cartNum desc
         """, (userId,))
         
+        #cart.html에서 입력한갑을 orderINFO에 갖고온 것
         getterName = request.POST["getterName"]
         getterTel = request.POST["getterTel"]
         getterZonecode = request.POST["getterZonecode"]
@@ -107,13 +111,14 @@ class OrderDoneView(View):
         
         context = {}
         userId = request.POST["userId"]
+        #CART와 상품의 비교를위해 ㅇINNERJOIN해준다
         carts = Cart.objects.raw("""
         select c.cartNum, p.prodName, p.prodNum, p.prodPrice, p.prodStock, c.buyCount, p.prodPrice*c.buyCount prodTotal
         from Product_Product p inner join Cart_Cart c
         on p.prodNum=c.prodNum and c.userId=%s
         order by cartNum desc
         """, (userId,))
-        
+        #카트와 상품재고 하나씩 비교해주기위해 
         for cart in carts:
             if cart.prodStock < cart.buyCount:
                 context = {
@@ -121,14 +126,14 @@ class OrderDoneView(View):
                     }
                 return HttpResponse(template.render(context, request))
         
-        
+        #오더에서 넘어온 값들을 받느다.
         getterName = request.POST["getterName"]
         getterTel = request.POST["getterTel"]
         getterZonecode = request.POST["getterZonecode"]
         getterAddress = request.POST["getterAddress"]
         getterDetailAddr = request.POST["getterDetailAddr"]
         totalPrice = request.POST["totalPrice"]
-        
+        #오더 테이블에 저장해준다.
         order = Order(
             userId = userId,
             getterName = getterName,
@@ -141,9 +146,9 @@ class OrderDoneView(View):
             totalPrice = totalPrice,
             )
         order.save()
-        
+        #최신 ORDERNUM을 갖고온다.
         orderNum = Order.objects.order_by("-orderNum").first()
-        
+        #bulk_create 대량의 데이터를 INSERT해주기 위해 사용한다. 카트안에 있는 상품별로 객체를 설정해서 상품별 
         OrderDetail.objects.bulk_create(
             [OrderDetail(
                 orderNum=orderNum,
