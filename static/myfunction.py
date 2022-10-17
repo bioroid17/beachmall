@@ -37,6 +37,7 @@ def getRecentProduct(userId):
     
     return recentProducts
 
+# 성별과 연령대로 추천
 def recommendByGenderAge(userId):
     member = Member.objects.get(userId=userId)
     gender = member.gender
@@ -63,19 +64,8 @@ def recommendByGenderAge(userId):
     
     return reco_sorted[0:6]
 
+# 실시간 검색어
 def realtimeSearch():
-    # 실시간 검색어 로그
-    # searchlog = open("log/searchlog.log", "r", encoding="utf-8") # 로그 읽기
-    # lines = csv.reader(searchlog)
-    # count = 0
-    # f = open("search.csv", "w", encoding="utf-8") # csv에 작성하기
-    # for line in lines :
-    #     searchlog = line[1].split(" ")[5]
-    #     searchtitle = searchlog.split(":")[1]
-    #     f.write(searchtitle)
-    #     f.write("\r") # 줄바꿈
-    # f.close()
-    
     # 실시간 검색어 출력
     searchrank = pd.read_csv("log/searchlog.log", encoding='utf-8', names=["asctime", "levelname", "name:lineno", "id", "query", "pagenum", "from", "to"]) # 저장한 csv 읽기
     print(searchrank)
@@ -83,3 +73,10 @@ def realtimeSearch():
     slh = sl.sort_values(by='count', ascending=False).head(10) # 위부터 10개만 뽑음
     slr = slh.reset_index(drop=True) # 기존의 index 테이블 삭제
     return [row.split(":")[1] for row in slr["query"]]
+
+# 고객이 한번 구매한 상품을 다시 구매한다.
+def buyAgain():
+    pass
+# 설문조사 받은 내용으로 적용할 것
+def recommendBySurvey():
+    pass
