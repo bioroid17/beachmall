@@ -6,3 +6,4 @@ class Cart(models.Model):
     userId = models.ForeignKey("member.Member", on_delete=models.CASCADE, db_column="userId")
     prodNum = models.ForeignKey("product.Product", on_delete=models.CASCADE, db_column="prodNum")
     buyCount = models.IntegerField(verbose_name="선택한 상품의 수량", null=False)
+    is_active = models.BooleanField(verbose_name="활성화 여부", null=False, default=True)

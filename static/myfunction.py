@@ -75,8 +75,13 @@ def realtimeSearch():
     return [row.split(":")[1] for row in slr["query"]]
 
 # 고객이 한번 구매한 상품을 다시 구매한다.
-def buyAgain():
-    pass
+def buyAgain(userId):
+    buylist = []
+    orders = Order.objects.filter(userId=userId)
+    for order in orders:
+        orderDetails = OrderDetail.objects.filter(orderNum=order.orderNum.orderNum)
+        # for
+
 # 설문조사 받은 내용으로 적용할 것
 def recommendBySurvey():
     pass
