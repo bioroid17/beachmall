@@ -17,7 +17,8 @@ from cart.models import Cart
 from refund.models import Refund
 from product.choice import BRAND_CHOICE
 import logging, csv
-from static.myfunction import recommendByGenderAge, realtimeSearch
+from static.myfunction import recommendByGenderAge, realtimeSearch,\
+    recommendByCartWishOrder
 
 PAGE_SIZE = 5
 PAGE_BLOCK = 3
@@ -82,7 +83,7 @@ class IndexView(View):
         """)
         
         rts = realtimeSearch()
-        
+        recommendByCartWishOrder()
         context={
             "recommends":recommends,
             "userId":userId,

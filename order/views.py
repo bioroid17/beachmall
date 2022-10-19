@@ -167,7 +167,7 @@ class OrderDoneView(View):
             product.save()
             cart.delete()
         
-        logger.info("id:"+userId+",orderNum:"+str(orderNum)+",getterName:"+getterName+",getterTel:"+getterTel+",getterZonecode:"+str(getterZonecode)+",getterAddress:"+getterAddress+
+        logger.info("id:"+userId+",orderNum:"+str(orderNum.orderNum)+",getterName:"+getterName+",getterTel:"+getterTel+",getterZonecode:"+str(getterZonecode)+",getterAddress:"+getterAddress+
                     ",getterDetailAddr:"+getterDetailAddr+",totalPrice:"+totalPrice+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         
         return HttpResponse(template.render(context, request))
