@@ -50,7 +50,7 @@ class OrderView(View):
                 "member" : member,
                 "totalPrice" : totalPrice
                 }
-            logger.info("id:"+memid+",,,,,,,,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
+            logger.info("id:"+memid+",,,,,,,,,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         return HttpResponse(template.render(context, request))
     """
     입력한 수취인의 정보를 post 방식으로 넘길 때 실행한다.
@@ -90,7 +90,7 @@ class OrderView(View):
             "carts" : carts,
             "totalPrice" : totalPrice,
             }
-        logger.info("id:"+userId+",,getterName:"+getterName+",getterTel:"+getterTel+",getterZonecode:"+getterZonecode+",getterAddress:"+getterAddress+
+        logger.info("id:"+userId+",,,getterName:"+getterName+",getterTel:"+getterTel+",getterZonecode:"+getterZonecode+",getterAddress:"+getterAddress+
                     ",getterDetailAddr:"+getterDetailAddr+",totalPrice:"+totalPrice+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         
         return HttpResponse(template.render(context, request))
@@ -166,9 +166,9 @@ class OrderDoneView(View):
             product.prodStock -= cart.buyCount
             product.save()
             cart.delete()
+            logger.info("id:"+userId+",prodNum:"+str(product.prodNum)+",orderNum:"+str(orderNum.orderNum)+",getterName:"+getterName+",getterTel:"+getterTel+",getterZonecode:"+str(getterZonecode)+
+                        ",getterAddress:"+getterAddress+",getterDetailAddr:"+getterDetailAddr+",totalPrice:"+totalPrice+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         
-        logger.info("id:"+userId+",orderNum:"+str(orderNum.orderNum)+",getterName:"+getterName+",getterTel:"+getterTel+",getterZonecode:"+str(getterZonecode)+",getterAddress:"+getterAddress+
-                    ",getterDetailAddr:"+getterDetailAddr+",totalPrice:"+totalPrice+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         
         return HttpResponse(template.render(context, request))
     

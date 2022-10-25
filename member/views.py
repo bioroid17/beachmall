@@ -18,7 +18,7 @@ from refund.models import Refund
 from product.choice import BRAND_CHOICE
 import logging, csv
 from static.myfunction import recommendByGenderAge, realtimeSearch,\
-    recommendByCartWishOrder
+    recommendByCartWishOrder, recommend
 
 PAGE_SIZE = 5
 PAGE_BLOCK = 3
@@ -83,7 +83,10 @@ class IndexView(View):
         """)
         
         rts = realtimeSearch()
-        recommendByCartWishOrder()
+        ordercounts = Order.objects.filter(userId=userId).count()
+        if ordercounts > 0:
+            cartwishorder_recommends = recommendByCartWishOrder(userId)
+            recommends = [Product.objects.get(prodNum=int(index.split(":")[1])) for index in cartwishorder_recommends.index]
         context={
             "recommends":recommends,
             "userId":userId,

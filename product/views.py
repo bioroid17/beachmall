@@ -50,7 +50,8 @@ class ProductDetailView(View):
         pages = range(startpage, endpage + 1)
         
         userId = request.session.get("memid")
-        logger.info("id:"+userId+",prodNum:"+str(product.prodNum)+",prodName:"+product.prodName+",brand:"+product.brand+",,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
+        if userId:
+            logger.info("id:"+userId+",prodNum:"+str(product.prodNum)+",prodName:"+product.prodName+",brand:"+product.brand+",,from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         
         recentProducts = getRecentProduct(userId)
         
@@ -133,7 +134,8 @@ class ProductCategoryView(View):
             "minamount" : minamount,
             "maxamount" : maxamount,
             }
-        logger.info("id:"+userId+",,,,pageNum:"+str(pagenum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
+        if userId:
+            logger.info("id:"+userId+",,,,pageNum:"+str(pagenum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         return HttpResponse(template.render( context ,request))
     def post(self,request):
         pass
@@ -196,7 +198,8 @@ class WaterRocketView(View):
             "pagecount" : pagecount,
             "recentProducts" : recentProducts,
             }
-        logger.info("id:"+userId+",,,,pageNum:"+str(pagenum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
+        if userId:
+            logger.info("id:"+userId+",,,,pageNum:"+str(pagenum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         return HttpResponse(template.render( context ,request))
     def post(self,request):
         pass
@@ -261,7 +264,8 @@ class ProductListView(View):
             "recentProducts" : recentProducts,
             "lastProducts" : lastProducts,
             }
-        logger.info("id:"+userId+",,,brand:"+brand+",pageNum:"+str(pagenum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
+        if userId:
+            logger.info("id:"+userId+",,,brand:"+brand+",pageNum:"+str(pagenum)+",from:"+request.META["HTTP_REFERER"]+",to:"+request.get_full_path())
         return HttpResponse(template.render( context, request))
     def post(self,request):
         pass

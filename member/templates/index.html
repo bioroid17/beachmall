@@ -52,6 +52,7 @@
 		</div>
 	</section>
 	<!-- 오늘의 상품추천 -->
+	{% if userId %}
 	<form method="GET" name="recoprod">
 
 		<div class="col-lg-9 col-md-7">
@@ -68,20 +69,20 @@
 						<div class="col-lg-4">
 							<div class="product__discount__item">
 								<div class="product__discount__item__pic set-bg"
-									data-setbg="{{recommend.prodNum.prodImage1.url}}">
+									data-setbg="{{recommend.prodImage1.url}}">
 									<div class="product__discount__percent">-10%</div>
 									<ul class="product__item__pic__hover">
-										<li><a href="{% url 'wishlist:wishins' %}?userId={{request.session.memid}}&prodNum={{recommend.prodNum.prodNum}}"><i class="fa fa-heart"></i></a></li>
-										<li><a href="{% url 'cart:cartins' %}?userId={{request.session.memid}}&prodNum={{recommend.prodNum.prodNum}}&buyCount=1"><i class="fa fa-shopping-cart"></i></a></li>
+										<li><a href="{% url 'wishlist:wishins' %}?userId={{request.session.memid}}&prodNum={{recommend.prodNum}}"><i class="fa fa-heart"></i></a></li>
+										<li><a href="{% url 'cart:cartins' %}?userId={{request.session.memid}}&prodNum={{recommend.prodNum}}&buyCount=1"><i class="fa fa-shopping-cart"></i></a></li>
 									</ul>
 								</div>
 								<div class="product__discount__item__text">
-									<span>{{recommend.prodNum.brand}}</span>
+									<span>{{recommend.brand}}</span>
 									<h5>
-										<a href="{% url 'product:productDetail' %}?prodNum={{recommend.prodNum.prodNum}}">{{recommend.prodNum.prodName}}</a>
+										<a href="{% url 'product:productDetail' %}?prodNum={{recommend.prodNum}}">{{recommend.prodName}}</a>
 									</h5>
 									<div class="product__item__price">
-										{{recommend.prodNum.prodPrice|intcomma }}원 <span>{{recommend.prodNum.prodPrice|mul:1.1|floatformat:"0"|intcomma }}원</span>
+										{{recommend.prodPrice|intcomma }}원 <span>{{recommend.prodPrice|mul:1.1|floatformat:"0"|intcomma }}원</span>
 									</div>
 								</div>
 							</div>
@@ -92,6 +93,7 @@
 			</div>
 		</div>
 	</form>
+	{% endif %}
 	<!-- 오늘의 상품추천 -->
 	<div class="col-lg-9 col-md-7">
 		<div class="product__discount">

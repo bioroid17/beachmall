@@ -125,8 +125,8 @@ video {
 
 .nav-right2 {
 	position: absolute;
-	right: 12%;
-	top: 10%;
+	right: 3%;
+	top: 3%;
 	list-style: none;
 	z-index: 10;
 	border: 1px solid silver;
@@ -262,14 +262,15 @@ video {
 					</div>
 				</nav>
 				<!--검색어 순위-->
-				<div class="block"
-					style="position: absolute; width: 200px; display: inline-block; right: 400px; /* 창에서 오른쪽 길이 */ top: 75%; /* 창에서 위에서 부터의 높이 */ background-color: white; margin: 0; height: 40px;">
+				{% if request.path == "/member/index" %}
+				<div class="block" style="position: absolute; width: 200px; display: inline-block; right: 20%; /* 창에서 오른쪽 길이 */ top: 75%; /* 창에서 위에서 부터의 높이 */ background-color: white; margin: 0; height: 40px;">
 					<ul id="ticker">
 						{% for rt in rts %}
 						<li><a href="{% url 'search:searchResult' %}?kw={{rt}}"><span>{{forloop.counter}}</span> {{rt}}</a></li>
 						{% endfor %}
 					</ul>
 				</div>
+				{% endif %}
 			</div>
 			<input class="goupbtn" type="button" onclick="clickme()">
 		</header>
