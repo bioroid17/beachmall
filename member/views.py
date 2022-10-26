@@ -17,8 +17,7 @@ from cart.models import Cart
 from refund.models import Refund
 from product.choice import BRAND_CHOICE
 import logging, csv
-from static.myfunction import recommendByGenderAge, realtimeSearch,\
-    recommendByCartWishOrder, recommend
+from static.myfunction import realtimeSearch, recommendByCartWishOrder, gender_age_recommend
 
 PAGE_SIZE = 5
 PAGE_BLOCK = 3
@@ -71,9 +70,10 @@ class IndexView(View):
         
         productlog.close()
         
-        reco_age_gender = []
+        gender_age_recos = []
         if userId != None and userId != "":
-            reco_age_gender = recommendByGenderAge(userId)
+            recos = gender_age_recommend(userId)
+            gender_age_recos = [Product.objects.get(prodNum=index) for index in recos.index]
         #OrderDetail.prodNum과 Product.prodNum 같은것을 연결해준. hotdeal객체를 사용하여 많이 구매한 상품을 띄어준다
         hotdeals = OrderDetail.objects.raw("""
         select od.orderDetailNum, od.orderNum, od.prodName, od.prodPrice, od.prodThumbnail, p.prodNum, p.brand
@@ -86,7 +86,7 @@ class IndexView(View):
         ordercounts = Order.objects.filter(userId=userId).count()
         if ordercounts > 0:
             cartwishorder_recommends = recommendByCartWishOrder(userId)
-            recommends = [Product.objects.get(prodNum=int(index.split(":")[1])) for index in cartwishorder_recommends.index]
+            recommends = [Product.objects.get(prodNum=index) for index in cartwishorder_recommends.index]
         context={
             "recommends":recommends,
             "userId":userId,
@@ -94,7 +94,7 @@ class IndexView(View):
             "brands":BRAND_CHOICE,
             "frequentProducts":frequentProducts,
             "hotdeals":hotdeals,
-            "reco_age_gender":reco_age_gender,
+            "gender_age_recos":gender_age_recos,
             "rts":rts,
             }
         template=loader.get_template("index.html")
