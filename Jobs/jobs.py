@@ -22,7 +22,7 @@ def schedule_api():
             reco1.save()
             reco2.save()
             print("%s 저장 완료" % user.userId)
-        except KeyError:
+        except Exception:
             print("%s 저장 실패" % user.userId)
             continue
     print("추천 저장 완료")
