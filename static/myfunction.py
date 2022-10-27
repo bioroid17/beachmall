@@ -190,6 +190,6 @@ def gender_age_recommend(userId):
     no_buys = no_buy(cart_order_matrix, user_gender_age)
     recommend_item = recommend(item_df, user_gender_age, no_buys, 10)
     recommend_df = pd.DataFrame(recommend_item.values, index=recommend_item.index, columns=["predict_score"])
-    print(recommend_df)
+    # print(str(list(recommend_df.index)))
     
     return recommend_df

@@ -3,6 +3,6 @@ from recommend.models import Recommend
 
 # Register your models here.
 class RecommendAdmin(admin.ModelAdmin):
-    list_display = ("recommendNum","prodNum","status")
+    list_display = ("recommendNum", "userId", "prodList", "status")
 
 admin.site.register(Recommend, RecommendAdmin)

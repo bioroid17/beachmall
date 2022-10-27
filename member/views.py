@@ -18,6 +18,7 @@ from refund.models import Refund
 from product.choice import BRAND_CHOICE
 import logging, csv
 from static.myfunction import realtimeSearch, recommendByCartWishOrder, gender_age_recommend
+import json
 
 PAGE_SIZE = 5
 PAGE_BLOCK = 3
@@ -28,8 +29,6 @@ logger = logging.getLogger(__name__)
 class IndexView(View):
     def get (self,request):
         userId = request.session.get("memid")
-        #Recommend어플에서 모델을 사용해서, 최신순으로 정렬을 하게한다 
-        recommends = Recommend.objects.order_by("-recommendNum")
         
         #로그를 이용해서 최근본 상품을 사용한다.
         productlog = open("log/productlog.log", 'r', encoding="utf-8")
@@ -71,9 +70,13 @@ class IndexView(View):
         productlog.close()
         
         gender_age_recos = []
-        if userId != None and userId != "":
-            recos = gender_age_recommend(userId)
-            gender_age_recos = [Product.objects.get(prodNum=index) for index in recos.index]
+        if userId:
+            try:
+                recos = Recommend.objects.filter(userId=userId).filter(status="gender_age").order_by("-recommendNum").first().prodList
+                recommends = json.loads(recos)
+                gender_age_recos = [Product.objects.get(prodNum=prodNum) for prodNum in recommends]
+            except (ObjectDoesNotExist, AttributeError):
+                gender_age_recos = []
         #OrderDetail.prodNum과 Product.prodNum 같은것을 연결해준. hotdeal객체를 사용하여 많이 구매한 상품을 띄어준다
         hotdeals = OrderDetail.objects.raw("""
         select od.orderDetailNum, od.orderNum, od.prodName, od.prodPrice, od.prodThumbnail, p.prodNum, p.brand
@@ -84,11 +87,16 @@ class IndexView(View):
         
         rts = realtimeSearch()
         ordercounts = Order.objects.filter(userId=userId).count()
+        cartwishorder_recos = []
         if ordercounts > 0:
-            cartwishorder_recommends = recommendByCartWishOrder(userId)
-            recommends = [Product.objects.get(prodNum=index) for index in cartwishorder_recommends.index]
+            try:
+                recos = Recommend.objects.filter(userId=userId).filter(status="cart_wish_order").order_by("-recommendNum").first().prodList
+                recommends = json.loads(recos)
+                cartwishorder_recos = [Product.objects.get(prodNum=prodNum) for prodNum in recommends]
+            except (ObjectDoesNotExist, AttributeError):
+                cartwishorder_recos = []
         context={
-            "recommends":recommends,
+            "cartwishorder_recos":cartwishorder_recos,
             "userId":userId,
             "recentProducts":recentProducts,
             "brands":BRAND_CHOICE,
