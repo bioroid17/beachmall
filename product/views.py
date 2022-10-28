@@ -8,6 +8,8 @@ from product.choice import BRAND_CHOICE
 from reviewboard.models import Reviewboard
 from recommend.models import Recommend
 from static.myfunction import getRecentProduct
+from django.core.exceptions import ObjectDoesNotExist
+import json
 
 # Create your views here.
 logger = logging.getLogger( __name__ )
@@ -112,7 +114,16 @@ class ProductCategoryView(View):
         pages = range( startpage, endpage+1 )
         
         lastProducts = Product.objects.order_by("-prodNum")[0:5]
-        recommends = Recommend.objects.order_by("-recommendNum")
+
+        recommends = []
+        userId = request.session.get("memid")
+        if userId:
+            try:
+                recos = Recommend.objects.filter(userId=userId).filter(status="gender_age").order_by("-recommendNum").first().prodList
+                gender_age_recos = json.loads(recos)
+                recommends = [Product.objects.get(prodNum=prodNum) for prodNum in gender_age_recos]
+            except (ObjectDoesNotExist, AttributeError):
+                recommends = []
         
         userId = request.session.get("memid")
         recentProducts = getRecentProduct(userId)
@@ -179,7 +190,16 @@ class WaterRocketView(View):
         pages = range( startpage, endpage+1 )
 
         lastProducts = Product.objects.order_by("-prodNum")[0:5]
-        recommends = Recommend.objects.order_by("-recommendNum")
+        
+        recommends = []
+        userId = request.session.get("memid")
+        if userId:
+            try:
+                recos = Recommend.objects.filter(userId=userId).filter(status="gender_age").order_by("-recommendNum").first().prodList
+                gender_age_recos = json.loads(recos)
+                recommends = [Product.objects.get(prodNum=prodNum) for prodNum in gender_age_recos]
+            except (ObjectDoesNotExist, AttributeError):
+                recommends = []
         
         userId = request.session.get("memid")
         recentProducts = getRecentProduct(userId)
