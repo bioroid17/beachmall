@@ -82,6 +82,7 @@
 				</div>
 			</div>
 			<div class="col-lg-9 col-md-7">
+				{% if request.session.memid %}
 				<div class="product__discount">
 					<div class="section-title product__discount__title">
 						<img src="../static/images/waterrocket.png"
@@ -121,6 +122,7 @@
 						</div>
 					</div>
 				</div>
+				{% endif %}
 				<div class="filter__item">
 					<div class="section-title product__discount__title">
 						<img src="../static/images/waterrocket.png"
