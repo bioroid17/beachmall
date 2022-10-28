@@ -346,10 +346,17 @@ class MyOrderListView(View):
             
         orders = Order.objects.filter(userId=userId).order_by("-orderNum")[start:end]
         orderdetaillist = []
-        
         for order in orders:
-            orderdetails = OrderDetail.objects.filter(orderNum=order.orderNum).order_by("orderDetailNum").values()  # 딕셔너리 여러개가 든 리스트 형태로 반환 
-            orderdetaillist.append(orderdetails)
+            refundlist = []
+            orderdetails = OrderDetail.objects.filter(orderNum=order.orderNum).order_by("orderDetailNum").values()  # 딕셔너리 여러개가 든 리스트 형태로 반환
+            for orderdetail in orderdetails:
+                try:
+                    refundstatus = Refund.objects.get(orderDetailNum=orderdetail["orderDetailNum"]).status
+                except ObjectDoesNotExist:
+                    refundstatus = 'x'
+                refundlist.append(refundstatus)
+            
+            orderdetaillist.append(zip(orderdetails, refundlist))
         orderlist = zip(orders, orderdetaillist)
         
         number = ordercount - ( pagenum - 1 ) * int(PAGE_SIZE )

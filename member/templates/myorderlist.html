@@ -103,7 +103,7 @@
 								<span><a href="{% url 'member:myorderdetail' %}?orderNum={{order.orderNum}}">주문 상세보기</a></span>
 							</div>
 						</div>
-						{% for orderdetail in orderdetails %}
+						{% for orderdetail, refund in orderdetails %}
 						<div class="after_order">
 							<div>
 								<div>
@@ -162,8 +162,10 @@
 										<td class="after_td_sh_od">
 											<div class="after_td_sh_od_div">
 												<button class="after_td_sh_od_div_button1">배송완료</button>
-												{% if orderdetail.is_refunded %}
-												<button class="after_td_sh_od_div_button2" disabled>이미 반품된 상품입니다.</button>
+												{% if refund == 'y' %}
+												<button class="after_td_sh_od_div_button2" disabled>이미 처리된 상품입니다.</button>
+												{% elif refund == 'n' %}
+												<button class="after_td_sh_od_div_button2" disabled>반품/환불/교환 진행중</button>
 												{% else %}
 												<button class="after_td_sh_od_div_button2"
 													onclick="location='{% url 'refund:refundregister' %}?orderDetailNum={{orderdetail.orderDetailNum}}'">반품/환불/교환</button>
