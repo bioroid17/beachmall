@@ -1,0 +1,691 @@
+[2022-10-18 10:56:32],INFO,[product.views:136],id:aaa,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/productCategory
+[2022-10-18 10:56:37],INFO,[product.views:53],id:aaa,prodNum:540,prodName:수영복_여자수영복_우먼어비셜래쉬가드블랙,brand:Seafolly,,from:http://localhost:8000/product/productCategory,to:/product/productDetail?prodNum=540
+[2022-10-18 10:56:40],INFO,[product.views:53],id:aaa,prodNum:541,prodName:수영복_여자수영복_하트넥비키니세트,brand:Seafolly,,from:http://localhost:8000/product/productCategory,to:/product/productDetail?prodNum=541
+[2022-10-18 10:56:44],INFO,[product.views:53],id:aaa,prodNum:539,prodName:수영복_여자수영복_올라운더스윔웨어이지오프원피스,brand:Seafolly,,from:http://localhost:8000/product/productCategory,to:/product/productDetail?prodNum=539
+[2022-10-18 10:56:49],INFO,[product.views:53],id:aaa,prodNum:538,prodName:수영복_여자수영복_오프숄더리본원피스,brand:Seafolly,,from:http://localhost:8000/product/productCategory,to:/product/productDetail?prodNum=538
+[2022-10-18 10:56:55],INFO,[product.views:53],id:aaa,prodNum:534,prodName:수영복_여자수영복_브이컷크롭탑비키니,brand:Seafolly,,from:http://localhost:8000/product/productCategory,to:/product/productDetail?prodNum=534
+[2022-10-18 10:56:58],INFO,[product.views:53],id:aaa,prodNum:527,prodName:수영복_여자래쉬가드_홀리데이퍼프소매모노키니원피스,brand:Seafolly,,from:http://localhost:8000/product/productCategory,to:/product/productDetail?prodNum=527
+[2022-10-18 10:57:01],INFO,[product.views:136],id:aaa,,,,pageNum:3,from:http://localhost:8000/product/productCategory,to:/product/productCategory?pagenum=3
+[2022-10-18 10:57:05],INFO,[product.views:53],id:aaa,prodNum:501,prodName:수영복__남자수영복_맨무브집업래쉬가드,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=3,to:/product/productDetail?prodNum=501
+[2022-10-18 10:57:10],INFO,[product.views:53],id:aaa,prodNum:497,prodName:수영복__남자수영복_남성서프자켓carbonblack,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=3,to:/product/productDetail?prodNum=497
+[2022-10-18 10:57:13],INFO,[product.views:136],id:aaa,,,,pageNum:5,from:http://localhost:8000/product/productCategory?pagenum=3,to:/product/productCategory?pagenum=5
+[2022-10-18 10:57:17],INFO,[product.views:53],id:aaa,prodNum:479,prodName:트레블키트,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=479
+[2022-10-18 10:57:20],INFO,[product.views:53],id:aaa,prodNum:476,prodName:아이스박스,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=476
+[2022-10-18 10:57:23],INFO,[product.views:53],id:aaa,prodNum:477,prodName:아쿠아슈즈,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=477
+[2022-10-18 10:57:26],INFO,[product.views:53],id:aaa,prodNum:475,prodName:아기튜브,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=475
+[2022-10-18 10:57:29],INFO,[product.views:53],id:aaa,prodNum:474,prodName:선크림,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=474
+[2022-10-18 10:57:36],INFO,[product.views:53],id:aaa,prodNum:473,prodName:선배드,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=473
+[2022-10-18 10:57:39],INFO,[product.views:53],id:aaa,prodNum:470,prodName:스마트 카트_블랙,brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=470
+[2022-10-18 10:57:42],INFO,[product.views:53],id:aaa,prodNum:471,prodName:서핑보드,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=471
+[2022-10-18 10:57:44],INFO,[product.views:53],id:aaa,prodNum:472,prodName:선배드,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=472
+[2022-10-18 10:57:47],INFO,[product.views:53],id:aaa,prodNum:468,prodName:스마트 카트_소이밀크,brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=468
+[2022-10-18 10:57:50],INFO,[product.views:53],id:aaa,prodNum:467,prodName:샌들,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=467
+[2022-10-18 10:58:05],INFO,[product.views:136],id:aaa,,,,pageNum:6,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productCategory?pagenum=6
+[2022-10-18 10:58:09],INFO,[product.views:53],id:aaa,prodNum:466,prodName:노스피크 티타늄 머그 싱글 레이어,brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productDetail?prodNum=466
+[2022-10-18 10:58:13],INFO,[product.views:53],id:aaa,prodNum:465,prodName:클리브랜드 알루미늄 폴 세트 (무광),brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productDetail?prodNum=465
+[2022-10-18 10:58:17],INFO,[product.views:53],id:aaa,prodNum:462,prodName:가이 라인 스트링 ( GUY LINE STRING ),brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productDetail?prodNum=462
+[2022-10-18 10:58:21],INFO,[product.views:53],id:aaa,prodNum:463,prodName:컴팩트 스트랩,brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productDetail?prodNum=463
+[2022-10-18 10:58:24],INFO,[product.views:53],id:aaa,prodNum:461,prodName:슬라이딩 업라이트 폴,brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productDetail?prodNum=461
+[2022-10-18 10:58:29],INFO,[product.views:53],id:aaa,prodNum:462,prodName:가이 라인 스트링 ( GUY LINE STRING ),brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productDetail?prodNum=462
+[2022-10-18 10:58:33],INFO,[product.views:53],id:aaa,prodNum:456,prodName:노스피크 데칼 스티커 (NOPK DECAL STICKER),brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productDetail?prodNum=456
+[2022-10-24 17:08:52],INFO,[product.views:136],id:aaa,,,,pageNum:1,from:http://localhost:8000/cart/cart,to:/product/productCategory
+[2022-10-24 17:23:58],INFO,[product.views:136],id:bbb,,,,pageNum:1,from:http://localhost:8000/wishlist/wish,to:/product/productCategory
+[2022-10-24 17:24:30],INFO,[product.views:136],id:bbb,,,,pageNum:1,from:http://localhost:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 09:47:17],INFO,[product.views:264],id:jy,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arena
+[2022-10-25 09:47:24],INFO,[product.views:264],id:jy,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 09:47:25],INFO,[product.views:264],id:jy,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Military
+[2022-10-25 09:47:29],INFO,[product.views:53],id:jy,prodNum:417,prodName:핀란드군장,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=417
+[2022-10-25 09:47:56],INFO,[product.views:264],id:jy,,,brand:Military,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productList?brand=Military&pagenum=2
+[2022-10-25 09:47:58],INFO,[product.views:264],id:jy,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Military&pagenum=2,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 09:48:02],INFO,[product.views:53],id:jy,prodNum:412,prodName:롱 릴렉스 체어_블랙,brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productDetail?prodNum=412
+[2022-10-25 09:50:35],INFO,[product.views:264],id:jy,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 09:50:37],INFO,[product.views:264],id:jy,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productList?brand=Hoog
+[2022-10-25 09:50:42],INFO,[product.views:264],id:jy,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productList?brand=Food
+[2022-10-25 09:50:44],INFO,[product.views:53],id:jy,prodNum:411,prodName:전투식량,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=411
+[2022-10-25 09:51:10],INFO,[product.views:264],id:jy,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 09:51:16],INFO,[product.views:53],id:jy,prodNum:534,prodName:수영복_여자수영복_브이컷크롭탑비키니,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productDetail?prodNum=534
+[2022-10-25 09:51:26],INFO,[product.views:264],id:zxc,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Military
+[2022-10-25 09:51:31],INFO,[product.views:136],id:bbb,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/productCategory
+[2022-10-25 09:51:37],INFO,[product.views:264],id:jy,,,brand:Seafolly,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Seafolly&pagenum=2
+[2022-10-25 09:51:50],INFO,[product.views:264],id:jy,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly&pagenum=2,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 09:51:52],INFO,[product.views:264],id:jy,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Food
+[2022-10-25 09:52:07],INFO,[product.views:136],id:bbb,,,,pageNum:1,from:http://localhost:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 09:52:12],INFO,[product.views:136],id:bbb,,,,pageNum:6,from:http://localhost:8000/product/productCategory,to:/product/productCategory?pagenum=6
+[2022-10-25 09:52:16],INFO,[product.views:264],id:jy,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Speedo
+[2022-10-25 09:52:18],INFO,[product.views:53],id:bbb,prodNum:458,prodName:알루미늄 스토퍼 ( ALUMINUM STOPPER ),brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productDetail?prodNum=458
+[2022-10-25 09:52:31],INFO,[product.views:264],id:jy,,,brand:Speedo,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productList?brand=Speedo&pagenum=2
+[2022-10-25 09:52:31],INFO,[product.views:53],id:bbb,prodNum:452,prodName:더블 액션 파워 펌프용 듀얼 어댑터 & 호스,brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productDetail?prodNum=452
+[2022-10-25 09:52:34],INFO,[product.views:264],id:jy,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Speedo&pagenum=2,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 09:52:37],INFO,[product.views:53],id:jy,prodNum:486,prodName:더블탭 텀블러_15oz (440ml),brand:Rash pl.,,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productDetail?prodNum=486
+[2022-10-25 09:52:41],INFO,[product.views:136],id:bbb,,,,pageNum:7,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productCategory?pagenum=7
+[2022-10-25 09:52:44],INFO,[product.views:264],id:jy,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productList?brand=Seafolly
+[2022-10-25 09:52:48],INFO,[product.views:264],id:jy,,,brand:Seafolly,pageNum:4,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Seafolly&pagenum=4
+[2022-10-25 09:52:52],INFO,[product.views:53],id:bbb,prodNum:440,prodName:모기퇴치제,brand:Seafolly,,from:http://localhost:8000/product/productCategory?pagenum=7,to:/product/productDetail?prodNum=440
+[2022-10-25 09:52:52],INFO,[product.views:53],id:jy,prodNum:481,prodName:무지개 튜브,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Seafolly&pagenum=4,to:/product/productDetail?prodNum=481
+[2022-10-25 09:53:14],INFO,[product.views:199],id:jy,,,,pageNum:1,from:http://192.168.0.113:8000/member/myorderlist,to:/product/waterRocket
+[2022-10-25 09:53:15],INFO,[product.views:136],id:jy,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 09:53:19],INFO,[product.views:136],id:jy,,,,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory
+[2022-10-25 09:53:22],INFO,[product.views:264],id:jy,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Hoog
+[2022-10-25 09:53:26],INFO,[product.views:53],id:jy,prodNum:537,prodName:수영복_여자수영복_아리엘스윔드레스,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=537
+[2022-10-25 09:53:54],INFO,[product.views:136],id:bbb,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/productCategory
+[2022-10-25 09:54:03],INFO,[product.views:136],id:bbb,,,,pageNum:3,from:http://localhost:8000/product/productCategory,to:/product/productCategory?pagenum=3
+[2022-10-25 09:54:07],INFO,[product.views:136],id:zx,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 09:54:08],INFO,[product.views:264],id:zx,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Hoog
+[2022-10-25 09:54:12],INFO,[product.views:53],id:zx,prodNum:54,prodName:해먹,brand:Hoog,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=54
+[2022-10-25 09:54:19],INFO,[product.views:136],id:zx,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 09:54:23],INFO,[product.views:264],id:zx,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Military
+[2022-10-25 09:54:25],INFO,[product.views:264],id:zx,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productList?brand=Hoog
+[2022-10-25 09:55:23],INFO,[product.views:264],id:z,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Buffalo
+[2022-10-25 09:55:28],INFO,[product.views:53],id:z,prodNum:110,prodName:파스텔피크닉매트120X150,brand:Buffalo,,from:http://192.168.0.113:8000/product/productList?brand=Buffalo,to:/product/productDetail?prodNum=110
+[2022-10-25 09:56:00],INFO,[product.views:264],id:jy,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 09:56:01],INFO,[product.views:264],id:jy,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Hoog
+[2022-10-25 09:56:04],INFO,[product.views:264],id:jy,,,brand:Hoog,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productList?brand=Hoog&pagenum=2
+[2022-10-25 09:56:06],INFO,[product.views:264],id:jy,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Hoog&pagenum=2,to:/product/productList?brand=Hoog
+[2022-10-25 09:56:09],INFO,[product.views:264],id:jy,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productList?brand=Buffalo
+[2022-10-25 09:56:17],INFO,[product.views:264],id:jy,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Buffalo,to:/product/productList?brand=Speedo
+[2022-10-25 09:56:18],INFO,[product.views:264],id:jy,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 09:56:20],INFO,[product.views:264],id:jy,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Military
+[2022-10-25 09:56:23],INFO,[product.views:264],id:c,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=U.seven
+[2022-10-25 09:56:24],INFO,[product.views:264],id:jy,,,brand:Military,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productList?brand=Military&pagenum=2
+[2022-10-25 09:56:25],INFO,[product.views:264],id:c,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=U.seven,to:/product/productList?brand=Food
+[2022-10-25 09:56:26],INFO,[product.views:53],id:jy,prodNum:115,prodName:밀리터리 도끼,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military&pagenum=2,to:/product/productDetail?prodNum=115
+[2022-10-25 09:56:28],INFO,[product.views:53],id:c,prodNum:257,prodName:표고버섯,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=257
+[2022-10-25 09:56:44],INFO,[product.views:264],id:c,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Food
+[2022-10-25 09:56:47],INFO,[product.views:264],id:c,,,brand:Food,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=2
+[2022-10-25 09:57:03],INFO,[product.views:136],id:jy,,,,pageNum:1,from:http://192.168.0.113:8000/member/myorderlist,to:/product/productCategory
+[2022-10-25 09:57:20],INFO,[product.views:264],id:jy,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Speedo
+[2022-10-25 09:57:22],INFO,[product.views:264],id:jy,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 09:57:24],INFO,[product.views:264],id:jy,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productList?brand=Buffalo
+[2022-10-25 09:57:25],INFO,[product.views:264],id:jy,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Buffalo,to:/product/productList?brand=Buffalo
+[2022-10-25 09:57:29],INFO,[product.views:264],id:cx,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arise
+[2022-10-25 09:57:32],INFO,[product.views:53],id:cx,prodNum:468,prodName:스마트 카트_소이밀크,brand:Arise,,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productDetail?prodNum=468
+[2022-10-25 09:58:32],INFO,[product.views:264],id:v,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 09:58:35],INFO,[product.views:264],id:v,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Vendis
+[2022-10-25 09:58:39],INFO,[product.views:53],id:v,prodNum:359,prodName:트림하임 5 PU,brand:Vendis,,from:http://192.168.0.113:8000/product/productList?brand=Vendis,to:/product/productDetail?prodNum=359
+[2022-10-25 09:58:57],INFO,[product.views:136],id:qq,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 09:58:59],INFO,[product.views:264],id:qq,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 09:59:02],INFO,[product.views:53],id:qq,prodNum:268,prodName:치콘,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=268
+[2022-10-25 09:59:08],INFO,[product.views:136],id:qq,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 09:59:10],INFO,[product.views:264],id:qq,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 09:59:14],INFO,[product.views:53],id:qq,prodNum:264,prodName:적상추,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=264
+[2022-10-25 09:59:21],INFO,[product.views:53],id:qq,prodNum:260,prodName:깻잎,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=260
+[2022-10-25 09:59:29],INFO,[product.views:136],id:qq,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 09:59:33],INFO,[product.views:264],id:qq,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 09:59:37],INFO,[product.views:264],id:qq,,,brand:Food,pageNum:3,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=3
+[2022-10-25 09:59:39],INFO,[product.views:53],id:qq,prodNum:241,prodName:소고기 홍두깨살,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=3,to:/product/productDetail?prodNum=241
+[2022-10-25 09:59:46],INFO,[product.views:137],id:qq,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 09:59:47],INFO,[product.views:265],id:qq,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 10:00:04],INFO,[product.views:265],id:qq,,,brand:Food,pageNum:4,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=4
+[2022-10-25 10:00:08],INFO,[product.views:54],id:qq,prodNum:177,prodName:돼지고기 앞다리살,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=4,to:/product/productDetail?prodNum=177
+[2022-10-25 10:00:31],INFO,[product.views:266],id:b,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:00:32],INFO,[product.views:138],id:qq,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 10:00:35],INFO,[product.views:266],id:qq,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 10:00:36],INFO,[product.views:266],id:b,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Arise
+[2022-10-25 10:00:38],INFO,[product.views:266],id:qq,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=U.seven,to:/product/productList?brand=Seafolly
+[2022-10-25 10:00:39],INFO,[product.views:266],id:qq,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:00:41],INFO,[product.views:266],id:qq,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Speedo
+[2022-10-25 10:00:41],INFO,[product.views:266],id:b,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productList?brand=Food
+[2022-10-25 10:00:42],INFO,[product.views:266],id:qq,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productList?brand=Military
+[2022-10-25 10:00:43],INFO,[product.views:138],id:b,,,,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productCategory
+[2022-10-25 10:00:43],INFO,[product.views:266],id:qq,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productList?brand=Vendis
+[2022-10-25 10:00:44],INFO,[product.views:266],id:qq,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Vendis,to:/product/productList?brand=Arena
+[2022-10-25 10:00:45],INFO,[product.views:201],id:b,,,,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/waterRocket
+[2022-10-25 10:00:47],INFO,[product.views:266],id:qq,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productList?brand=Food
+[2022-10-25 10:00:47],INFO,[product.views:138],id:b,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 10:00:49],INFO,[product.views:266],id:qq,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=U.seven
+[2022-10-25 10:00:50],INFO,[product.views:201],id:b,,,,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/waterRocket
+[2022-10-25 10:00:56],INFO,[product.views:138],id:b,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 10:00:56],INFO,[product.views:267],id:qq,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=U.seven,to:/product/productList?brand=Hoog
+[2022-10-25 10:01:05],INFO,[product.views:268],id:qq,,,brand:Hoog,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productList?brand=Hoog&pagenum=2
+[2022-10-25 10:01:07],INFO,[product.views:268],id:b,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 10:01:09],INFO,[product.views:268],id:qq,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Hoog&pagenum=2,to:/product/productList?brand=Food
+[2022-10-25 10:01:13],INFO,[product.views:268],id:b,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=U.seven,to:/product/productList?brand=Seafolly
+[2022-10-25 10:01:14],INFO,[product.views:54],id:qq,prodNum:257,prodName:표고버섯,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=257
+[2022-10-25 10:01:17],INFO,[product.views:138],id:qq,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 10:01:18],INFO,[product.views:268],id:qq,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 10:01:19],INFO,[product.views:268],id:b,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Seafolly
+[2022-10-25 10:01:20],INFO,[product.views:268],id:b,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:01:22],INFO,[product.views:268],id:qq,,,brand:Food,pageNum:4,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=4
+[2022-10-25 10:01:23],INFO,[product.views:268],id:b,,,brand:Tornado Sports,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Tornado%20Sports&pagenum=2
+[2022-10-25 10:01:26],INFO,[product.views:268],id:qq,,,brand:Food,pageNum:3,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=4,to:/product/productList?brand=Food&pagenum=3
+[2022-10-25 10:01:27],INFO,[product.views:268],id:b,,,brand:Tornado Sports,pageNum:3,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports&pagenum=2,to:/product/productList?brand=Tornado%20Sports&pagenum=3
+[2022-10-25 10:01:30],INFO,[product.views:54],id:qq,prodNum:170,prodName:돼지고기 뒷다리살,brand:Food,,from:http://192.168.0.113:8000/search/searchResult?kw=%EA%B3%A0%EA%B8%B0,to:/product/productDetail?prodNum=170
+[2022-10-25 10:01:33],INFO,[product.views:138],id:qq,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 10:01:50],INFO,[product.views:138],id:b,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 10:02:04],INFO,[product.views:268],id:qq,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 10:02:06],INFO,[product.views:268],id:qq,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productList?brand=Arise
+[2022-10-25 10:02:07],INFO,[product.views:54],id:qq,prodNum:470,prodName:스마트 카트_블랙,brand:Arise,,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productDetail?prodNum=470
+[2022-10-25 10:03:17],INFO,[product.views:268],id:n,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Vendis
+[2022-10-25 10:03:21],INFO,[product.views:268],id:n,,,brand:Vendis,pageNum:5,from:http://192.168.0.113:8000/product/productList?brand=Vendis,to:/product/productList?brand=Vendis&pagenum=5
+[2022-10-25 10:03:23],INFO,[product.views:54],id:n,prodNum:306,prodName:아스가르드 7.1 텐트 (플로어 일체형),brand:Vendis,,from:http://192.168.0.113:8000/product/productList?brand=Vendis&pagenum=5,to:/product/productDetail?prodNum=306
+[2022-10-25 10:03:27],INFO,[product.views:138],id:asdfgh7537,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 10:03:29],INFO,[product.views:54],id:asdfgh7537,prodNum:534,prodName:수영복_여자수영복_브이컷크롭탑비키니,brand:Seafolly,,from:http://192.168.0.113:8000/product/productCategory,to:/product/productDetail?prodNum=534
+[2022-10-25 10:03:35],INFO,[product.views:138],id:asdfgh7537,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 10:03:39],INFO,[product.views:268],id:asdfgh7537,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Military
+[2022-10-25 10:03:41],INFO,[product.views:54],id:asdfgh7537,prodNum:417,prodName:핀란드군장,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=417
+[2022-10-25 10:03:45],INFO,[product.views:268],id:asdfgh7537,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Hoog
+[2022-10-25 10:03:46],INFO,[product.views:54],id:asdfgh7537,prodNum:58,prodName:캠핑용_팟,brand:Hoog,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=58
+[2022-10-25 10:03:50],INFO,[product.views:268],id:asdfgh7537,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Buffalo
+[2022-10-25 10:03:53],INFO,[product.views:54],id:asdfgh7537,prodNum:116,prodName:프리마 스크린 하우스,brand:Buffalo,,from:http://192.168.0.113:8000/product/productList?brand=Buffalo,to:/product/productDetail?prodNum=116
+[2022-10-25 10:03:57],INFO,[product.views:268],id:asdfgh7537,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Food
+[2022-10-25 10:03:58],INFO,[product.views:54],id:asdfgh7537,prodNum:406,prodName:맛다시,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=406
+[2022-10-25 10:04:01],INFO,[product.views:268],id:asdfgh7537,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arise
+[2022-10-25 10:04:03],INFO,[product.views:54],id:asdfgh7537,prodNum:466,prodName:노스피크 티타늄 머그 싱글 레이어,brand:Arise,,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productDetail?prodNum=466
+[2022-10-25 10:04:05],INFO,[product.views:268],id:asdfgh7537,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:04:07],INFO,[product.views:54],id:asdfgh7537,prodNum:418,prodName:로우 컴포트 체어_소이밀크,brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productDetail?prodNum=418
+[2022-10-25 10:04:24],INFO,[product.views:268],id:m,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arena
+[2022-10-25 10:04:27],INFO,[product.views:54],id:m,prodNum:228,prodName:아레나 파워 숏핀,brand:Arena,,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productDetail?prodNum=228
+[2022-10-25 10:05:03],INFO,[product.views:202],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/member/mybeach,to:/product/waterRocket
+[2022-10-25 10:05:07],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:05:15],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:05:19],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:05:23],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:05:28],INFO,[product.views:268],id:d,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Military
+[2022-10-25 10:05:29],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:05:30],INFO,[product.views:54],id:d,prodNum:417,prodName:핀란드군장,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=417
+[2022-10-25 10:05:40],INFO,[product.views:202],id:asdfgh1094,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/waterRocket
+[2022-10-25 10:05:42],INFO,[product.views:202],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/waterRocket
+[2022-10-25 10:05:42],INFO,[product.views:54],id:asdfgh1094,prodNum:540,prodName:수영복_여자수영복_우먼어비셜래쉬가드블랙,brand:Seafolly,,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productDetail?prodNum=540
+[2022-10-25 10:05:46],INFO,[product.views:268],id:asdfgh1094,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 10:05:46],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:05:47],INFO,[product.views:268],id:asdfgh1094,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Seafolly
+[2022-10-25 10:05:48],INFO,[product.views:268],id:asdfgh1094,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:05:51],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:05:52],INFO,[product.views:54],id:asdfgh1094,prodNum:418,prodName:로우 컴포트 체어_소이밀크,brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productDetail?prodNum=418
+[2022-10-25 10:05:55],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:05:56],INFO,[product.views:268],id:asdfgh1094,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Vendis
+[2022-10-25 10:05:58],INFO,[product.views:138],id:ee,,,,pageNum:2,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?pagenum=2
+[2022-10-25 10:06:00],INFO,[product.views:54],id:asdfgh1094,prodNum:364,prodName:팍스 24 앱시스 세트 (Performance),brand:Vendis,,from:http://192.168.0.113:8000/product/productList?brand=Vendis,to:/product/productDetail?prodNum=364
+[2022-10-25 10:06:02],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:06:04],INFO,[product.views:268],id:asdfgh1094,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Military
+[2022-10-25 10:06:05],INFO,[product.views:138],id:ee,,,,pageNum:5,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?pagenum=5
+[2022-10-25 10:06:06],INFO,[product.views:54],id:asdfgh1094,prodNum:414,prodName:미군침낭,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=414
+[2022-10-25 10:06:09],INFO,[product.views:268],id:asdfgh1094,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arena
+[2022-10-25 10:06:11],INFO,[product.views:138],id:ee,,,,pageNum:2,from:http://192.168.0.113:8000/product/productCategory?pagenum=5,to:/product/productCategory?pagenum=2
+[2022-10-25 10:06:14],INFO,[product.views:268],id:asdfgh1094,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productList?brand=Hoog
+[2022-10-25 10:06:16],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:06:16],INFO,[product.views:268],id:asdfgh1094,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productList?brand=Seafolly
+[2022-10-25 10:06:18],INFO,[product.views:268],id:asdfgh1094,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Military
+[2022-10-25 10:06:19],INFO,[product.views:268],id:s,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:06:21],INFO,[product.views:54],id:s,prodNum:412,prodName:롱 릴렉스 체어_블랙,brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productDetail?prodNum=412
+[2022-10-25 10:06:22],INFO,[product.views:138],id:ee,,,,pageNum:2,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?pagenum=2
+[2022-10-25 10:06:25],INFO,[product.views:54],id:asdfgh1094,prodNum:125,prodName:텐트용 난로,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=125
+[2022-10-25 10:06:30],INFO,[product.views:268],id:asdfgh1094,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arena
+[2022-10-25 10:06:31],INFO,[product.views:268],id:asdfgh1094,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 10:06:33],INFO,[product.views:54],id:asdfgh1094,prodNum:485,prodName:노스피크 레디백,brand:Rash pl.,,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productDetail?prodNum=485
+[2022-10-25 10:06:37],INFO,[product.views:268],id:asdfgh1094,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Food
+[2022-10-25 10:06:38],INFO,[product.views:54],id:asdfgh1094,prodNum:411,prodName:전투식량,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=411
+[2022-10-25 10:06:42],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/productCategory
+[2022-10-25 10:06:44],INFO,[product.views:268],id:ee,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Seafolly
+[2022-10-25 10:06:50],INFO,[product.views:54],id:ee,prodNum:527,prodName:수영복_여자래쉬가드_홀리데이퍼프소매모노키니원피스,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productDetail?prodNum=527
+[2022-10-25 10:07:04],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/productCategory
+[2022-10-25 10:07:08],INFO,[product.views:268],id:ee,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Buffalo
+[2022-10-25 10:07:10],INFO,[product.views:268],id:ee,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Buffalo,to:/product/productList?brand=Hoog
+[2022-10-25 10:07:18],INFO,[product.views:202],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/waterRocket
+[2022-10-25 10:07:23],INFO,[product.views:202],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/waterRocket
+[2022-10-25 10:07:25],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 10:07:28],INFO,[product.views:268],id:ee,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Seafolly
+[2022-10-25 10:07:35],INFO,[product.views:268],id:ee,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=U.seven
+[2022-10-25 10:07:50],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 10:07:52],INFO,[product.views:268],id:ee,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 10:08:04],INFO,[product.views:268],id:ee,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arise
+[2022-10-25 10:08:27],INFO,[product.views:268],id:ee,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arise
+[2022-10-25 10:08:30],INFO,[product.views:268],id:ee,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productList?brand=Seafolly
+[2022-10-25 10:08:32],INFO,[product.views:268],id:f,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 10:08:34],INFO,[product.views:54],id:ee,prodNum:530,prodName:수영복_여자수영복_W레이스업원피스수영복,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productDetail?prodNum=530
+[2022-10-25 10:08:39],INFO,[product.views:138],id:f,,,,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productCategory
+[2022-10-25 10:08:45],INFO,[product.views:138],id:f,,,,pageNum:5,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?pagenum=5
+[2022-10-25 10:08:49],INFO,[product.views:138],id:f,,,,pageNum:4,from:http://192.168.0.113:8000/product/productCategory?pagenum=5,to:/product/productCategory?pagenum=4
+[2022-10-25 10:08:49],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/productCategory
+[2022-10-25 10:08:51],INFO,[product.views:268],id:ee,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Seafolly
+[2022-10-25 10:08:52],INFO,[product.views:54],id:f,prodNum:495,prodName:원터치 텐트,brand:Seafolly,,from:http://192.168.0.113:8000/product/productCategory?pagenum=4,to:/product/productDetail?prodNum=495
+[2022-10-25 10:08:53],INFO,[product.views:268],id:ee,,,brand:Seafolly,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Seafolly&pagenum=2
+[2022-10-25 10:08:57],INFO,[product.views:268],id:ee,,,brand:Seafolly,pageNum:4,from:http://192.168.0.113:8000/product/productList?brand=Seafolly&pagenum=2,to:/product/productList?brand=Seafolly&pagenum=4
+[2022-10-25 10:09:00],INFO,[product.views:268],id:hgfdsa7537,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Military
+[2022-10-25 10:09:03],INFO,[product.views:54],id:hgfdsa7537,prodNum:414,prodName:미군침낭,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=414
+[2022-10-25 10:09:04],INFO,[product.views:268],id:ee,,,brand:Seafolly,pageNum:3,from:http://192.168.0.113:8000/product/productList?brand=Seafolly&pagenum=4,to:/product/productList?brand=Seafolly&pagenum=3
+[2022-10-25 10:09:06],INFO,[product.views:54],id:ee,prodNum:507,prodName:수영복__남자수영복_에어쿠션슬림핏집업래쉬가드,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Seafolly&pagenum=3,to:/product/productDetail?prodNum=507
+[2022-10-25 10:09:07],INFO,[product.views:268],id:hgfdsa7537,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Buffalo
+[2022-10-25 10:09:10],INFO,[product.views:54],id:hgfdsa7537,prodNum:111,prodName:포터블 무선청소기,brand:Buffalo,,from:http://192.168.0.113:8000/product/productList?brand=Buffalo,to:/product/productDetail?prodNum=111
+[2022-10-25 10:09:10],INFO,[product.views:268],id:f,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productCategory?pagenum=4,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 10:09:13],INFO,[product.views:268],id:f,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productList?brand=Food
+[2022-10-25 10:09:13],INFO,[product.views:268],id:hgfdsa7537,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Food
+[2022-10-25 10:09:16],INFO,[product.views:268],id:f,,,brand:Food,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=2
+[2022-10-25 10:09:17],INFO,[product.views:268],id:hgfdsa7537,,,brand:Food,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=2
+[2022-10-25 10:09:19],INFO,[product.views:268],id:f,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=2,to:/product/productList?brand=Arena
+[2022-10-25 10:09:21],INFO,[product.views:268],id:f,,,brand:Arena,pageNum:3,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productList?brand=Arena&pagenum=3
+[2022-10-25 10:09:21],INFO,[product.views:54],id:hgfdsa7537,prodNum:242,prodName:포천이동갈비,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=2,to:/product/productDetail?prodNum=242
+[2022-10-25 10:09:24],INFO,[product.views:54],id:f,prodNum:199,prodName:넥 프로텍션 걸캡,brand:Arena,,from:http://192.168.0.113:8000/product/productList?brand=Arena&pagenum=3,to:/product/productDetail?prodNum=199
+[2022-10-25 10:09:28],INFO,[product.views:268],id:hgfdsa7537,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Food
+[2022-10-25 10:09:30],INFO,[product.views:268],id:hgfdsa7537,,,brand:Food,pageNum:5,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=5
+[2022-10-25 10:09:31],INFO,[product.views:138],id:ee,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/productCategory
+[2022-10-25 10:09:33],INFO,[product.views:54],id:hgfdsa7537,prodNum:168,prodName:양념돼지갈비,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=5,to:/product/productDetail?prodNum=168
+[2022-10-25 10:09:36],INFO,[product.views:138],id:ee,,,,pageNum:4,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?pagenum=4
+[2022-10-25 10:09:41],INFO,[product.views:268],id:hgfdsa7537,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Food
+[2022-10-25 10:09:44],INFO,[product.views:268],id:hgfdsa7537,,,brand:Food,pageNum:5,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=5
+[2022-10-25 10:09:45],INFO,[product.views:138],id:ee,,,,pageNum:3,from:http://192.168.0.113:8000/product/productCategory?pagenum=4,to:/product/productCategory?pagenum=3
+[2022-10-25 10:09:47],INFO,[product.views:54],id:hgfdsa7537,prodNum:168,prodName:양념돼지갈비,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=5,to:/product/productDetail?prodNum=168
+[2022-10-25 10:09:50],INFO,[product.views:268],id:ee,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory?pagenum=3,to:/product/productList?brand=Seafolly
+[2022-10-25 10:09:53],INFO,[product.views:268],id:ee,,,brand:Seafolly,pageNum:4,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Seafolly&pagenum=4
+[2022-10-25 10:09:55],INFO,[product.views:268],id:hgfdsa7537,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Speedo
+[2022-10-25 10:09:57],INFO,[product.views:54],id:hgfdsa7537,prodNum:449,prodName:브라보 OV10,brand:Speedo,,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productDetail?prodNum=449
+[2022-10-25 10:10:01],INFO,[product.views:268],id:hgfdsa7537,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:10:05],INFO,[product.views:54],id:hgfdsa7537,prodNum:405,prodName:로우 플랫 체어_블랙,brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productDetail?prodNum=405
+[2022-10-25 10:10:05],INFO,[product.views:268],id:ee,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly&pagenum=4,to:/product/productList?brand=Food
+[2022-10-25 10:10:09],INFO,[product.views:268],id:hgfdsa7537,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 10:10:12],INFO,[product.views:54],id:hgfdsa7537,prodNum:534,prodName:수영복_여자수영복_브이컷크롭탑비키니,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productDetail?prodNum=534
+[2022-10-25 10:10:13],INFO,[product.views:268],id:g,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 10:10:13],INFO,[product.views:268],id:ee,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&minamount=48447&maxamount=865112
+[2022-10-25 10:10:15],INFO,[product.views:268],id:g,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Hoog
+[2022-10-25 10:10:18],INFO,[product.views:268],id:hgfdsa7537,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 10:10:19],INFO,[product.views:54],id:g,prodNum:34,prodName:초경량침냥,brand:Hoog,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=34
+[2022-10-25 10:10:23],INFO,[product.views:268],id:hgfdsa7537,,,brand:Seafolly,pageNum:5,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Seafolly&pagenum=5
+[2022-10-25 10:10:25],INFO,[product.views:268],id:ee,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Food&minamount=48447&maxamount=865112,to:/product/productList?brand=Food&minamount=10&maxamount=98447
+[2022-10-25 10:10:29],INFO,[product.views:268],id:hgfdsa7537,,,brand:Seafolly,pageNum:4,from:http://192.168.0.113:8000/product/productList?brand=Seafolly&pagenum=5,to:/product/productList?brand=Seafolly&pagenum=4
+[2022-10-25 10:10:30],INFO,[product.views:268],id:ee,,,brand:Food,pageNum:4,from:http://192.168.0.113:8000/product/productList?brand=Food&minamount=10&maxamount=98447,to:/product/productList?brand=Food&pagenum=4
+[2022-10-25 10:10:35],INFO,[product.views:54],id:hgfdsa7537,prodNum:475,prodName:아기튜브,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Seafolly&pagenum=4,to:/product/productDetail?prodNum=475
+[2022-10-25 10:10:35],INFO,[product.views:54],id:ee,prodNum:186,prodName:소갈비,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=4,to:/product/productDetail?prodNum=186
+[2022-10-25 10:12:24],INFO,[product.views:268],id:rr,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:12:27],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:12:31],INFO,[product.views:268],id:h,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Military
+[2022-10-25 10:12:32],INFO,[product.views:268],id:rr,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Vendis
+[2022-10-25 10:12:32],INFO,[product.views:54],id:h,prodNum:414,prodName:미군침낭,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=414
+[2022-10-25 10:12:35],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:12:37],INFO,[product.views:268],id:rr,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Vendis
+[2022-10-25 10:12:41],INFO,[product.views:138],id:h,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 10:12:43],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 10:12:43],INFO,[product.views:268],id:h,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Military
+[2022-10-25 10:12:44],INFO,[product.views:268],id:rr,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Buffalo
+[2022-10-25 10:12:49],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:12:53],INFO,[product.views:268],id:h,,,brand:Military,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productList?brand=Military&pagenum=2
+[2022-10-25 10:12:54],INFO,[product.views:268],id:rr,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 10:12:57],INFO,[product.views:202],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/waterRocket
+[2022-10-25 10:13:01],INFO,[product.views:202],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/waterRocket
+[2022-10-25 10:13:02],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 10:13:08],INFO,[product.views:268],id:rr,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Seafolly
+[2022-10-25 10:13:11],INFO,[product.views:268],id:rr,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Vendis
+[2022-10-25 10:13:19],INFO,[product.views:268],id:aaaaaa,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Military
+[2022-10-25 10:13:19],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 10:13:22],INFO,[product.views:268],id:rr,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Hoog
+[2022-10-25 10:13:22],INFO,[product.views:54],id:aaaaaa,prodNum:130,prodName:밀리터리매트,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=130
+[2022-10-25 10:13:25],INFO,[product.views:268],id:aaaaaa,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 10:13:26],INFO,[product.views:54],id:h,prodNum:115,prodName:밀리터리 도끼,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military&pagenum=2,to:/product/productDetail?prodNum=115
+[2022-10-25 10:13:28],INFO,[product.views:268],id:aaaaaa,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Speedo
+[2022-10-25 10:13:31],INFO,[product.views:54],id:aaaaaa,prodNum:436,prodName:파워이소프로450_소이밀크 (POWER ISO PRO 450_SOY MILK),brand:Speedo,,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productDetail?prodNum=436
+[2022-10-25 10:13:35],INFO,[product.views:268],id:aaaaaa,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Military
+[2022-10-25 10:13:37],INFO,[product.views:202],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/waterRocket
+[2022-10-25 10:13:39],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 10:13:40],INFO,[product.views:268],id:aaaaaa,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productList?brand=Speedo
+[2022-10-25 10:13:41],INFO,[product.views:54],id:aaaaaa,prodNum:443,prodName:펜타 스토브,brand:Speedo,,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productDetail?prodNum=443
+[2022-10-25 10:13:44],INFO,[product.views:268],id:aaaaaa,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arena
+[2022-10-25 10:13:48],INFO,[product.views:268],id:aaaaaa,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productList?brand=Food
+[2022-10-25 10:13:50],INFO,[product.views:268],id:aaaaaa,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=U.seven
+[2022-10-25 10:13:52],INFO,[product.views:268],id:rr,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Vendis
+[2022-10-25 10:13:52],INFO,[product.views:54],id:aaaaaa,prodNum:494,prodName:서핑보드CJ NELSON NOSERIDER 9.5,brand:U.seven,,from:http://192.168.0.113:8000/product/productList?brand=U.seven,to:/product/productDetail?prodNum=494
+[2022-10-25 10:13:56],INFO,[product.views:268],id:rr,,,brand:Vendis,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Vendis,to:/product/productList?brand=Vendis&pagenum=2
+[2022-10-25 10:13:57],INFO,[product.views:268],id:aaaaaa,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arise
+[2022-10-25 10:13:59],INFO,[product.views:54],id:aaaaaa,prodNum:468,prodName:스마트 카트_소이밀크,brand:Arise,,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productDetail?prodNum=468
+[2022-10-25 10:14:04],INFO,[product.views:268],id:aaaaaa,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arena
+[2022-10-25 10:14:07],INFO,[product.views:268],id:aaaaaa,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productList?brand=Vendis
+[2022-10-25 10:14:10],INFO,[product.views:54],id:aaaaaa,prodNum:364,prodName:팍스 24 앱시스 세트 (Performance),brand:Vendis,,from:http://192.168.0.113:8000/product/productList?brand=Vendis,to:/product/productDetail?prodNum=364
+[2022-10-25 10:14:13],INFO,[product.views:268],id:aaaaaa,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Speedo
+[2022-10-25 10:14:22],INFO,[product.views:54],id:aaaaaa,prodNum:433,prodName:홀리데이 후드 블랭킷,brand:Speedo,,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productDetail?prodNum=433
+[2022-10-25 10:14:24],INFO,[product.views:268],id:aaaaaa,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Speedo
+[2022-10-25 10:14:26],INFO,[product.views:268],id:aaaaaa,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productList?brand=Seafolly
+[2022-10-25 10:14:28],INFO,[product.views:268],id:aaaaaa,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Speedo
+[2022-10-25 10:14:29],INFO,[product.views:268],id:aaaaaa,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productList?brand=Speedo
+[2022-10-25 10:14:31],INFO,[product.views:268],id:aaaaaa,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productList?brand=Arise
+[2022-10-25 10:14:40],INFO,[product.views:54],id:aaaaaa,prodNum:460,prodName:리페어 패치 ( REPAIR PATCH ),brand:Arise,,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productDetail?prodNum=460
+[2022-10-25 10:14:53],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/member/myorderlist,to:/product/productCategory
+[2022-10-25 10:14:55],INFO,[product.views:268],id:rr,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Seafolly
+[2022-10-25 10:14:57],INFO,[product.views:268],id:rr,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Hoog
+[2022-10-25 10:14:57],INFO,[product.views:54],id:aaaaaa,prodNum:461,prodName:슬라이딩 업라이트 폴,brand:Arise,,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productDetail?prodNum=461
+[2022-10-25 10:14:59],INFO,[product.views:54],id:rr,prodNum:58,prodName:캠핑용_팟,brand:Hoog,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=58
+[2022-10-25 10:15:01],INFO,[product.views:268],id:aaaaaa,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:15:03],INFO,[product.views:268],id:aaaaaa,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Buffalo
+[2022-10-25 10:15:07],INFO,[product.views:54],id:aaaaaa,prodNum:104,prodName:토리랜턴,brand:Buffalo,,from:http://192.168.0.113:8000/product/productList?brand=Buffalo,to:/product/productDetail?prodNum=104
+[2022-10-25 10:15:16],INFO,[product.views:268],id:j,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:15:18],INFO,[product.views:54],id:j,prodNum:418,prodName:로우 컴포트 체어_소이밀크,brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productDetail?prodNum=418
+[2022-10-25 10:15:26],INFO,[product.views:268],id:rr,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Military
+[2022-10-25 10:15:26],INFO,[product.views:138],id:j,,,,pageNum:1,from:http://192.168.0.113:8000/product/productDetail?prodNum=418,to:/product/productCategory
+[2022-10-25 10:15:28],INFO,[product.views:54],id:j,prodNum:148,prodName:오랜지,brand:Food,,from:http://192.168.0.113:8000/product/productCategory,to:/product/productDetail?prodNum=148
+[2022-10-25 10:15:31],INFO,[product.views:268],id:rr,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productList?brand=Vendis
+[2022-10-25 10:15:39],INFO,[product.views:268],id:j,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Hoog
+[2022-10-25 10:15:43],INFO,[product.views:54],id:j,prodNum:47,prodName:하이비텐트,brand:Hoog,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=47
+[2022-10-25 10:15:44],INFO,[product.views:202],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/member/myorderlist,to:/product/waterRocket
+[2022-10-25 10:15:46],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 10:15:49],INFO,[product.views:268],id:rr,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Speedo
+[2022-10-25 10:15:51],INFO,[product.views:54],id:rr,prodNum:449,prodName:브라보 OV10,brand:Speedo,,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productDetail?prodNum=449
+[2022-10-25 10:15:59],INFO,[product.views:202],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/waterRocket
+[2022-10-25 10:16:01],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 10:16:24],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory
+[2022-10-25 10:16:25],INFO,[product.views:268],id:rr,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Hoog
+[2022-10-25 10:16:28],INFO,[product.views:54],id:rr,prodNum:49,prodName:텐트용 폴대,brand:Hoog,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=49
+[2022-10-25 10:17:05],INFO,[product.views:202],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/waterRocket
+[2022-10-25 10:17:13],INFO,[product.views:268],id:rr,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:17:16],INFO,[product.views:54],id:rr,prodNum:418,prodName:로우 컴포트 체어_소이밀크,brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productDetail?prodNum=418
+[2022-10-25 10:17:24],INFO,[product.views:202],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/waterRocket
+[2022-10-25 10:17:28],INFO,[product.views:138],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 10:17:29],INFO,[product.views:268],id:rr,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:17:32],INFO,[product.views:54],id:rr,prodNum:407,prodName:마이 롤 테이블 2.M (미디엄),brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productDetail?prodNum=407
+[2022-10-25 10:17:48],INFO,[product.views:268],id:rr,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:17:49],INFO,[product.views:268],id:rr,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:17:52],INFO,[product.views:268],id:rr,,,brand:Tornado Sports,pageNum:3,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Tornado%20Sports&pagenum=3
+[2022-10-25 10:17:55],INFO,[product.views:54],id:rr,prodNum:382,prodName:루나 타프스크린 미디엄_소이밀크,brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports&pagenum=3,to:/product/productDetail?prodNum=382
+[2022-10-25 10:18:12],INFO,[product.views:268],id:hgfdsa1094,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Vendis
+[2022-10-25 10:18:15],INFO,[product.views:54],id:hgfdsa1094,prodNum:360,prodName:트림하임 풋프린트,brand:Vendis,,from:http://192.168.0.113:8000/product/productList?brand=Vendis,to:/product/productDetail?prodNum=360
+[2022-10-25 10:18:19],INFO,[product.views:268],id:hgfdsa1094,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 10:18:24],INFO,[product.views:268],id:hgfdsa1094,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productList?brand=Arena
+[2022-10-25 10:18:27],INFO,[product.views:268],id:hgfdsa1094,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productList?brand=Vendis
+[2022-10-25 10:18:34],INFO,[product.views:268],id:hgfdsa1094,,,brand:Vendis,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Vendis,to:/product/productList?brand=Vendis&pagenum=2
+[2022-10-25 10:18:36],INFO,[product.views:54],id:hgfdsa1094,prodNum:352,prodName:카리 테크-미니 타프 (Colour My Adventure),brand:Vendis,,from:http://192.168.0.113:8000/product/productList?brand=Vendis&pagenum=2,to:/product/productDetail?prodNum=352
+[2022-10-25 10:18:44],INFO,[product.views:268],id:hgfdsa1094,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:18:46],INFO,[product.views:268],id:hgfdsa1094,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Arise
+[2022-10-25 10:18:49],INFO,[product.views:54],id:hgfdsa1094,prodNum:462,prodName:가이 라인 스트링 ( GUY LINE STRING ),brand:Arise,,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productDetail?prodNum=462
+[2022-10-25 10:18:52],INFO,[product.views:268],id:hgfdsa1094,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Hoog
+[2022-10-25 10:18:53],INFO,[product.views:54],id:hgfdsa1094,prodNum:58,prodName:캠핑용_팟,brand:Hoog,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=58
+[2022-10-25 10:18:53],INFO,[product.views:202],id:rr,,,,pageNum:1,from:http://192.168.0.113:8000/qnaboard/myQnaList,to:/product/waterRocket
+[2022-10-25 10:18:57],INFO,[product.views:268],id:hgfdsa1094,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Hoog
+[2022-10-25 10:18:59],INFO,[product.views:54],id:hgfdsa1094,prodNum:54,prodName:해먹,brand:Hoog,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=54
+[2022-10-25 10:19:12],INFO,[product.views:54],id:hgfdsa1094,prodNum:22,prodName:호그블랑켓,brand:Hoog,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=22
+[2022-10-25 10:19:15],INFO,[product.views:268],id:hgfdsa1094,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Military
+[2022-10-25 10:19:17],INFO,[product.views:54],id:hgfdsa1094,prodNum:419,prodName:야외 필수 다용도제품,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=419
+[2022-10-25 10:19:22],INFO,[product.views:268],id:hgfdsa1094,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Military
+[2022-10-25 10:19:24],INFO,[product.views:268],id:hgfdsa1094,,,brand:Military,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productList?brand=Military&pagenum=2
+[2022-10-25 10:19:28],INFO,[product.views:54],id:hgfdsa1094,prodNum:109,prodName:3맨텐트,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military&pagenum=2,to:/product/productDetail?prodNum=109
+[2022-10-25 10:39:56],INFO,[product.views:54],id:aaa,prodNum:436,prodName:파워이소프로450_소이밀크 (POWER ISO PRO 450_SOY MILK),brand:Speedo,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=436
+[2022-10-25 10:41:31],INFO,[product.views:54],id:aaa,prodNum:436,prodName:파워이소프로450_소이밀크 (POWER ISO PRO 450_SOY MILK),brand:Speedo,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=436
+[2022-10-25 10:48:13],INFO,[product.views:138],id:aaa,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/productCategory
+[2022-10-25 10:48:16],INFO,[product.views:138],id:aaa,,,,pageNum:2,from:http://localhost:8000/product/productCategory,to:/product/productCategory?pagenum=2
+[2022-10-25 10:48:20],INFO,[product.views:138],id:aaa,,,,pageNum:3,from:http://localhost:8000/product/productCategory?pagenum=2,to:/product/productCategory?pagenum=3
+[2022-10-25 10:48:24],INFO,[product.views:138],id:aaa,,,,pageNum:4,from:http://localhost:8000/product/productCategory?pagenum=3,to:/product/productCategory?pagenum=4
+[2022-10-25 10:49:54],INFO,[product.views:138],id:aaa,,,,pageNum:4,from:http://localhost:8000/product/productCategory?pagenum=3,to:/product/productCategory?pagenum=4
+[2022-10-25 10:49:58],INFO,[product.views:54],id:aaa,prodNum:487,prodName:더블탭 텀블러_20oz (590ml),brand:Rash pl.,,from:http://localhost:8000/product/productCategory?pagenum=4,to:/product/productDetail?prodNum=487
+[2022-10-25 10:50:01],INFO,[product.views:268],id:aaa,,,brand:Rash pl.,pageNum:1,from:http://localhost:8000/product/productCategory?pagenum=4,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 10:50:08],INFO,[product.views:54],id:aaa,prodNum:486,prodName:더블탭 텀블러_15oz (440ml),brand:Rash pl.,,from:http://localhost:8000/product/productCategory?pagenum=4,to:/product/productDetail?prodNum=486
+[2022-10-25 10:50:14],INFO,[product.views:138],id:aaa,,,,pageNum:5,from:http://localhost:8000/product/productCategory?pagenum=4,to:/product/productCategory?pagenum=5
+[2022-10-25 10:50:18],INFO,[product.views:138],id:aaa,,,,pageNum:6,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productCategory?pagenum=6
+[2022-10-25 10:50:24],INFO,[product.views:54],id:aaa,prodNum:453,prodName:펌프 어댑터 (PUMP ADAPTOR),brand:Arise,,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productDetail?prodNum=453
+[2022-10-25 10:52:52],INFO,[product.views:138],id:aaa,,,,pageNum:6,from:http://localhost:8000/product/productCategory?pagenum=5,to:/product/productCategory?pagenum=6
+[2022-10-25 10:52:53],INFO,[product.views:138],id:aaa,,,,pageNum:7,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productCategory?pagenum=7
+[2022-10-25 10:52:57],INFO,[product.views:138],id:aaa,,,,pageNum:8,from:http://localhost:8000/product/productCategory?pagenum=7,to:/product/productCategory?pagenum=8
+[2022-10-25 10:53:00],INFO,[product.views:54],id:aaa,prodNum:428,prodName:브라보 OV10 전용 가방,brand:Speedo,,from:http://localhost:8000/product/productCategory?pagenum=8,to:/product/productDetail?prodNum=428
+[2022-10-25 10:53:26],INFO,[product.views:268],id:y,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:53:28],INFO,[product.views:54],id:y,prodNum:424,prodName:키친 테이블 플레이트 바 4라인  (KITCHEN TABLE PLATE BAR 4LINE),brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productDetail?prodNum=424
+[2022-10-25 10:53:30],INFO,[product.views:138],id:y,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 10:53:31],INFO,[product.views:268],id:y,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 10:53:32],INFO,[product.views:268],id:y,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Speedo
+[2022-10-25 10:53:35],INFO,[product.views:54],id:y,prodNum:442,prodName:히트 3M 신슐레이트_페일 카키,brand:Speedo,,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productDetail?prodNum=442
+[2022-10-25 10:55:00],INFO,[product.views:138],id:u,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 10:55:02],INFO,[product.views:268],id:u,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Buffalo
+[2022-10-25 10:55:04],INFO,[product.views:54],id:u,prodNum:111,prodName:포터블 무선청소기,brand:Buffalo,,from:http://192.168.0.113:8000/product/productList?brand=Buffalo,to:/product/productDetail?prodNum=111
+[2022-10-25 10:55:06],INFO,[product.views:138],id:u,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 10:55:07],INFO,[product.views:268],id:u,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 10:55:09],INFO,[product.views:54],id:u,prodNum:491,prodName:서핑보드[ROXY] MINI MALIBU 7.6 PNK,brand:U.seven,,from:http://192.168.0.113:8000/product/productList?brand=U.seven,to:/product/productDetail?prodNum=491
+[2022-10-25 10:55:11],INFO,[product.views:138],id:u,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 10:55:13],INFO,[product.views:268],id:u,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 10:56:04],INFO,[product.views:268],id:i,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 10:56:08],INFO,[product.views:54],id:i,prodNum:528,prodName:수영복_여자수영복_glitter비키니세트,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productDetail?prodNum=528
+[2022-10-25 10:56:11],INFO,[product.views:138],id:i,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 10:56:12],INFO,[product.views:268],id:i,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Arena
+[2022-10-25 10:56:14],INFO,[product.views:54],id:i,prodNum:238,prodName:퓨즈EAR PLUG,brand:Arena,,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productDetail?prodNum=238
+[2022-10-25 10:56:16],INFO,[product.views:138],id:i,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 10:56:18],INFO,[product.views:268],id:i,,,brand:Vendis,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Vendis
+[2022-10-25 10:56:21],INFO,[product.views:268],id:i,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Vendis,to:/product/productList?brand=Hoog
+[2022-10-25 10:56:28],INFO,[product.views:54],id:i,prodNum:31,prodName:둠텐트,brand:Hoog,,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productDetail?prodNum=31
+[2022-10-25 10:57:14],INFO,[product.views:138],id:aaa,,,,pageNum:7,from:http://localhost:8000/product/productCategory?pagenum=6,to:/product/productCategory?pagenum=7
+[2022-10-25 10:57:24],INFO,[product.views:138],id:aaa,,,,pageNum:1,from:http://localhost:8000/noticeboard/noticelist,to:/product/productCategory
+[2022-10-25 10:58:22],INFO,[product.views:138],id:i,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 10:58:23],INFO,[product.views:202],id:i,,,,pageNum:1,from:http://192.168.0.113:8000/noticeboard/noticelist,to:/product/waterRocket
+[2022-10-25 10:58:30],INFO,[product.views:202],id:i,,,,pageNum:1,from:http://192.168.0.113:8000/search/searchResult?kw=%EC%9A%94%ED%8A%B8,to:/product/waterRocket
+[2022-10-25 10:58:31],INFO,[product.views:202],id:aaa,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/waterRocket
+[2022-10-25 11:01:21],INFO,[product.views:202],id:o,,,,pageNum:1,from:http://192.168.0.113:8000/member/myorderlist,to:/product/waterRocket
+[2022-10-25 11:01:23],INFO,[product.views:138],id:o,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 11:01:25],INFO,[product.views:268],id:o,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Seafolly
+[2022-10-25 11:01:28],INFO,[product.views:268],id:o,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Arise
+[2022-10-25 11:01:33],INFO,[product.views:54],id:o,prodNum:457,prodName:노스피크 워싱 버킷,brand:Arise,,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productDetail?prodNum=457
+[2022-10-25 11:01:39],INFO,[product.views:268],id:o,,,brand:Arise,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productList?brand=Arise&pagenum=2
+[2022-10-25 11:01:42],INFO,[product.views:54],id:o,prodNum:452,prodName:더블 액션 파워 펌프용 듀얼 어댑터 & 호스,brand:Arise,,from:http://192.168.0.113:8000/product/productList?brand=Arise&pagenum=2,to:/product/productDetail?prodNum=452
+[2022-10-25 11:01:45],INFO,[product.views:138],id:o,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:01:46],INFO,[product.views:268],id:o,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Seafolly
+[2022-10-25 11:01:47],INFO,[product.views:268],id:o,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 11:01:51],INFO,[product.views:268],id:o,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productList?brand=Buffalo
+[2022-10-25 11:01:53],INFO,[product.views:54],id:o,prodNum:116,prodName:프리마 스크린 하우스,brand:Buffalo,,from:http://192.168.0.113:8000/product/productList?brand=Buffalo,to:/product/productDetail?prodNum=116
+[2022-10-25 11:01:55],INFO,[product.views:202],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/reviewboard/myReviewList,to:/product/waterRocket
+[2022-10-25 11:01:56],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 11:01:58],INFO,[product.views:268],id:yy,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 11:02:01],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:02:03],INFO,[product.views:268],id:yy,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 11:02:06],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:02:08],INFO,[product.views:268],id:yy,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 11:02:11],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:02:12],INFO,[product.views:268],id:yy,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 11:02:16],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:02:18],INFO,[product.views:268],id:yy,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 11:02:22],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:02:25],INFO,[product.views:268],id:yy,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 11:02:38],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:02:44],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:03:01],INFO,[product.views:138],id:o,,,,pageNum:1,from:http://192.168.0.113:8000/search/searchResult?kw=%EB%B2%84%ED%8C%94%EB%A1%9C,to:/product/productCategory
+[2022-10-25 11:03:22],INFO,[product.views:54],id:aaa,prodNum:428,prodName:브라보 OV10 전용 가방,brand:Speedo,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=428
+[2022-10-25 11:03:35],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/productCategory
+[2022-10-25 11:03:45],INFO,[product.views:54],id:o,prodNum:20,prodName:호그베개,brand:Hoog,,from:http://192.168.0.113:8000/search/searchResult?kw=%ED%98%B8%EA%B7%B8,to:/product/productDetail?prodNum=20
+[2022-10-25 11:03:55],INFO,[product.views:138],id:o,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/productCategory
+[2022-10-25 11:04:06],INFO,[product.views:202],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/member/myorderlist,to:/product/waterRocket
+[2022-10-25 11:04:08],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 11:04:10],INFO,[product.views:268],id:yy,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 11:04:21],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 11:04:23],INFO,[product.views:268],id:yy,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-25 11:04:25],INFO,[product.views:268],id:yy,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=U.seven,to:/product/productList?brand=Hoog
+[2022-10-25 11:04:28],INFO,[product.views:268],id:yy,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productList?brand=Speedo
+[2022-10-25 11:04:30],INFO,[product.views:268],id:yy,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productList?brand=Seafolly
+[2022-10-25 11:04:33],INFO,[product.views:54],id:aaa,prodNum:428,prodName:브라보 OV10 전용 가방,brand:Speedo,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=428
+[2022-10-25 11:04:39],INFO,[product.views:268],id:o,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Arise
+[2022-10-25 11:04:47],INFO,[product.views:268],id:yy,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=U.seven
+[2022-10-25 11:04:50],INFO,[product.views:268],id:yy,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=U.seven,to:/product/productList?brand=Arise
+[2022-10-25 11:05:17],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/member/myorderlist,to:/product/productCategory
+[2022-10-25 11:05:21],INFO,[product.views:138],id:yy,,,,pageNum:5,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?pagenum=5
+[2022-10-25 11:05:23],INFO,[product.views:54],id:yy,prodNum:190,prodName:고글하드케이스,brand:Arena,,from:http://192.168.0.113:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=190
+[2022-10-25 11:05:34],INFO,[product.views:268],id:o,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 11:05:45],INFO,[product.views:268],id:o,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=U.seven
+[2022-10-25 11:05:47],INFO,[product.views:268],id:o,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=U.seven,to:/product/productList?brand=Food
+[2022-10-25 11:06:20],INFO,[product.views:54],id:yy,prodNum:184,prodName:소고기 la갈비,brand:Food,,from:http://192.168.0.113:8000/search/searchResult?kw=%EC%86%8C%EA%B3%A0%EA%B8%B0,to:/product/productDetail?prodNum=184
+[2022-10-25 11:06:28],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/productCategory
+[2022-10-25 11:06:30],INFO,[product.views:268],id:yy,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 11:06:36],INFO,[product.views:54],id:yy,prodNum:161,prodName:양고기모음,brand:Food,,from:http://192.168.0.113:8000/search/searchResult?kw=%EA%B3%A0%EA%B8%B0,to:/product/productDetail?prodNum=161
+[2022-10-25 11:06:45],INFO,[product.views:202],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/waterRocket
+[2022-10-25 11:06:45],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 11:06:47],INFO,[product.views:268],id:yy,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 11:06:51],INFO,[product.views:54],id:yy,prodNum:162,prodName:양고기 큐브,brand:Food,,from:http://192.168.0.113:8000/search/searchResult?kw=%EC%96%91%EA%B3%A0%EA%B8%B0,to:/product/productDetail?prodNum=162
+[2022-10-25 11:07:02],INFO,[product.views:138],id:yy,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/productCategory
+[2022-10-25 11:07:33],INFO,[product.views:138],id:p,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 11:07:48],INFO,[product.views:138],id:p,,,,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory
+[2022-10-25 11:07:56],INFO,[product.views:268],id:p,,,brand:Buffalo,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Buffalo
+[2022-10-25 11:07:59],INFO,[product.views:54],id:p,prodNum:112,prodName:프리마 미니 헥사타프,brand:Buffalo,,from:http://192.168.0.113:8000/product/productList?brand=Buffalo,to:/product/productDetail?prodNum=112
+[2022-10-25 11:08:02],INFO,[product.views:138],id:p,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:08:03],INFO,[product.views:268],id:p,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 11:08:05],INFO,[product.views:268],id:p,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productList?brand=Food
+[2022-10-25 11:08:07],INFO,[product.views:268],id:p,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Arena
+[2022-10-25 11:08:09],INFO,[product.views:54],id:p,prodNum:234,prodName:워터베스트 30KG,brand:Arena,,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productDetail?prodNum=234
+[2022-10-25 11:08:11],INFO,[product.views:138],id:p,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:08:11],INFO,[product.views:268],id:uu,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Food
+[2022-10-25 11:08:12],INFO,[product.views:268],id:p,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 11:08:15],INFO,[product.views:138],id:uu,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:08:16],INFO,[product.views:54],id:p,prodNum:405,prodName:로우 플랫 체어_블랙,brand:Tornado Sports,,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productDetail?prodNum=405
+[2022-10-25 11:08:19],INFO,[product.views:138],id:uu,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:08:19],INFO,[product.views:138],id:p,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:08:21],INFO,[product.views:268],id:p,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 11:08:23],INFO,[product.views:138],id:uu,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:08:23],INFO,[product.views:268],id:p,,,brand:Food,pageNum:4,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=4
+[2022-10-25 11:08:24],INFO,[product.views:268],id:uu,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Hoog
+[2022-10-25 11:08:30],INFO,[product.views:138],id:uu,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:08:31],INFO,[product.views:54],id:p,prodNum:179,prodName:돼지고기 통목살,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=4,to:/product/productDetail?prodNum=179
+[2022-10-25 11:08:41],INFO,[product.views:138],id:uu,,,,pageNum:1,from:http://192.168.0.113:8000/qnaboard/myQnaList,to:/product/productCategory
+[2022-10-25 11:08:45],INFO,[product.views:54],id:uu,prodNum:527,prodName:수영복_여자래쉬가드_홀리데이퍼프소매모노키니원피스,brand:Seafolly,,from:http://192.168.0.113:8000/product/productCategory,to:/product/productDetail?prodNum=527
+[2022-10-25 11:08:58],INFO,[product.views:138],id:uu,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/productCategory
+[2022-10-25 11:09:05],INFO,[product.views:268],id:uu,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Seafolly
+[2022-10-25 11:09:06],INFO,[product.views:54],id:uu,prodNum:539,prodName:수영복_여자수영복_올라운더스윔웨어이지오프원피스,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productDetail?prodNum=539
+[2022-10-25 11:09:39],INFO,[product.views:268],id:l,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 11:09:40],INFO,[product.views:268],id:l,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Military
+[2022-10-25 11:09:42],INFO,[product.views:54],id:l,prodNum:419,prodName:야외 필수 다용도제품,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=419
+[2022-10-25 11:09:44],INFO,[product.views:138],id:l,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:09:45],INFO,[product.views:268],id:l,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Military
+[2022-10-25 11:09:50],INFO,[product.views:54],id:l,prodNum:129,prodName:터널텐트,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=129
+[2022-10-25 11:09:51],INFO,[product.views:138],id:l,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:09:53],INFO,[product.views:268],id:l,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Military
+[2022-10-25 11:09:56],INFO,[product.views:268],id:l,,,brand:Military,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productList?brand=Military&pagenum=2
+[2022-10-25 11:09:59],INFO,[product.views:54],id:l,prodNum:109,prodName:3맨텐트,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military&pagenum=2,to:/product/productDetail?prodNum=109
+[2022-10-25 11:10:13],INFO,[product.views:268],id:l,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Food
+[2022-10-25 11:10:15],INFO,[product.views:54],id:l,prodNum:411,prodName:전투식량,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=411
+[2022-10-25 11:10:17],INFO,[product.views:138],id:l,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:10:18],INFO,[product.views:268],id:l,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 11:10:22],INFO,[product.views:54],id:l,prodNum:264,prodName:적상추,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=264
+[2022-10-25 11:10:26],INFO,[product.views:138],id:l,,,,pageNum:1,from:http://192.168.0.113:8000/product/productDetail?prodNum=264,to:/product/productCategory
+[2022-10-25 11:10:28],INFO,[product.views:268],id:l,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 11:10:32],INFO,[product.views:54],id:l,prodNum:262,prodName:모든쌈채소,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productDetail?prodNum=262
+[2022-10-25 11:10:34],INFO,[product.views:138],id:l,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:10:34],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 11:10:35],INFO,[product.views:268],id:l,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 11:10:37],INFO,[product.views:54],id:ii,prodNum:541,prodName:수영복_여자수영복_하트넥비키니세트,brand:Seafolly,,from:http://192.168.0.113:8000/product/productCategory,to:/product/productDetail?prodNum=541
+[2022-10-25 11:10:38],INFO,[product.views:268],id:l,,,brand:Food,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=2
+[2022-10-25 11:10:42],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:10:42],INFO,[product.views:54],id:l,prodNum:255,prodName:양송이버섯,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=2,to:/product/productDetail?prodNum=255
+[2022-10-25 11:10:44],INFO,[product.views:138],id:l,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:10:45],INFO,[product.views:268],id:l,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 11:10:46],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:10:48],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:10:50],INFO,[product.views:138],id:l,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:10:51],INFO,[product.views:268],id:l,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 11:10:52],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:10:53],INFO,[product.views:268],id:l,,,brand:Food,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=2
+[2022-10-25 11:10:56],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:11:00],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:11:00],INFO,[product.views:268],id:l,,,brand:Food,pageNum:3,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=2,to:/product/productList?brand=Food&pagenum=3
+[2022-10-25 11:11:04],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:11:07],INFO,[product.views:138],id:ii,,,,pageNum:2,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?pagenum=2
+[2022-10-25 11:11:10],INFO,[product.views:138],id:ii,,,,pageNum:3,from:http://192.168.0.113:8000/product/productCategory?pagenum=2,to:/product/productCategory?pagenum=3
+[2022-10-25 11:11:14],INFO,[product.views:54],id:l,prodNum:206,prodName:소고기 앞다리살,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=3,to:/product/productDetail?prodNum=206
+[2022-10-25 11:11:15],INFO,[product.views:138],id:ii,,,,pageNum:2,from:http://192.168.0.113:8000/product/productCategory?pagenum=3,to:/product/productCategory?pagenum=2
+[2022-10-25 11:11:26],INFO,[product.views:138],id:l,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:11:57],INFO,[product.views:268],id:l,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 11:11:59],INFO,[product.views:268],id:l,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Arise
+[2022-10-25 11:12:01],INFO,[product.views:268],id:l,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 11:12:03],INFO,[product.views:268],id:l,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productList?brand=Military
+[2022-10-25 11:12:09],INFO,[product.views:54],id:l,prodNum:417,prodName:핀란드군장,brand:Military,,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productDetail?prodNum=417
+[2022-10-25 11:12:48],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 11:13:01],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/member/myorderlist,to:/product/productCategory
+[2022-10-25 11:13:14],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/productCategory
+[2022-10-25 11:13:18],INFO,[product.views:138],id:ii,,,,pageNum:4,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?pagenum=4
+[2022-10-25 11:13:20],INFO,[product.views:268],id:ii,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory?pagenum=4,to:/product/productList?brand=Food
+[2022-10-25 11:13:23],INFO,[product.views:268],id:ii,,,brand:Food,pageNum:4,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=4
+[2022-10-25 11:13:26],INFO,[product.views:268],id:ii,,,brand:Food,pageNum:3,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=4,to:/product/productList?brand=Food&pagenum=3
+[2022-10-25 11:13:29],INFO,[product.views:268],id:ii,,,brand:Food,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=3,to:/product/productList?brand=Food&pagenum=2
+[2022-10-25 11:13:31],INFO,[product.views:268],id:ii,,,brand:Food,pageNum:5,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=2,to:/product/productList?brand=Food&pagenum=5
+[2022-10-25 11:13:33],INFO,[product.views:268],id:ii,,,brand:Food,pageNum:6,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=5,to:/product/productList?brand=Food&pagenum=6
+[2022-10-25 11:13:36],INFO,[product.views:54],id:ii,prodNum:151,prodName:파인애플,brand:Food,,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=6,to:/product/productDetail?prodNum=151
+[2022-10-25 11:13:50],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/member/mybeach,to:/product/productCategory
+[2022-10-25 11:13:58],INFO,[product.views:268],id:ii,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 11:14:01],INFO,[product.views:268],id:ii,,,brand:Food,pageNum:3,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=Food&pagenum=3
+[2022-10-25 11:14:04],INFO,[product.views:268],id:ii,,,brand:Food,pageNum:4,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=3,to:/product/productList?brand=Food&pagenum=4
+[2022-10-25 11:14:06],INFO,[product.views:202],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Food&pagenum=4,to:/product/waterRocket
+[2022-10-25 11:14:07],INFO,[product.views:138],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-25 11:14:08],INFO,[product.views:268],id:ii,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Seafolly
+[2022-10-25 11:14:11],INFO,[product.views:268],id:ii,,,brand:Seafolly,pageNum:3,from:http://192.168.0.113:8000/product/productList?brand=Seafolly,to:/product/productList?brand=Seafolly&pagenum=3
+[2022-10-25 11:14:19],INFO,[product.views:54],id:ii,prodNum:499,prodName:수영복__남자수영복_래쉬가드비치반바지세트BEM,brand:Seafolly,,from:http://192.168.0.113:8000/product/productList?brand=Seafolly&pagenum=3,to:/product/productDetail?prodNum=499
+[2022-10-25 11:14:56],INFO,[product.views:202],id:ii,,,,pageNum:1,from:http://192.168.0.113:8000/refund/myrefundlist,to:/product/waterRocket
+[2022-10-25 11:15:00],INFO,[product.views:138],id:ii,,,,pageNum:5,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory?pagenum=5
+[2022-10-25 11:23:14],INFO,[product.views:268],id:ll,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 11:23:25],INFO,[product.views:268],id:oo,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productList?brand=Seafolly
+[2022-10-25 11:23:26],INFO,[product.views:268],id:ll,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 11:23:28],INFO,[product.views:138],id:oo,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:23:28],INFO,[product.views:268],id:ll,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Rash%20pl.
+[2022-10-25 11:23:30],INFO,[product.views:138],id:oo,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:23:32],INFO,[product.views:54],id:ll,prodNum:489,prodName:인디 코트_페일카키,brand:Rash pl.,,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productDetail?prodNum=489
+[2022-10-25 11:23:33],INFO,[product.views:138],id:oo,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:23:33],INFO,[product.views:138],id:ll,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:23:34],INFO,[product.views:268],id:ll,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Arena
+[2022-10-25 11:23:36],INFO,[product.views:138],id:oo,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:23:39],INFO,[product.views:138],id:oo,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:23:42],INFO,[product.views:268],id:ll,,,brand:Arena,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productList?brand=Arena&pagenum=2
+[2022-10-25 11:23:47],INFO,[product.views:54],id:ll,prodNum:217,prodName:손가방,brand:Arena,,from:http://192.168.0.113:8000/product/productList?brand=Arena&pagenum=2,to:/product/productDetail?prodNum=217
+[2022-10-25 11:23:50],INFO,[product.views:138],id:ll,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:23:52],INFO,[product.views:268],id:ll,,,brand:Speedo,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Speedo
+[2022-10-25 11:24:01],INFO,[product.views:268],id:ll,,,brand:Speedo,pageNum:2,from:http://192.168.0.113:8000/product/productList?brand=Speedo,to:/product/productList?brand=Speedo&pagenum=2
+[2022-10-25 11:24:04],INFO,[product.views:54],id:ll,prodNum:425,prodName:멀티 트롤리 백_M,L,brand:Speedo,,from:http://192.168.0.113:8000/product/productList?brand=Speedo&pagenum=2,to:/product/productDetail?prodNum=425
+[2022-10-25 11:24:06],INFO,[product.views:138],id:oo,,,,pageNum:1,from:http://192.168.0.113:8000/member/mybeach,to:/product/productCategory
+[2022-10-25 11:24:06],INFO,[product.views:138],id:ll,,,,pageNum:1,from:http://192.168.0.113:8000/cart/cart,to:/product/productCategory
+[2022-10-25 11:24:08],INFO,[product.views:268],id:ll,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Tornado%20Sports
+[2022-10-25 11:24:09],INFO,[product.views:268],id:ll,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Military
+[2022-10-25 11:24:09],INFO,[product.views:268],id:oo,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Food
+[2022-10-25 11:24:11],INFO,[product.views:268],id:ll,,,brand:Hoog,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Military,to:/product/productList?brand=Hoog
+[2022-10-25 11:24:20],INFO,[product.views:268],id:ll,,,brand:Military,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Hoog,to:/product/productList?brand=Military
+[2022-10-25 11:24:26],INFO,[product.views:138],id:oo,,,,pageNum:1,from:http://192.168.0.113:8000/member/modify,to:/product/productCategory
+[2022-10-25 11:24:37],INFO,[product.views:54],id:ll,prodNum:214,prodName:비치모자,brand:Arena,,from:http://192.168.0.113:8000/search/searchResult?kw=%EB%AA%A8%EC%9E%90,to:/product/productDetail?prodNum=214
+[2022-10-25 11:25:36],INFO,[product.views:54],id:oo,prodNum:417,prodName:핀란드군장,brand:Military,,from:http://192.168.0.113:8000/member/index,to:/product/productDetail?prodNum=417
+[2022-10-25 11:25:56],INFO,[product.views:202],id:oo,,,,pageNum:1,from:http://192.168.0.113:8000/order/orderdone,to:/product/waterRocket
+[2022-10-25 11:26:00],INFO,[product.views:138],id:oo,,,,pageNum:5,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory?pagenum=5
+[2022-10-25 11:26:02],INFO,[product.views:268],id:oo,,,brand:Seafolly,pageNum:1,from:http://192.168.0.113:8000/product/productCategory?pagenum=5,to:/product/productList?brand=Seafolly
+[2022-10-25 11:26:05],INFO,[product.views:54],id:oo,prodNum:481,prodName:무지개 튜브,brand:Seafolly,,from:http://192.168.0.113:8000/product/productCategory?pagenum=5,to:/product/productDetail?prodNum=481
+[2022-10-25 11:26:22],INFO,[product.views:138],id:oo,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-25 11:26:51],INFO,[product.views:54],id:oo,prodNum:527,prodName:수영복_여자래쉬가드_홀리데이퍼프소매모노키니원피스,brand:Seafolly,,from:http://192.168.0.113:8000/product/productCategory,to:/product/productDetail?prodNum=527
+[2022-10-25 11:27:06],INFO,[product.views:138],id:ll,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:28:46],INFO,[product.views:138],id:pp,,,,pageNum:1,from:http://192.168.0.113:8000/member/mybeach,to:/product/productCategory
+[2022-10-25 11:28:51],INFO,[product.views:138],id:pp,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:28:54],INFO,[product.views:138],id:pp,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:28:58],INFO,[product.views:138],id:pp,,,,pageNum:2,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?pagenum=2
+[2022-10-25 11:29:04],INFO,[product.views:138],id:pp,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-25 11:29:06],INFO,[product.views:138],id:pp,,,,pageNum:5,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?pagenum=5
+[2022-10-25 15:04:02],INFO,[product.views:54],id:ll,prodNum:165,prodName:냉동삼겹살,brand:Food,,from:http://localhost:8000/search/searchResult?kw=%EC%82%BC%EA%B2%B9%EC%82%B4,to:/product/productDetail?prodNum=165
+[2022-10-25 18:17:30],INFO,[product.views:54],id:bbb,prodNum:162,prodName:양고기 큐브,brand:Food,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=162
+[2022-10-25 18:19:48],INFO,[product.views:54],id:bbb,prodNum:162,prodName:양고기 큐브,brand:Food,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=162
+[2022-10-25 18:19:51],INFO,[product.views:54],id:bbb,prodNum:162,prodName:양고기 큐브,brand:Food,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=162
+[2022-10-25 18:20:01],INFO,[product.views:54],id:bbb,prodNum:162,prodName:양고기 큐브,brand:Food,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=162
+[2022-10-26 20:35:13],INFO,[product.views:54],id:bbb,prodNum:22,prodName:호그블랑켓,brand:Hoog,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=22
+[2022-10-27 14:27:27],INFO,[product.views:54],id:bbb,prodNum:22,prodName:호그블랑켓,brand:Hoog,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=22
+[2022-10-27 14:29:29],INFO,[product.views:54],id:bbb,prodNum:22,prodName:호그블랑켓,brand:Hoog,,from:http://localhost:8000/member/index,to:/product/productDetail?prodNum=22
+[2022-10-28 09:50:34],INFO,[product.views:202],id:aaa,,,,pageNum:1,from:http://localhost:8000/cart/cart,to:/product/waterRocket
+[2022-10-28 09:50:34],INFO,[product.views:202],id:aaa,,,,pageNum:1,from:http://localhost:8000/product/waterRocket,to:/product/waterRocket
+[2022-10-28 09:59:20],INFO,[product.views:138],id:z,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/productCategory
+[2022-10-28 09:59:21],INFO,[product.views:138],id:z,,,,pageNum:1,from:http://localhost:8000/product/productCategory,to:/product/productCategory
+[2022-10-28 10:03:57],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/productCategory
+[2022-10-28 10:03:57],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/product/productCategory,to:/product/productCategory
+[2022-10-28 10:04:01],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/productCategory
+[2022-10-28 10:04:01],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/product/productCategory,to:/product/productCategory
+[2022-10-28 10:04:15],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/productCategory
+[2022-10-28 10:04:16],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/product/productCategory,to:/product/productCategory
+[2022-10-28 10:05:18],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/productCategory
+[2022-10-28 10:05:18],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/product/productCategory,to:/product/productCategory
+[2022-10-28 10:05:31],INFO,[product.views:56],id:abc,prodNum:264,prodName:적상추,brand:Food,,from:http://192.168.0.113:8000/search/searchResult?kw=%EC%83%81%EC%B6%94,to:/product/productDetail?prodNum=264
+[2022-10-28 10:06:32],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/member/index,to:/product/productCategory
+[2022-10-28 10:07:07],INFO,[product.views:222],id:z,,,,pageNum:1,from:http://localhost:8000/product/productCategory,to:/product/waterRocket
+[2022-10-28 10:07:07],INFO,[product.views:222],id:z,,,,pageNum:1,from:http://localhost:8000/product/waterRocket,to:/product/waterRocket
+[2022-10-28 10:08:45],INFO,[product.views:222],id:z,,,,pageNum:1,from:http://localhost:8000/product/productCategory,to:/product/waterRocket
+[2022-10-28 10:08:57],INFO,[product.views:56],id:z,prodNum:541,prodName:수영복_여자수영복_하트넥비키니세트,brand:Seafolly,,from:http://localhost:8000/product/waterRocket,to:/product/productDetail?prodNum=541
+[2022-10-28 10:09:01],INFO,[product.views:222],id:z,,,,pageNum:1,from:http://localhost:8000/product/productCategory,to:/product/waterRocket
+[2022-10-28 10:13:37],INFO,[product.views:149],id:abc,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-28 10:14:05],INFO,[product.views:56],id:abc,prodNum:490,prodName:서핑보드[PLACEBO]LAYZ POTATO 5.7,brand:U.seven,,from:http://192.168.0.113:8000/search/searchResult?kw=%EC%84%9C%ED%95%91%EB%B3%B4%EB%93%9C,to:/product/productDetail?prodNum=490
+[2022-10-28 10:14:14],INFO,[product.views:149],id:abc,,,,pageNum:1,from:http://192.168.0.113:8000/search/searchResult?kw=%EC%84%9C%ED%95%91%EB%B3%B4%EB%93%9C,to:/product/productCategory
+[2022-10-28 10:14:21],INFO,[product.views:149],id:abc,,,,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productCategory?minamount=581837&maxamount=5000000
+[2022-10-28 10:14:38],INFO,[product.views:149],id:abc,,,,pageNum:1,from:http://192.168.0.113:8000/search/searchResult?kw=%EC%84%9C%ED%95%91%EB%B3%B4%EB%93%9C,to:/product/productCategory
+[2022-10-28 10:14:46],INFO,[product.views:222],id:abc,,,,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/waterRocket
+[2022-10-28 10:14:48],INFO,[product.views:149],id:abc,,,,pageNum:1,from:http://192.168.0.113:8000/product/waterRocket,to:/product/productCategory
+[2022-10-28 10:14:52],INFO,[product.views:288],id:abc,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=Tornado%20Sports
+[2022-10-28 10:15:02],INFO,[product.views:288],id:abc,,,brand:Arena,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Arena
+[2022-10-28 10:15:14],INFO,[product.views:288],id:abc,,,brand:Tornado Sports,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arena,to:/product/productList?brand=Tornado%20Sports
+[2022-10-28 10:15:18],INFO,[product.views:288],id:abc,,,brand:Rash pl.,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Tornado%20Sports,to:/product/productList?brand=Rash%20pl.
+[2022-10-28 10:15:21],INFO,[product.views:288],id:abc,,,brand:Arise,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Rash%20pl.,to:/product/productList?brand=Arise
+[2022-10-28 10:15:23],INFO,[product.views:288],id:abc,,,brand:Food,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Arise,to:/product/productList?brand=Food
+[2022-10-28 10:15:26],INFO,[product.views:288],id:abc,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=Food,to:/product/productList?brand=U.seven
+[2022-10-28 10:15:36],INFO,[product.views:149],id:abc,,,,pageNum:1,from:http://192.168.0.113:8000/search/searchResult?kw=%EC%84%9C%ED%95%91%EB%B3%B4%EB%93%9C,to:/product/productCategory
+[2022-10-28 10:15:39],INFO,[product.views:288],id:abc,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productCategory,to:/product/productList?brand=U.seven
+[2022-10-28 10:15:45],INFO,[product.views:288],id:abc,,,brand:U.seven,pageNum:1,from:http://192.168.0.113:8000/product/productList?brand=U.seven,to:/product/productList?brand=U.seven&minamount=1835191&maxamount=5000000
+[2022-10-28 10:16:38],INFO,[product.views:56],id:abc,prodNum:494,prodName:서핑보드CJ NELSON NOSERIDER 9.5,brand:U.seven,,from:http://192.168.0.113:8000/product/productList?brand=U.seven&minamount=1835191&maxamount=5000000,to:/product/productDetail?prodNum=494
+[2022-10-28 10:16:47],INFO,[product.views:149],id:abc,,,,pageNum:1,from:http://192.168.0.113:8000/wishlist/wish,to:/product/productCategory
+[2022-10-28 10:16:53],INFO,[product.views:56],id:abc,prodNum:471,prodName:서핑보드,brand:Seafolly,,from:http://192.168.0.113:8000/search/searchResult?kw=%EC%84%9C%ED%95%91%EB%B3%B4%EB%93%9C,to:/product/productDetail?prodNum=471
+[2022-10-28 10:27:54],INFO,[product.views:149],id:abc,,,,pageNum:1,from:http://192.168.0.113:8000/member/myorderlist,to:/product/productCategory
+[2022-10-28 10:27:57],INFO,[product.views:56],id:abc,prodNum:541,prodName:수영복_여자수영복_하트넥비키니세트,brand:Seafolly,,from:http://192.168.0.113:8000/product/productCategory,to:/product/productDetail?prodNum=541
+[2022-10-28 10:49:17],INFO,[product.views:149],id:abc,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-28 13:52:57],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/member/myorderlist,to:/product/productCategory
+[2022-10-28 14:13:18],INFO,[product.views:149],id:z,,,,pageNum:1,from:http://localhost:8000/member/mybeach,to:/product/productCategory
+[2022-10-28 14:28:53],INFO,[product.views:149],id:aaa,,,,pageNum:1,from:http://192.168.0.113:8000/member/index,to:/product/productCategory
+[2022-10-28 16:20:35],INFO,[product.views:56],id:aaa,prodNum:148,prodName:오랜지,brand:Food,,from:http://192.168.0.113:8000/reviewboard/myReviewList,to:/product/productDetail?prodNum=148
