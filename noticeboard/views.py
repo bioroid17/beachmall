@@ -10,7 +10,7 @@ PAGE_SIZE =5
 PAGE_BLOCK =6
 # Create your views here.
 
-
+# 게사펀 리스트
 class NoticeView(View):
     def get(self,request):
         template = loader.get_template( "noticelist.html" )
@@ -55,7 +55,7 @@ class NoticeView(View):
     def post(self,request):
         pass
 
-
+# 게시판 상세 내용
 class NoticeDetailView(View):
     def get(self, request):
         noticeNum = request.GET["noticeNum"]

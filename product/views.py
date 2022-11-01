@@ -16,7 +16,8 @@ logger = logging.getLogger( __name__ )
 
 PAGE_SIZE = 15
 PAGE_BLOCK = 5
-    
+
+# 상품 상세 정보 페이지
 class ProductDetailView(View):
     def get(self, request):
         template = loader.get_template("productDetail.html")
@@ -73,7 +74,8 @@ class ProductDetailView(View):
         return HttpResponse(template.render(context, request))
     def post(self, request):
         pass
-    
+
+# 상품 전체 리스트 페이지    
 class ProductCategoryView(View):
     def get (self,request):
         template=loader.get_template("productCategory.html")
@@ -150,7 +152,8 @@ class ProductCategoryView(View):
         return HttpResponse(template.render( context ,request))
     def post(self,request):
         pass
-    
+
+# 상품 물로켓 리스트 페이지
 class WaterRocketView(View):
     def get (self,request):
         template=loader.get_template("waterRocket.html")
@@ -223,7 +226,8 @@ class WaterRocketView(View):
         return HttpResponse(template.render( context ,request))
     def post(self,request):
         pass
-    
+
+# 상품 브랜드별 리스트 페이지    
 class ProductListView(View):
     def get (self,request):
         template = loader.get_template( "productList.html" )

@@ -21,6 +21,7 @@ class ReviewWriteView(View):
         return super( ReviewWriteView ,self ).dispatch( request, *args, **kwargs )
     def get(self, request ) :
         pass
+    # 상품 후기 작성 실행
     def post(self, request ) :
         prodNum = request.POST["prodNum"]
         review = Reviewboard(
@@ -40,6 +41,7 @@ class ReviewModifyView( View ) :
         return super( ReviewModifyView,self ).dispatch( request, *args, **kwargs)
     def get(self, request ) :
         pass
+    # 상품 후기 수정 실행
     def post(self, request) : # post만 구현하면 된다
         reviewNum = request.POST["reviewNum"]
         review = Reviewboard.objects.get(reviewNum=reviewNum)
@@ -56,12 +58,14 @@ class ReviewDeleteView( View ) :
         return super( ReviewDeleteView,self ).dispatch( request, *args, **kwargs)
     def get(self, request ) :
         pass
+    # 상품 후기 삭제 실행
     def post(self, request ) :
         reviewNum = request.POST["reviewNum"]
         review = Reviewboard.objects.get(reviewNum=reviewNum)
         review.delete()
         return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found')) 
     
+# 내 상품 후기 리스트 보기
 class MyReviewList (View):
     def get(self, request):
         

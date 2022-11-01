@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 
+# 찜 목록 보기
 class WishView(View):
     def get(self, request):
         template = loader.get_template("wish.html") # wish.html에 출력한다

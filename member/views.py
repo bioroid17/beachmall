@@ -43,32 +43,43 @@ class IndexView(View):
             if datetime.strptime(line[0][1:11], "%Y-%m-%d") < today - timedelta(days=7):
                 break
             id = line[3].split(":")[1]
+            
+            # 지금 로그인한 아이디에 관한 로그만 본다.
             if id != userId:
                 continue
+            
+            # prodNum이 비어있으면 건너뛰기
             if line[4] == "" or line[4] == None:
                 continue
             prodNum = line[4].split(":")[1]
             if Product.objects.filter(prodNum=prodNum).count() == 0:
                 continue
+            # 자주 본 상품번호 리스트에 집어넣기
             if str(prodNum) in mostViews:
                 mostViews[str(prodNum)] += 1
             else:
                 mostViews[str(prodNum)] = 1
+            
+            # 최근 본 상품번호 리스트에 집어넣기
             if count >= 4:
                 continue
             else:
                 if prodNum not in recents:
                     recents.append(prodNum)
                     count += 1
+        
+        # 상품 번호 리스트로 최근 본 상품
         recentProducts = [Product.objects.get(prodNum=recent) for recent in recents]
         
         views_sorted = [(key, value) for key, value in mostViews.items()][0:5]
         views_sorted.sort(key=lambda x:x[1], reverse=True)
         
+        # 상품 번호 리스트로 자주 본 상품
         frequentProducts = [Product.objects.get(prodNum=prodNum) for prodNum, searchCount in views_sorted]
         
         productlog.close()
         
+        # 연령대 및 성별로 추천 상품 추출
         gender_age_recos = []
         if userId:
             try:
@@ -85,7 +96,10 @@ class IndexView(View):
         order by sum(buyCount) DESC LIMIT 5
         """)
         
+        # 실시간 검색어
         rts = realtimeSearch()
+        
+        # 상품 구매 이력과 장바구니 추가이력으로 추천 상품
         ordercounts = Order.objects.filter(userId=userId).count()
         cartwishorder_recos = []
         if ordercounts > 0:
@@ -260,7 +274,8 @@ class JoinView(View):
         #setting에서 info 에다 쌓이는것 
 
         return redirect("member:index") 
-    
+
+# 아이디 중복확인 체크
 class IdConfirmView(View):
     def get(self, request):
         userId = request.GET["id"]  
@@ -284,6 +299,7 @@ class IdConfirmView(View):
     def post(self, request):  
         pass
 
+# 전화번호 중복확인 체크
 class TelConfirmView(View):
     def get(self, request):
         #join.html에서 tel1,tel2,tel3로 나눠진 값들이다
@@ -321,7 +337,7 @@ class TelConfirmView(View):
     def post(self, request):  
         pass
 
-
+# 내 주문목록 보기
 class MyOrderListView(View):
     def get (self,request):
         template=loader.get_template("myorderlist.html")
@@ -331,8 +347,6 @@ class MyOrderListView(View):
 
         #페이징
         #pagenum을 get으로 갖고온다
-        
-
         pagenum = request.GET.get( "pagenum" )
         if not pagenum :
             #pagenum은 1로 시작하게 만들기
@@ -343,20 +357,28 @@ class MyOrderListView(View):
         end = start + int(PAGE_SIZE)                      # 41 + 10 - 1            50 페이지에갖고 올것 끝을 정해준다.
         if end > ordercount :
             end = ordercount
-            
+        
+        # 주문 목록 페이징. 주문 번호로 내림차순 정렬
         orders = Order.objects.filter(userId=userId).order_by("-orderNum")[start:end]
         orderdetaillist = []
+        
+        # 각 주문 별로 상세 내용 정렬
         for order in orders:
             refundlist = []
+            
+            # 각 주문 상세 내용 추출
             orderdetails = OrderDetail.objects.filter(orderNum=order.orderNum).order_by("orderDetailNum").values()  # 딕셔너리 여러개가 든 리스트 형태로 반환
             for orderdetail in orderdetails:
                 try:
+                    # 각 주문 상품에 대한 환불 여부 확인. 환불 신청을 한 적 있으면 Refund 테이블에서 'y' 또는 'n'을 받아온다.
                     refundstatus = Refund.objects.get(orderDetailNum=orderdetail["orderDetailNum"]).status
-                except ObjectDoesNotExist:
+                except ObjectDoesNotExist: # 환불 신청 한 적 없을 때
                     refundstatus = 'x'
+                # 리스트에 값 추가
                 refundlist.append(refundstatus)
-            
+            # 리스트에 값 추가. refundlist와 orderdetails의 같은 인덱스끼리 묶는다.
             orderdetaillist.append(zip(orderdetails, refundlist))
+        # orders와 ordertaillist 묶어서 새 리스트 생성
         orderlist = zip(orders, orderdetaillist)
         
         number = ordercount - ( pagenum - 1 ) * int(PAGE_SIZE )
@@ -386,20 +408,21 @@ class MyOrderListView(View):
         return HttpResponse(template.render(context, request))
     def post(self,request):
         pass
-    
+
+# 주문 상세 정보 보기
 class MyOrderDetailView(View):
     def get (self,request):
         template=loader.get_template("myorderdetail.html")
         orderNum = request.GET["orderNum"]
         order = Order.objects.get(orderNum=orderNum)
         memid = request.session.get("memid")
-        carts = Cart.objects.filter(userId=memid)
         if order.userId != memid:
             context = {
                 "message" : "주문자 정보와 로그인 정보가 일치하지 않습니다.",
                 }
             return HttpResponse(template.render( context ,request))
-            
+        
+        # 주문 상세 정보
         name, tel = Member.objects.filter(userId=memid).values_list("name", "tel")[0]
         orderdetails = OrderDetail.objects.filter(orderNum=orderNum).order_by("orderDetailNum").values()
         
@@ -407,7 +430,6 @@ class MyOrderDetailView(View):
             orderdetail["prodThumbnail"] = Product.objects.get(prodNum=orderdetail["prodNum"]).prodThumbnail
             
         context={
-            "carts" : carts,
             "name" : name,
             "tel" : tel,
             "order" : order,
@@ -416,7 +438,8 @@ class MyOrderDetailView(View):
         return HttpResponse(template.render(context ,request))
     def post(self,request):
         pass
-    
+
+# 마이비치
 class MyBeachView(View):
     def get (self,request):
         memid = request.session.get("memid")
@@ -457,7 +480,7 @@ class ModifyProView(View):
         dto.save() #insert된다
         return redirect("member:index")
         
-        
+# 회원 정보 수정        
 class ModifyView(View):
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
@@ -494,6 +517,7 @@ class ModifyView(View):
                 }   
         return HttpResponse(template.render(context,request))
 
+# 메인 페이지 팝업창
 class PapUpView(View):
     def get (self,request):
         context={}

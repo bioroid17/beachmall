@@ -16,6 +16,7 @@ logger = logging.getLogger( __name__ )
 PAGE_SIZE = 5
 PAGE_BLOCK = 3
 
+# QnA 리스트 페이지
 class ListView( View ) :
     def get(self, request ) :
         template = loader.get_template( "qna.html" )
@@ -58,7 +59,7 @@ class ListView( View ) :
     def post(self, request ) :
         pass
     
-    
+# 글쓰기 페이지    
 class WriteView( View ) :
     @method_decorator( csrf_exempt )
     def dispatch(self, request, *args, **kwargs):
@@ -83,7 +84,8 @@ class WriteView( View ) :
             )
         dto.save()
         return redirect( "qnaboard:qna" ) #app name 설정 때문에 board:list 로 해야함
-    
+
+# QnA 글 상세정보
 class DetailView( View ) :
     def get(self, request ) :
         qnaNum = request.GET["qnaNum"]
@@ -107,7 +109,7 @@ class DetailView( View ) :
     def post(self, request ) :
         pass
     
-    
+# QnA 글 삭제    
 class DeleteView( View ) :
     @method_decorator( csrf_exempt )
     def dispatch(self, request, *args, **kwargs):
@@ -124,7 +126,8 @@ class DeleteView( View ) :
         logger.info( str(qnaNum)+","+dto.userId )
         dto.delete()
         return redirect( "qnaboard:qna" )
-        
+
+# QnA 글 수정
 class ModifyView( View ) :
     @method_decorator( csrf_exempt )
     def dispatch(self, request, *args, **kwargs):
@@ -150,7 +153,7 @@ class ModifyView( View ) :
         dto.qnaContent = request.POST["qnaContent"]
         dto.save()
         return redirect( "qnaboard:qna" )
-        
+# 내 QnA 글 리스트       
 class MyQnaList (View):
     def get(self, request):
         userId = request.session.get("memid")

@@ -10,6 +10,7 @@ PAGE_BLOCK = 3
 
 logger = logging.getLogger(__name__)
 
+# 검색 내용 보기 페이지. 상품 이름 또는 브랜드 명으로 검색
 def searchResult(request):
     query = request.GET.get('kw')
     

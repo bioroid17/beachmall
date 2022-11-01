@@ -17,6 +17,8 @@ PAGE_SIZE = 5
 PAGE_BLOCK = 3
 
 # Create your views here.
+
+# 반품/환불/교환 목록 보기 페이지
 class RefundListView(View):
     def get(self,request):
         template=loader.get_template("refundlist.html")
@@ -61,6 +63,7 @@ class RefundListView(View):
     def post(self,request):
         pass
 
+# 반품/환불/교환 신청하기 페이지
 class RefundRegisterView(View):
     @method_decorator( csrf_exempt )
     def dispatch(self, request, *args, **kwargs):

@@ -11,6 +11,7 @@ class SurveyView(View):
     @method_decorator( csrf_exempt )
     def dispatch(self, request, *args, **kwargs):
         return super( SurveyView,self ).dispatch( request, *args, **kwargs)
+    # 설문조사 페이지
     def get(self,request):
         userId = request.session.get("memid")
         template = loader.get_template("survey.html")
@@ -20,7 +21,7 @@ class SurveyView(View):
                 "survey" : survey
             }
         return HttpResponse(template.render(context,request))
-    
+    # 설문 작성 내용 저장
     def post(self,request):
         template = loader.get_template("save.html")
         userId = request.session.get("memid")
