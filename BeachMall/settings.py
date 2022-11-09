@@ -215,8 +215,6 @@ LOGGING = {
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d!no9n&p2$i0tx7-_zdoj^u&*7s&21yy#u^q20cd(h(dzij3!6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
