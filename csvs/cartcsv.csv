@@ -166,3 +166,9 @@ oo,F_40대,417,20,8000/product/productDetail?prodNum=417,/cart/cartins?userId=oo
 oo,F_40대,481,1,8000/product/productDetail?prodNum=481,/cart/cartins?userId=oo&prodNum=481&buyCount=1
 oo,F_40대,527,1,8000/product/productDetail?prodNum=527,/cart/cartins?userId=oo&prodNum=527&buyCount=1
 pp,F_30대,541,1,8000/wishlist/wish,/cart/cartins?userId=pp&prodNum=541&buyCount=1
+abc,M_20대,471,1,8000/product/productDetail?prodNum=471,/cart/cartins?userId=abc&prodNum=471&buyCount=1
+abc,M_20대,541,1,8000/product/productDetail?prodNum=541,/cart/cartins?userId=abc&prodNum=541&buyCount=1
+z,M_30대,22,1,8000/product/productCategory,/cart/cartins?userId=z&prodNum=22&buyCount=1
+z,M_30대,110,1,8000/wishlist/wish,/cart/cartins?userId=z&prodNum=110&buyCount=1
+z,M_30대,516,1,8000/product/productCategory,/cart/cartins?userId=z&prodNum=516&buyCount=1
+z,M_30대,462,1,8000/product/productCategory,/cart/cartins?userId=z&prodNum=462&buyCount=1
